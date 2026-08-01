@@ -1,14 +1,35 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-ink: #121212;
-  --color-base: #fdfdfd;
+  --color-ink: var(--text);
+  --color-base: var(--surface);
   --color-vital: #f4b400;
   --color-blue: #0077b6;
   --color-red: #d90429;
 
+  /* Pastel palette */
+  --color-pastel-blue: #dbeafe;
+  --color-pastel-yellow: #fef3c7;
+  --color-pastel-pink: #fce7f3;
+  --color-pastel-mint: #d1fae5;
+  --color-pastel-lavender: #ede9fe;
+  --color-pastel-peach: #ffedd5;
+  --color-pastel-sky: #e0f2fe;
+
   --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-label: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  --surface: #fdfdfd;
+  --text: #121212;
+}
+
+.dark {
+  --surface: #121212;
+  --text: #fdfdfd;
 }
 
 html {
@@ -20,6 +41,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* ---- Display typography ---- */
@@ -64,6 +86,97 @@ body {
     filter: blur(1.5px);
     letter-spacing: 0.02em;
   }
+}
+
+/* ---- Glass / translucency ---- */
+.glass-card {
+  background: color-mix(in srgb, var(--color-base) 55%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.glass-dark {
+  background: color-mix(in srgb, var(--color-ink) 78%, transparent);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.pastel-blob {
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.55;
+}
+
+/* ---- Hero role animations ---- */
+@keyframes role-radar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes role-scan {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(28px);
+  }
+}
+
+@keyframes bar-grow {
+  0% {
+    transform: scaleY(0.15);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.15);
+  }
+}
+
+@keyframes pen-draw {
+  0% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-24px, 16px) scale(1.15);
+  }
+}
+
+@keyframes float-pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ---- Theme toggle ---- */
+.theme-toggle-btn {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.theme-toggle-btn:hover {
+  transform: rotate(15deg) scale(1.1);
 }
 
 /* ---- Reading progress bar ---- */

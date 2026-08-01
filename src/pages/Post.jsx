@@ -21,7 +21,7 @@ export default function Post() {
 
   useEffect(() => {
     if (!post) {
-      navigate("/blog", { replace: true });
+      navigate("/projects", { replace: true });
       return;
     }
     window.scrollTo(0, 0);
@@ -59,10 +59,10 @@ export default function Post() {
       <article className="relative">
         <div className="px-4 sm:px-6 max-w-3xl mx-auto pt-10">
           <Link
-            to="/blog"
+            to="/projects"
             className="label-mono text-ink/50 hover:text-vital transition-colors"
           >
-            ← ARCHIVE
+            ← ALL PROJECTS
           </Link>
 
           <header className="mt-6 mb-10 border-b-2 border-ink pb-8">

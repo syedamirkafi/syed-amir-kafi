@@ -2,10 +2,9 @@ import { Link, useLocation } from "react-router";
 
 const items = [
   { n: "01", label: "HOME", to: "/" },
-  { n: "02", label: "BLOG", to: "/blog" },
-  { n: "03", label: "WORK", to: "/work" },
+  { n: "02", label: "PROJECTS", to: "/projects" },
+  { n: "03", label: "WINS", to: "/wins" },
   { n: "04", label: "ABOUT", to: "/about" },
-  { n: "05", label: "NOW", to: "/now" },
 ];
 
 export default function BottomNav() {

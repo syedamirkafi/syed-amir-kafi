@@ -3,11 +3,10 @@ import { Routes, Route, useLocation } from "react-router";
 import Header from "./components/Header.jsx";
 import BottomNav from "./components/BottomNav.jsx";
 import Home from "./pages/Home.jsx";
-import Blog from "./pages/Blog.jsx";
+import Projects from "./pages/Projects.jsx";
 import Post from "./pages/Post.jsx";
-import Work from "./pages/Work.jsx";
+import Wins from "./pages/Wins.jsx";
 import About from "./pages/About.jsx";
-import Now from "./pages/Now.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 function ScrollToTop() {
@@ -25,11 +24,10 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/blog/:slug" element={<Post />} />
-        <Route path="/work" element={<Work />} />
+        <Route path="/wins" element={<Wins />} />
         <Route path="/about" element={<About />} />
-        <Route path="/now" element={<Now />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <BottomNav />

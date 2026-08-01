@@ -24,7 +24,7 @@ export default function NotFound() {
               RETURN TO BASE
             </Link>
             <Link
-              to="/blog"
+              to="/projects"
               className="px-6 py-3 border-2 border-ink label-mono font-semibold hover:bg-ink hover:text-base transition-colors"
             >
               BROWSE THE ARCHIVE

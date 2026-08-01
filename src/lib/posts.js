@@ -22,6 +22,7 @@ export function getAllPosts() {
       category: data.category || "NOTE",
       section: data.section || "stories",
       style: data.style || "default",
+      status: data.status || "shipped",
       stats: Array.isArray(data.stats) ? data.stats : [],
       tags: data.tags || [],
       excerpt: data.excerpt || "",

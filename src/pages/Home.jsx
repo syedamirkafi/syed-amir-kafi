@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { profile } from "../data/profile.js";
 import { portfolio } from "../data/portfolio.js";
@@ -6,12 +7,29 @@ import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 import PostCard from "../components/PostCard.jsx";
 import SkillGrid from "../components/SkillGrid.jsx";
 import ContactCTA from "../components/ContactCTA.jsx";
-import MetricsBand from "../components/MetricsBand.jsx";
+import HeroRoles from "../components/HeroRoles.jsx";
 import { withBase } from "../lib/base.js";
+
+const ROLE_COLORS = {
+  RESEARCHER: "#0077B6",
+  ANALYST: "#f4b400",
+  DESIGNER: "#d90429",
+};
 
 export default function Home() {
   useDocumentTitle(null);
   const posts = getAllPosts().slice(0, 4);
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRoleIndex((i) => (i + 1) % profile.roles.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, []);
+
+  const activeRole = profile.roles[roleIndex];
+  const activeColor = ROLE_COLORS[activeRole] || "#f4b400";
 
   return (
     <main className="flex-1 pt-12 pb-20">
@@ -20,15 +38,15 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-12 gap-0 border-2 border-ink mt-6 min-h-[62vh] backdrop-blur-sm relative">
           <div
             className="md:col-span-7 p-8 sm:p-12 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink transition-colors duration-700 relative overflow-hidden"
-            style={{ backgroundColor: "color-mix(in srgb, #f4b400 9%, #fdfdfd)" }}
+            style={{ backgroundColor: "color-mix(in srgb, var(--color-vital) 9%, var(--color-base))" }}
           >
             <div
-              className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full blur-3xl opacity-40 transition-colors duration-700"
-              style={{ backgroundColor: "#f4b400" }}
+              className="pastel-blob absolute -top-24 -right-24 w-72 h-72 transition-colors duration-700"
+              style={{ backgroundColor: activeColor, animation: "orb-drift 6s ease-in-out infinite" }}
             />
             <span
               className="label-mono mb-6 transition-colors duration-700 relative"
-              style={{ color: "#f4b400" }}
+              style={{ color: activeColor }}
             >
               {profile.mode}
             </span>
@@ -40,58 +58,60 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3 relative">
               <Link
-                to="/blog"
+                to="/projects"
                 className="px-6 py-3 bg-vital text-base label-mono font-semibold hover:bg-ink transition-colors"
               >
-                ENTER THE BLOG ›
+                ENTER THE PROJECTS ›
               </Link>
               <Link
-                to="/work"
+                to="/wins"
                 className="px-6 py-3 border-2 border-ink label-mono font-semibold hover:bg-ink hover:text-base transition-colors"
               >
-                VIEW THE WORK
+                VIEW THE WINS
               </Link>
             </div>
           </div>
 
           <div className="md:col-span-5 flex flex-col bg-ink text-base relative">
-            {profile.roles.map((role, i) => {
-              const isLast = i === profile.roles.length - 1;
-              return (
-                <div
-                  key={role}
-                  className="flex-1 flex items-center justify-center border-b-2 border-base/20 last:border-b-0 transition-all duration-500 relative overflow-hidden"
-                  style={{ backgroundColor: isLast ? "#f4b400" : "#121212" }}
-                >
-                  <span
-                    className={`head-display text-3xl sm:text-5xl select-none ${
-                      isLast
-                        ? "text-ink"
-                        : "text-base/30 blur-[2px]"
-                    }`}
-                    style={
-                      isLast
-                        ? { animation: "blur-morph 2.8s ease-in-out 0s infinite normal none running" }
-                        : undefined
-                    }
-                  >
-                    {role}
-                  </span>
-                </div>
-              );
-            })}
+            <HeroRoles active={activeRole} onSelect={setRoleIndex} />
           </div>
         </section>
 
-        {/* MEASURED PROOF */}
+        {/* THE WINS */}
         <section className="mt-16">
           <div className="flex items-baseline justify-between mb-8 border-b border-ink/30 pb-4">
-            <h2 className="head-display text-3xl sm:text-4xl">
-              Measured Proof
-            </h2>
-            <span className="label-mono text-ink/50">RECORDED OUTCOMES</span>
+            <h2 className="head-display text-3xl sm:text-4xl">The Wins</h2>
+            <Link
+              to="/wins"
+              className="label-mono text-ink/60 hover:text-vital transition-colors"
+            >
+              ALL WINS →
+            </Link>
           </div>
-          <MetricsBand />
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 border-2 border-ink divide-x divide-y sm:divide-y-0 divide-ink/20">
+            {posts.slice(0, 5).map((p, i) => {
+              const stat = p.stats && p.stats[0];
+              return (
+                <Link
+                  key={p.slug}
+                  to={`/blog/${p.slug}`}
+                  className="p-6 flex flex-col justify-between min-h-[140px] glass-card hover:bg-ink hover:text-base transition-colors group"
+                >
+                  <span className="label-mono text-ink/40 text-[0.6rem] group-hover:text-base/50">
+                    ● RECORDED {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <div className="head-display text-4xl sm:text-5xl">
+                      {stat ? stat.value : p.title}
+                    </div>
+                    <div className="label-mono text-ink/60 text-[0.6rem] mt-2 leading-relaxed group-hover:text-base/70">
+                      {stat ? stat.label : "READ THE FIELD LOG"}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
           <div className="mt-8">
             <span className="red-square" />
           </div>
@@ -104,7 +124,7 @@ export default function Home() {
               Intellectual Archive
             </h2>
             <Link
-              to="/blog"
+              to="/projects"
               className="label-mono text-ink/60 hover:text-vital transition-colors"
             >
               ALL POSTS →
@@ -139,7 +159,7 @@ export default function Home() {
               Polymath Gallery
             </h2>
             <Link
-              to="/work"
+              to="/projects"
               className="label-mono text-ink/60 hover:text-vital transition-colors"
             >
               ALL WORK →

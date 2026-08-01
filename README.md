@@ -56,6 +56,7 @@ excerpt: "..."
 cover: "#0077B6"             # tile color for the card
 coverImage: "/photos/....svg" # optional lead image on the post page
 featured: true
+status: shipped              # in-progress | shipped (projects page badge)
 order: 1                     # sort order (lower = first)
 stats:                       # optional, used by career cards / metrics
   - value: "+18%"
@@ -63,11 +64,12 @@ stats:                       # optional, used by career cards / metrics
 ---
 ```
 
-Posts sort by `order`, then date. Section groups feed the blog tabs
-(`src/sections/*`): career (result-first rows with `stats`), academia (indexed
-rows), tech (frame components per `style`), photo (masonry from
+Posts sort by `order`, then date. Section groups feed the merged Projects page
+(`src/pages/Projects.jsx`): career (result-first rows with `stats`), academia
+(indexed rows), tech (frame components per `style`), photo (masonry from
 `src/data/photos.js`), stories (timeline). The `style` field picks a
-Browser/Terminal/Console/Device frame in `src/sections/TechSection.jsx`.
+Browser/Terminal/Console/Device frame in `src/sections/TechSection.jsx`. Posts
+with `status: in-progress` surface under "In Progress" on the Projects page.
 
 ### Photos
 
@@ -79,9 +81,9 @@ Photo gallery entries live in `src/data/photos.js` and the images in
 
 - `src/data/profile.js` — name, contact, bio, coordinates, CV link
 - `src/data/skills.js` — skills grid groups
-- `src/data/portfolio.js` — "The Work" cards
+- `src/data/portfolio.js` — project cards with `status` (in-progress/shipped)
 - `src/data/timeline.js` — experience, education, certifications
-- `src/data/metrics.js` — "Measured Proof" band numbers on the home page
+- `src/data/wins.js` — "The Wins" metric cards with stories and source posts
 
 ### CV
 
@@ -90,17 +92,26 @@ Photo gallery entries live in `src/data/photos.js` and the images in
 
 ## Pages
 
-- `/` Home — hero, measured-proof metrics band, latest posts, toolbox, contact
-- `/blog` — themed tabs (all / career / academia / tech / photo / stories) with
-  search + tag chips on the ALL tab
+- `/` Home — hero with animated role rotator, wins teaser, latest posts,
+  toolbox, contact
+- `/projects` — merged page: IN PROGRESS + SHIPPED groups, portfolio cards,
+  then career/academia/tech/stories/photo sections, search + tag chips
+- `/wins` — "The Wins" — measured outcomes as cards with story + source post
 - `/blog/:slug` — post with cover image, MIN READ badge, share buttons, related
   reads, prev/next, contact CTA, syntax highlighting
-- `/work` — portfolio cards
 - `/about` — full profile: bio, skills, experience, education, certs, contact
-- `/now` — current work / study / learning / language status
 - anything else — styled 404 page
 
 Every page sets a document title via `src/lib/useDocumentTitle.js`.
+
+## Day / night mode
+
+Theme is stored in `localStorage` under `monolith-theme`; the toggle lives in
+the header (`src/components/ThemeToggle.jsx`) and defaults to the OS
+`prefers-color-scheme`. The `dark` class on `<html>` flips the `--surface` /
+`--text` variables in `src/index.css`; pastel accents (`--color-pastel-*`) and
+glass utilities (`.glass-card`, `.glass-dark`, `.pastel-blob`) keep the look
+consistent in both modes.
 
 ## Deploy (GitHub Pages)
 

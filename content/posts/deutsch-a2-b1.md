@@ -3,6 +3,7 @@ title: "Deutsch lernen: Von A2 nach B1 in 2026"
 date: "2026-07-30"
 category: DEUTSCH
 section: stories
+status: in-progress
 tags: [deutsch, german, a2, b1, learning]
 excerpt: "Mein Plan, bis Ende 2026 das Niveau B1 zu erreichen — und warum Sprache für den Arbeitsmarkt in Deutschland so wichtig ist."
 cover: "#D90429"

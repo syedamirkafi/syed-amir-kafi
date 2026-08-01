@@ -8,7 +8,7 @@ export default function AcademiaSection({ posts }) {
         <Link
           key={post.slug}
           to={`/blog/${post.slug}`}
-          className="module-shift block border-2 border-ink bg-base group"
+          className="module-shift block border-2 border-ink/40 hover:border-ink glass-card group"
         >
           <div className="flex items-start gap-6 p-6 sm:p-8">
             <div className="label-mono text-vital text-2xl sm:text-3xl pt-1 shrink-0">

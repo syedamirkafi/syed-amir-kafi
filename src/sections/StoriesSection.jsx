@@ -10,7 +10,7 @@ export default function StoriesSection({ posts }) {
           <Link
             key={post.slug}
             to={`/blog/${post.slug}`}
-            className="module-shift relative block border-2 border-ink bg-base group"
+            className="module-shift relative block border-2 border-ink/40 hover:border-ink glass-card group"
           >
             <span className="absolute -left-4 top-6 w-2 h-2 bg-vital" />
             <div className="p-6 sm:p-8">

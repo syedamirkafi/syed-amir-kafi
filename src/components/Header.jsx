@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { profile } from "../data/profile.js";
+import { ThemeToggle } from "./ThemeToggle.jsx";
 
 export default function Header() {
   return (
@@ -15,6 +16,9 @@ export default function Header() {
       </div>
       <div className="label-mono text-ink/50 sm:hidden">
         {profile.coordinatesShort}
+      </div>
+      <div className="flex items-center gap-3">
+        <ThemeToggle />
       </div>
     </header>
   );
