@@ -14,6 +14,7 @@ function getThemeColor() {
     const stored = localStorage.getItem(COLOR_KEY);
     if (stored) return stored;
   } catch (e) {}
+  // Use the new design system colors
   return document.documentElement.classList.contains("dark")
     ? "#0f172a"
     : "#ffffff";

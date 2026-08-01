@@ -18,7 +18,7 @@ export default function ContactCTA({ compact = false }) {
           href={withBase(profile.cvUrl)}
           target="_blank"
           rel="noreferrer"
-          className="px-6 py-3 bg-vital text-base label-mono font-semibold hover:bg-ink transition-colors"
+          className="px-6 py-3 bg-accent text-base label-mono font-semibold hover:bg-ink transition-colors"
         >
           CV ↓
         </a>

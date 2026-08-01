@@ -32,30 +32,30 @@ export default function About() {
                   {paragraph}
                 </p>
               ))}
-              <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href={withBase(profile.cvUrl)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-6 py-3 bg-vital text-base label-mono font-semibold hover:bg-ink transition-colors"
-                >
-                  CV ↓
-                </a>
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="px-6 py-3 border-2 border-ink label-mono font-semibold hover:bg-ink hover:text-base transition-colors"
-                >
-                  EMAIL
-                </a>
-                <a
-                  href={profile.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-6 py-3 border-2 border-ink label-mono font-semibold hover:bg-ink hover:text-base transition-colors"
-                >
-                  LINKEDIN
-                </a>
-              </div>
+               <div className="flex flex-wrap gap-3 pt-2">
+                 <a
+                   href={withBase(profile.cvUrl)}
+                   target="_blank"
+                   rel="noreferrer"
+                   className="px-6 py-3 bg-accent text-base label-mono font-semibold hover:bg-ink transition-colors"
+                 >
+                   CV ↓
+                 </a>
+                 <a
+                   href={`mailto:${profile.email}`}
+                   className="px-6 py-3 border-2 border-ink label-mono font-semibold hover:bg-ink hover:text-base transition-colors"
+                 >
+                   EMAIL
+                 </a>
+                 <a
+                   href={profile.linkedin}
+                   target="_blank"
+                   rel="noreferrer"
+                   className="px-6 py-3 border-2 border-ink label-mono font-semibold hover:bg-ink hover:text-base transition-colors"
+                 >
+                   LINKEDIN
+                 </a>
+               </div>
             </div>
             <div className="md:col-span-5">
               <div className="border-2 border-ink p-6 space-y-4">
