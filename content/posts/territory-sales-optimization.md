@@ -2,11 +2,17 @@
 title: "Territory Sales Optimization: 18% Through Data"
 date: "2026-07-20"
 category: ANALYTICS
+section: career
 tags: [sql, tableau, sales-analytics, kpi]
 excerpt: "How route-level analysis of sales patterns lifted territory sales 18% at Robi Axiata — and what the data taught me about distribution."
 cover: "#0077B6"
 featured: true
 order: 1
+stats:
+  - value: "+18%"
+    label: "territory sales growth"
+  - value: "13 / 200+"
+    label: "national officer rank"
 ---
 
 When I joined Robi Axiata as a Territory Officer, the standard playbook was simple: visit more retailers, push the product, hope the numbers move. I wanted to test a different hypothesis — that the territory's sales data, read correctly, could tell us *where* the money was being lost before a single extra visit was made.

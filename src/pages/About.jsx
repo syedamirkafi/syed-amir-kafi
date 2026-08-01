@@ -3,8 +3,10 @@ import { timeline, education, certifications } from "../data/timeline.js";
 import SkillGrid from "../components/SkillGrid.jsx";
 import ContactCTA from "../components/ContactCTA.jsx";
 import { withBase } from "../lib/base.js";
+import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 
 export default function About() {
+  useDocumentTitle("Full Chronicle");
   return (
     <main className="flex-1 pt-12 pb-20">
       <div className="px-4 sm:px-6 max-w-[1600px] mx-auto pt-8">

@@ -2,11 +2,15 @@
 title: "Cutting Two Steps from Order Picking at Picnic"
 date: "2026-07-25"
 category: OPERATIONS
+section: career
 tags: [process-mapping, wms, operations, bpmn]
 excerpt: "How documenting process gaps — and mapping cross-functional workflows — removed 2 steps from the order picking process."
 cover: "#121212"
 featured: true
 order: 3
+stats:
+  - value: "2"
+    label: "steps removed from order picking"
 ---
 
 As a working student in Operations & Process Support at Picnic, I sat between warehouse, logistics, and customer service. The job title says "support," but the real task was: **find where the process leaks time, and fix it.**

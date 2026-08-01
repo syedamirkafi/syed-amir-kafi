@@ -2,6 +2,7 @@
 title: "80+ Clients, One Discipline: Structured Research"
 date: "2026-07-27"
 category: BIZ-ANALYSIS
+section: academia
 tags: [research, reporting, consulting, analysis]
 excerpt: "What supporting 80+ university clients taught me about turning unstructured questions into structured, defensible answers."
 cover: "#D90429"

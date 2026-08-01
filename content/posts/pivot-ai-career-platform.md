@@ -2,6 +2,8 @@
 title: "Pivot: An AI-Powered Career Operations Platform"
 date: "2026-08-01"
 category: PROJECTS
+section: tech
+style: browser
 tags: [react, typescript, node, firebase, gemini-api, ai]
 excerpt: "Building a web tool that automates document generation and data extraction from job postings — the project that turned my job search into a product."
 cover: "#F4B400"

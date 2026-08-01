@@ -2,11 +2,17 @@
 title: "BPMN, Requirements & the Banking Ops Story"
 date: "2026-07-29"
 category: BIZ-ANALYSIS
+section: career
 tags: [bpmn, requirements, banking, process]
 excerpt: "A banking internship taught me the business-analysis stack: process mapping, requirements gathering, and documentation people actually use."
 cover: "#0077B6"
 featured: false
 order: 5
+stats:
+  - value: "Flexcube"
+    label: "core banking system mapped"
+  - value: "full"
+    label: "documentation stack rebuilt"
 ---
 
 At Dhaka Bank Ltd. I was an intern in Operations & Reporting — but the internship was really a crash course in business analysis. The branch's operational documentation was fragmented, and process knowledge lived inside people's heads.

@@ -1,4 +1,5 @@
 import matter from "gray-matter";
+import { withBase } from "./base.js";
 
 const modules = import.meta.glob("/content/posts/*.md", {
   query: "?raw",
@@ -19,9 +20,13 @@ export function getAllPosts() {
       title: data.title || slugFromPath(path),
       date: data.date || "2026-01-01",
       category: data.category || "NOTE",
+      section: data.section || "stories",
+      style: data.style || "default",
+      stats: Array.isArray(data.stats) ? data.stats : [],
       tags: data.tags || [],
       excerpt: data.excerpt || "",
       cover: data.cover || "#121212",
+      coverImage: data.coverImage ? withBase(data.coverImage) : null,
       featured: Boolean(data.featured),
       order: data.order || 99,
       content,
@@ -40,6 +45,15 @@ export function getPostBySlug(slug) {
 
 export function getCategories() {
   return [...new Set(getAllPosts().map((p) => p.category))];
+}
+
+export function getSections() {
+  return [...new Set(getAllPosts().map((p) => p.section))];
+}
+
+export function readingTime(post) {
+  const words = (post.content || "").trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
 }
 
 export function formatDate(iso) {

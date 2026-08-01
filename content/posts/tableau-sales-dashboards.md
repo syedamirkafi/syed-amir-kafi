@@ -2,11 +2,17 @@
 title: "Tableau Dashboards Across a 17-Person Team"
 date: "2026-07-22"
 category: ANALYTICS
+section: career
 tags: [tableau, dashboard-design, kpi, sales]
 excerpt: "Building daily, weekly, and monthly performance dashboards that a 17-person field team actually used — and upper management actually acted on."
 cover: "#F4B400"
 featured: true
 order: 2
+stats:
+  - value: "17"
+    label: "person field team"
+  - value: "3"
+    label: "dashboard rhythms (daily / weekly / monthly)"
 ---
 
 A dashboard that nobody opens is a failed investment. The challenge at Robi Axiata wasn't building charts — it was building dashboards that a 17-person field team wanted to check every morning, and that management trusted enough to act on.

@@ -1,6 +1,13 @@
 import { Link } from "react-router";
 import { formatDate } from "../lib/posts.js";
 
+const sectionLabels = {
+  career: "CAREER",
+  academia: "ACADEMIA",
+  tech: "TECH",
+  stories: "STORIES",
+};
+
 export default function PostCard({ post }) {
   return (
     <Link
@@ -8,11 +15,22 @@ export default function PostCard({ post }) {
       className="module-shift block border-2 border-ink bg-base group"
     >
       <div
-        className="flex items-center justify-center h-44"
+        className="flex items-center justify-center h-44 relative overflow-hidden"
         style={{ backgroundColor: post.cover }}
       >
-        <span className="head-display text-base text-3xl sm:text-5xl opacity-90 px-6 text-center">
-          {post.title}
+        {post.coverImage ? (
+          <img
+            src={post.coverImage}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <span className="head-display text-base text-3xl sm:text-5xl opacity-90 px-6 text-center">
+            {post.title}
+          </span>
+        )}
+        <span className="absolute top-0 left-0 px-2 py-1 label-mono text-base bg-ink">
+          {sectionLabels[post.section] || post.section.toUpperCase()}
         </span>
       </div>
       <div className="p-5 space-y-3">

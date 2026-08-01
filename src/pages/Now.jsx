@@ -1,5 +1,6 @@
 import { profile } from "../data/profile.js";
 import ContactCTA from "../components/ContactCTA.jsx";
+import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 
 const now = [
   {
@@ -47,6 +48,7 @@ const now = [
 ];
 
 export default function Now() {
+  useDocumentTitle("Now");
   return (
     <main className="flex-1 pt-12 pb-20">
       <div className="px-4 sm:px-6 max-w-[1600px] mx-auto pt-8">

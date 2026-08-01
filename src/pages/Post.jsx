@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router";
 import ReactMarkdown from "react-markdown";
-import { getPostBySlug, getAllPosts, formatDateLong } from "../lib/posts.js";
+import rehypeHighlight from "rehype-highlight";
+import {
+  getPostBySlug,
+  getAllPosts,
+  formatDateLong,
+  readingTime,
+} from "../lib/posts.js";
+import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 import ContactCTA from "../components/ContactCTA.jsx";
 
 export default function Post() {
@@ -10,6 +17,7 @@ export default function Post() {
   const [progress, setProgress] = useState(0);
 
   const post = getPostBySlug(slug);
+  useDocumentTitle(post ? post.title : null);
 
   useEffect(() => {
     if (!post) {
@@ -33,6 +41,14 @@ export default function Post() {
   const idx = all.findIndex((p) => p.slug === slug);
   const prev = idx > 0 ? all[idx - 1] : null;
   const next = idx < all.length - 1 ? all[idx + 1] : null;
+  const related = all
+    .filter((p) => p.slug !== slug && p.tags.some((t) => post.tags.includes(t)))
+    .slice(0, 2);
+  const mins = readingTime(post);
+  const encoded = encodeURIComponent(post.title);
+  const shareUrl = `https://syedamirkafi.github.io/the-monolith/blog/${slug}`;
+  const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+  const shareX = `https://twitter.com/intent/tweet?text=${encoded}&url=${encodeURIComponent(shareUrl)}`;
 
   return (
     <main className="flex-1 pt-12 pb-20">
@@ -57,33 +73,86 @@ export default function Post() {
               <span className="label-mono text-ink/50">
                 {formatDateLong(post.date)}
               </span>
+              <span className="label-mono text-ink/50">·</span>
+              <span className="label-mono text-ink/50">{mins} MIN READ</span>
             </div>
             <h1 className="head-display text-4xl sm:text-6xl">
               {post.title}
             </h1>
+            {post.coverImage && (
+              <img
+                src={post.coverImage}
+                alt=""
+                className="mt-8 w-full border-2 border-ink"
+              />
+            )}
             <p className="mt-5 text-lg text-ink/70 leading-relaxed">
               {post.excerpt}
             </p>
           </header>
 
           <div className="prose-content max-w-none space-y-5">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
+              {post.content}
+            </ReactMarkdown>
           </div>
 
-          <div className="flex flex-wrap gap-2 mt-10 pt-6 border-t border-ink/20">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="label-mono text-[0.65rem] px-2 py-1 border border-ink/30 text-ink/60"
+          <div className="flex flex-wrap items-center justify-between gap-3 mt-10 pt-6 border-t border-ink/20">
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="label-mono text-[0.65rem] px-2 py-1 border border-ink/30 text-ink/60"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <a
+                href={shareLinkedIn}
+                target="_blank"
+                rel="noreferrer"
+                className="label-mono text-[0.65rem] px-3 py-1.5 border-2 border-ink hover:bg-ink hover:text-base transition-colors"
               >
-                #{tag}
-              </span>
-            ))}
+                SHARE · IN
+              </a>
+              <a
+                href={shareX}
+                target="_blank"
+                rel="noreferrer"
+                className="label-mono text-[0.65rem] px-3 py-1.5 border-2 border-ink hover:bg-ink hover:text-base transition-colors"
+              >
+                POST · X
+              </a>
+            </div>
           </div>
 
           <div className="mt-12 mb-4">
             <span className="red-square" />
           </div>
+
+          {related.length > 0 && (
+            <section className="mt-12">
+              <h2 className="head-display text-2xl mb-6">Related Reads</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {related.map((r) => (
+                  <Link
+                    key={r.slug}
+                    to={`/blog/${r.slug}`}
+                    className="module-shift border-2 border-ink p-5 block"
+                  >
+                    <span className="label-mono text-ink/40 text-xs">
+                      SHARED TAGS · {r.category}
+                    </span>
+                    <span className="head-display text-lg block mt-2">
+                      {r.title}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <nav className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
             {prev ? (

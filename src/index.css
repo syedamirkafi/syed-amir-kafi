@@ -194,6 +194,46 @@ body {
   padding: 0;
 }
 
+/* ---- Code syntax highlighting (rehype-highlight) ---- */
+.prose-content .hljs {
+  background: transparent;
+  color: var(--color-base);
+}
+.prose-content .hljs-keyword,
+.prose-content .hljs-selector-tag,
+.prose-content .hljs-literal,
+.prose-content .hljs-doctag {
+  color: var(--color-vital);
+}
+.prose-content .hljs-string,
+.prose-content .hljs-regexp,
+.prose-content .hljs-addition,
+.prose-content .hljs-attribute {
+  color: #7fe08a;
+}
+.prose-content .hljs-title,
+.prose-content .hljs-section,
+.prose-content .hljs-built_in {
+  color: var(--color-blue);
+}
+.prose-content .hljs-comment,
+.prose-content .hljs-quote {
+  color: var(--color-base);
+  opacity: 0.5;
+  font-style: italic;
+}
+.prose-content .hljs-number,
+.prose-content .hljs-symbol,
+.prose-content .hljs-bullet {
+  color: #e06c75;
+}
+.prose-content .hljs-params,
+.prose-content .hljs-attr,
+.prose-content .hljs-variable,
+.prose-content .hljs-template-variable {
+  color: #d19a66;
+}
+
 .prose-content hr {
   border: 0;
   border-top: 2px solid var(--color-ink);

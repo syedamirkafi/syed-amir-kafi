@@ -2,12 +2,15 @@ import { Link } from "react-router";
 import { profile } from "../data/profile.js";
 import { portfolio } from "../data/portfolio.js";
 import { getAllPosts } from "../lib/posts.js";
+import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 import PostCard from "../components/PostCard.jsx";
 import SkillGrid from "../components/SkillGrid.jsx";
 import ContactCTA from "../components/ContactCTA.jsx";
+import MetricsBand from "../components/MetricsBand.jsx";
 import { withBase } from "../lib/base.js";
 
 export default function Home() {
+  useDocumentTitle(null);
   const posts = getAllPosts().slice(0, 4);
 
   return (
@@ -77,6 +80,20 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        {/* MEASURED PROOF */}
+        <section className="mt-16">
+          <div className="flex items-baseline justify-between mb-8 border-b border-ink/30 pb-4">
+            <h2 className="head-display text-3xl sm:text-4xl">
+              Measured Proof
+            </h2>
+            <span className="label-mono text-ink/50">RECORDED OUTCOMES</span>
+          </div>
+          <MetricsBand />
+          <div className="mt-8">
+            <span className="red-square" />
           </div>
         </section>
 

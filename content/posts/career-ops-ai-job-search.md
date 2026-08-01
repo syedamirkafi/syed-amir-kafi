@@ -2,6 +2,8 @@
 title: "How I Run My Job Search with AI"
 date: "2026-08-01"
 category: PROJECTS
+section: tech
+style: terminal
 tags: [ai, automation, job-search, open-source, analytics]
 excerpt: "I evaluate every job offer against my CV with an AI pipeline, generate ATS-optimized CVs, and track everything — here's how it works and what I've learned."
 cover: "#121212"

@@ -1,8 +1,10 @@
 import { portfolio } from "../data/portfolio.js";
 import ContactCTA from "../components/ContactCTA.jsx";
 import { withBase } from "../lib/base.js";
+import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 
 export default function Work() {
+  useDocumentTitle("The Work");
   return (
     <main className="flex-1 pt-12 pb-20">
       <div className="px-4 sm:px-6 max-w-[1600px] mx-auto pt-8">

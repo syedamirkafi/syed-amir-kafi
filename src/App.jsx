@@ -8,6 +8,7 @@ import Post from "./pages/Post.jsx";
 import Work from "./pages/Work.jsx";
 import About from "./pages/About.jsx";
 import Now from "./pages/Now.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,7 +30,7 @@ export default function App() {
         <Route path="/work" element={<Work />} />
         <Route path="/about" element={<About />} />
         <Route path="/now" element={<Now />} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <BottomNav />
     </div>
