@@ -8,12 +8,13 @@ import PostCard from "../components/PostCard.jsx";
 import SkillGrid from "../components/SkillGrid.jsx";
 import ContactCTA from "../components/ContactCTA.jsx";
 import HeroRoles from "../components/HeroRoles.jsx";
+import Reveal from "../components/Reveal.jsx";
 import { withBase } from "../lib/base.js";
 
 const ROLE_COLORS = {
   RESEARCHER: "#0077B6",
-  ANALYST: "#f4b400",
-  DESIGNER: "#d90429",
+  ANALYST: "#2563EB",
+  DESIGNER: "#dc2626",
 };
 
 export default function Home() {
@@ -35,9 +36,9 @@ export default function Home() {
     <main className="flex-1 pt-12 pb-20">
       <div className="px-4 sm:px-6 max-w-[1600px] mx-auto">
         {/* HERO */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-0 border-2 border-ink mt-6 min-h-[62vh] backdrop-blur-sm relative">
+        <Reveal className="grid grid-cols-1 md:grid-cols-12 gap-0 border-2 border-ink mt-6 min-h-[62vh] backdrop-blur-sm relative">
           <div
-            className="md:col-span-7 p-8 sm:p-12 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink transition-colors duration-700 relative overflow-hidden"
+            className="md:col-span-7 p-8 sm:p-12 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink transition-colors duration-700 relative overflow-hidden grid-bg"
             style={{ backgroundColor: "color-mix(in srgb, var(--color-vital) 9%, var(--color-base))" }}
           >
             <div

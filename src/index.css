@@ -5,9 +5,9 @@
 @theme {
   --color-ink: var(--text);
   --color-base: var(--surface);
-  --color-vital: #f4b400;
+  --color-vital: #2563EB;
   --color-blue: #0077b6;
-  --color-red: #d90429;
+  --color-red: #dc2626;
 
   /* Pastel palette */
   --color-pastel-blue: #dbeafe;
@@ -18,18 +18,36 @@
   --color-pastel-peach: #ffedd5;
   --color-pastel-sky: #e0f2fe;
 
-  --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
-  --font-label: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Archivo", ui-serif, Georgia, serif;
+  --font-label: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --surface: #fdfdfd;
-  --text: #121212;
+  --surface: #ffffff;
+  --text: #09090b;
+  --primary: #18181b;
+  --secondary: #3f3f46;
+  --accent: #2563eb;
+  --background: #fafafa;
+  --foreground: #09090b;
+  --muted: #e8ecf0;
+  --border: #e4e7e7;
+  --destructive: #dc2626;
+  --ring: #18181b;
 }
 
 .dark {
-  --surface: #121212;
-  --text: #fdfdfd;
+  --surface: #09090b;
+  --text: #fafafa;
+  --primary: #ffffff;
+  --secondary: #a1a1aa;
+  --accent: #3b82f6;
+  --background: #0f172a;
+  --foreground: #ffffff;
+  --muted: #27272a;
+  --border: #27272a;
+  --destructive: #ef4444;
+  --ring: #ffffff;
 }
 
 html {
@@ -46,15 +64,16 @@ body {
 
 /* ---- Display typography ---- */
 .head-display {
-  font-family: var(--font-display);
+  font-family: "Archivo", ui-serif, Georgia, serif;
   font-weight: 900;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   line-height: 0.9;
+  text-wrap: balance;
 }
 
 .label-mono {
-  font-family: var(--font-label);
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -64,7 +83,7 @@ body {
   display: inline-block;
   width: 14px;
   height: 14px;
-  background-color: var(--color-red);
+  background-color: var(--color-destructive);
 }
 
 .module-shift {
@@ -195,6 +214,10 @@ body {
   font-size: 1.0625rem;
   line-height: 1.7;
   color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+}
+
+.prose-content p {
+  text-wrap: pretty;
 }
 
 .prose-content > * + * {
@@ -364,13 +387,79 @@ body {
   color: color-mix(in srgb, var(--color-ink) 60%, transparent);
 }
 
+/* ---- Interaction & accessibility ---- */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-vital);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--color-vital);
+  color: var(--color-base);
+}
+
+/* ---- Fine grid texture (Swiss) ---- */
+.grid-bg {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-ink) 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-ink) 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 36px 36px;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ---- Scrollbar ---- */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-base);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-ink);
+  border: 3px solid var(--color-base);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-vital);
+  border-color: var(--color-base);
 }

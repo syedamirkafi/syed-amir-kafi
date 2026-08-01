@@ -1,4 +1,23 @@
 const KEY = "monolith-theme";
+const COLOR_KEY = "monolith-theme-color";
+
+function setMetaThemeColor(color) {
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute("content", color);
+  try {
+    localStorage.setItem(COLOR_KEY, color);
+  } catch (e) {}
+}
+
+function getThemeColor() {
+  try {
+    const stored = localStorage.getItem(COLOR_KEY);
+    if (stored) return stored;
+  } catch (e) {}
+  return document.documentElement.classList.contains("dark")
+    ? "#0f172a"
+    : "#ffffff";
+}
 
 export function getInitialTheme() {
   try {
@@ -14,6 +33,8 @@ export function getInitialTheme() {
 
 export function applyTheme(theme) {
   document.documentElement.classList.toggle("dark", theme === "dark");
+  const newColor = theme === "dark" ? "#0f172a" : "#ffffff";
+  setMetaThemeColor(newColor);
   try {
     localStorage.setItem(KEY, theme);
   } catch {
@@ -28,3 +49,5 @@ export function toggleTheme() {
   applyTheme(next);
   return next;
 }
+
+export { getThemeColor };

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { usePrefersReducedMotion } from "../lib/usePrefersReducedMotion.js";
 
 const ROLES = [
   {
@@ -8,38 +8,40 @@ const ROLES = [
   },
   {
     label: "ANALYST",
-    accent: "#f4b400",
-    pastel: "pastel-yellow",
+    accent: "#2563EB",
+    pastel: "pastel-blue",
   },
   {
     label: "DESIGNER",
-    accent: "#d90429",
+    accent: "#dc2626",
     pastel: "pastel-pink",
   },
 ];
 
-function RadarAnimation() {
+function RadarAnimation({ reduced }) {
   return (
     <svg viewBox="0 0 80 80" className="w-20 h-20" aria-hidden="true">
       <circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
       <circle cx="40" cy="40" r="18" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.35" />
       <circle cx="40" cy="40" r="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
       <line x1="40" y1="40" x2="40" y2="10" stroke="currentColor" strokeWidth="2" opacity="0.9">
-        <animateTransform
-          attributeName="transform"
-          type="rotate"
-          from="0 40 40"
-          to="360 40 40"
-          dur="2.4s"
-          repeatCount="indefinite"
-        />
+        {!reduced && (
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 40 40"
+            to="360 40 40"
+            dur="2.4s"
+            repeatCount="indefinite"
+          />
+        )}
       </line>
       <circle cx="40" cy="40" r="2.5" fill="currentColor" />
     </svg>
   );
 }
 
-function AnalystAnimation() {
+function AnalystAnimation({ reduced }) {
   const bars = [38, 62, 48, 80, 68];
   return (
     <svg viewBox="0 0 80 80" className="w-20 h-20" aria-hidden="true">
@@ -54,20 +56,22 @@ function AnalystAnimation() {
           fill="currentColor"
           opacity="0.85"
         >
-          <animate
-            attributeName="height"
-            values={`${h * 0.3};${h};${h * 0.3}`}
-            dur="2.2s"
-            begin={`${i * 0.18}s`}
-            repeatCount="indefinite"
-          />
+          {!reduced && (
+            <animate
+              attributeName="height"
+              values={`${h * 0.3};${h};${h * 0.3}`}
+              dur="2.2s"
+              begin={`${i * 0.18}s`}
+              repeatCount="indefinite"
+            />
+          )}
         </rect>
       ))}
     </svg>
   );
 }
 
-function DesignerAnimation() {
+function DesignerAnimation({ reduced }) {
   return (
     <svg viewBox="0 0 80 80" className="w-20 h-20" aria-hidden="true">
       <path
@@ -78,13 +82,16 @@ function DesignerAnimation() {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeDasharray="300"
+        strokeDashoffset={reduced ? 0 : undefined}
       >
-        <animate
-          attributeName="stroke-dashoffset"
-          values="300;0"
-          dur="2s"
-          repeatCount="indefinite"
-        />
+        {!reduced && (
+          <animate
+            attributeName="stroke-dashoffset"
+            values="300;0"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        )}
       </path>
       <circle cx="22" cy="56" r="3" fill="currentColor" />
       <circle cx="40" cy="56" r="3" fill="currentColor" />
@@ -100,6 +107,7 @@ const ANIMATIONS = {
 };
 
 export default function HeroRoles({ active, onSelect }) {
+  const reduced = usePrefersReducedMotion();
   return (
     <div className="flex-1 flex flex-col">
       {ROLES.map((role, i) => {
@@ -108,6 +116,8 @@ export default function HeroRoles({ active, onSelect }) {
         return (
           <button
             key={role.label}
+            type="button"
+            aria-pressed={isActive}
             onClick={() => onSelect(i)}
             className={`flex-1 flex items-center justify-center gap-4 border-b-2 last:border-b-0 transition-all duration-500 relative overflow-hidden ${
               isActive ? "" : "opacity-60"
@@ -116,7 +126,7 @@ export default function HeroRoles({ active, onSelect }) {
               backgroundColor: isActive
                 ? role.accent
                 : "transparent",
-              borderColor: "var(--color-base)",
+              borderColor: "var(--color-border)",
             }}
           >
             {isActive && (
@@ -144,7 +154,7 @@ export default function HeroRoles({ active, onSelect }) {
                 filter: isActive ? "none" : "blur(1px)",
               }}
             >
-              <Animation />
+              <Animation reduced={reduced} />
             </span>
           </button>
         );
