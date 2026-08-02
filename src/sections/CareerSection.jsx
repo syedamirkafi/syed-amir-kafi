@@ -5,13 +5,13 @@ export default function CareerSection({ posts }) {
   return (
     <div className="space-y-8">
       {posts.map((post, i) => (
-        <Link
-          key={post.slug}
-          to={`/blog/${post.slug}`}
-          className="module-shift block border-2 border-ink/40 hover:border-ink glass-card group"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-12">
-            <div className="md:col-span-4 glass-dark text-base p-6 flex flex-col justify-between min-h-[180px]">
+          <Link
+            key={post.slug}
+            to={`/blog/${post.slug}`}
+            className="module-shift block bg-base border border-ink/10 hover:border-ink/30 group transition-all duration-300"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-12">
+              <div className="md:col-span-4 bg-ink text-base p-6 flex flex-col justify-between min-h-[180px]">
               <span className="label-mono text-xs opacity-60">
                 FIELD LOG {String(i + 1).padStart(2, "0")}
               </span>

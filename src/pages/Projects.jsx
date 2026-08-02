@@ -32,10 +32,10 @@ function PortfolioCard({ item }) {
       href={withBase(item.href)}
       target={item.href.startsWith("/") ? undefined : "_blank"}
       rel="noreferrer"
-      className="module-shift block border-2 border-ink bg-base group"
+      className="module-shift block bg-base group transition-all duration-300"
     >
       <div
-        className="relative w-full h-52 overflow-hidden border-b-2 border-ink"
+        className="relative w-full h-52 overflow-hidden"
         style={{ backgroundColor: item.color }}
       >
         <div
@@ -47,7 +47,7 @@ function PortfolioCard({ item }) {
         </span>
         <span
           className="absolute top-0 left-0 px-2 py-1 label-mono text-base relative z-10"
-          style={{ backgroundColor: item.color }}
+          style={{ backgroundColor: item.color, color: "var(--color-base)" }}
         >
           {item.tag}
         </span>
@@ -60,12 +60,10 @@ function PortfolioCard({ item }) {
         <p className="text-sm text-ink/70 leading-relaxed line-clamp-3">
           {item.description}
         </p>
-        <div className="flex flex-wrap gap-1 pt-1">
-          {item.tags.map((tag) => (
-            <span key={tag} className="tag-chip">
-              #{tag}
-            </span>
-          ))}
+        <div className="pt-1">
+          <span className="label-mono text-ink/40 text-xs">
+            {item.tags.slice(0, 3).join(" · ")}
+          </span>
         </div>
       </div>
     </a>
@@ -74,8 +72,8 @@ function PortfolioCard({ item }) {
 
 function SectionHeader({ index, title, note }) {
   return (
-    <div className="flex items-baseline justify-between mb-8 border-b border-ink/30 pb-4">
-      <h2 className="head-display text-3xl sm:text-4xl">
+    <div className="flex items-baseline justify-between mb-6 pb-2">
+      <h2 className="head-display section-title text-3xl sm:text-4xl">
         <span className="label-mono text-vital text-base mr-3 align-middle">
           {index}
         </span>
@@ -124,7 +122,7 @@ export default function Projects() {
   return (
     <main className="flex-1 pt-12 pb-20">
       <div className="px-4 sm:px-6 max-w-[1600px] mx-auto pt-8">
-        <header className="border-b-2 border-ink pb-6 mb-10">
+        <header className="pb-6 mb-10">
           <span className="label-mono text-ink/50">/// 02 — OUTPUTS</span>
           <h1 className="head-display text-5xl sm:text-7xl mt-2">
             The Projects
@@ -142,22 +140,22 @@ export default function Projects() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="SEARCH THE ARCHIVE…"
-              className="w-full border-2 border-ink px-4 py-3 label-mono text-sm bg-base focus:outline-none focus:shadow-[4px_4px_0_0_var(--color-vital)]"
+              className="w-full border border-ink px-4 py-3 label-mono text-sm bg-base focus:outline-none focus:shadow-[0_0_0_2px_var(--color-vital)] transition-shadow duration-200"
               aria-label="Search projects"
             />
           </div>
           <div className="md:col-span-8 flex flex-wrap gap-1 content-start">
             {allTags.slice(0, 24).map((t) => (
-              <button
-                key={t}
-                onClick={() => setTag(tag === t ? null : t)}
-                className={`tag-chip hover:border-ink transition-colors ${
-                  tag === t ? "!border-ink !bg-ink !text-base" : ""
-                }`}
-              >
-                #{t}
-              </button>
-            ))}
+                <button
+                  key={t}
+                  onClick={() => setTag(tag === t ? null : t)}
+                  className={`tag-chip hover:border-ink/50 hover:text-ink transition-all duration-200 ${
+                    tag === t ? "border-ink bg-ink text-base" : ""
+                  }`}
+                >
+                  {t}
+                </button>
+              ))}
           </div>
         </div>
 
@@ -218,10 +216,6 @@ export default function Projects() {
               <SectionHeader index="07" title="Photo Log" note="FROM THE FIELD" />
               <PhotoSection />
             </section>
-
-            <div>
-              <span className="red-square" />
-            </div>
           </div>
         )}
 

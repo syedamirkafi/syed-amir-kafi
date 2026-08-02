@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router";
 import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 import BottomNav from "./components/BottomNav.jsx";
 import Home from "./pages/Home.jsx";
 import Projects from "./pages/Projects.jsx";

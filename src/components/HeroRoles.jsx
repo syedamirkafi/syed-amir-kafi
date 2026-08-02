@@ -18,144 +18,152 @@ const ROLES = [
   },
 ];
 
-function RadarAnimation({ reduced }) {
+function ResearcherIcon({ active, reduced }) {
   return (
-    <svg viewBox="0 0 80 80" className="w-20 h-20" aria-hidden="true">
-      <circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.5" />
-      <circle cx="40" cy="40" r="18" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.35" />
-      <circle cx="40" cy="40" r="6" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.2" />
-      <line x1="40" y1="40" x2="40" y2="10" stroke="currentColor" strokeWidth="2" opacity="0.9">
-        {!reduced && (
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="0 40 40"
-            to="360 40 40"
-            dur="2.4s"
-            repeatCount="indefinite"
-          />
-        )}
-      </line>
-      <circle cx="40" cy="40" r="2.5" fill="currentColor" />
-    </svg>
-  );
-}
-
-function AnalystAnimation({ reduced }) {
-  const bars = [38, 62, 48, 80, 68];
-  return (
-    <svg viewBox="0 0 80 80" className="w-20 h-20" aria-hidden="true">
-      {bars.map((h, i) => (
-        <rect
-          key={i}
-          x={8 + i * 14}
-          y={72 - h}
-          width="9"
-          height={h}
-          rx="1"
-          fill="currentColor"
-          opacity="0.85"
-        >
-          {!reduced && (
+    <svg
+      viewBox="0 0 24 24"
+      className="w-4 h-4 shrink-0"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h3z" />
+      <path d="M6 11.5a6 6 0 0 1 11.93 0" />
+      <circle cx="12" cy="16" r="2" />
+      <line x1="12" y1="16" x2="12" y2="12" />
+      {!reduced && active && (
+        <g stroke="currentColor" strokeWidth="1">
+          <path
+            d="M9 16a3 3 0 0 1 6 0"
+            opacity="0.5"
+            strokeLinecap="round"
+          >
             <animate
-              attributeName="height"
-              values={`${h * 0.3};${h};${h * 0.3}`}
-              dur="2.2s"
-              begin={`${i * 0.18}s`}
-              repeatCount="indefinite"
+              attributeName="stroke-dasharray"
+              values="0 6;6 0"
+              dur="2s"
+              fill="freeze"
+              repeatCount="1"
             />
-          )}
-        </rect>
-      ))}
+          </path>
+        </g>
+      )}
     </svg>
   );
 }
 
-function DesignerAnimation({ reduced }) {
+function AnalystIcon({ active, reduced }) {
   return (
-    <svg viewBox="0 0 80 80" className="w-20 h-20" aria-hidden="true">
-      <path
-        d="M14 58 L40 16 L66 58"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeDasharray="300"
-        strokeDashoffset={reduced ? 0 : undefined}
-      >
-        {!reduced && (
+    <svg
+      viewBox="0 0 24 24"
+      className="w-4 h-4 shrink-0"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="3" y1="17" x2="21" y2="17" />
+      <polyline points="5 13 12 6 19 13" />
+      {!reduced && active && (
+        <line
+          x1="5"
+          y1="13"
+          x2="5"
+          y2="9"
+          stroke="currentColor"
+          strokeWidth="1"
+          opacity="0.4"
+        >
           <animate
-            attributeName="stroke-dashoffset"
-            values="300;0"
-            dur="2s"
-            repeatCount="indefinite"
+            attributeName="opacity"
+            values="0;1;0.4"
+            dur="1.5s"
+            fill="freeze"
+            repeatCount="1"
           />
-        )}
-      </path>
-      <circle cx="22" cy="56" r="3" fill="currentColor" />
-      <circle cx="40" cy="56" r="3" fill="currentColor" />
-      <circle cx="58" cy="56" r="3" fill="currentColor" />
+        </line>
+      )}
     </svg>
   );
 }
 
-const ANIMATIONS = {
-  RESEARCHER: RadarAnimation,
-  ANALYST: AnalystAnimation,
-  DESIGNER: DesignerAnimation,
+function DesignerIcon({ active, reduced }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="w-4 h-4 shrink-0"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20.35 6.95a4.02 4.02 0 0 0-1.92-2.34A4 4 0 0 0 12 4 4 4 0 0 0 5.57 4.6a4 4 0 0 0-1.92 2.34 4 4 0 0 0-.15 1.95v3.28a3.93 3.93 0 0 0 1.06 2.7l.86.86a1 1 0 0 1 .34.76v3.28a4 4 0 1 0 2 0v-3.28a1 1 0 0 1 .34-.76l.86-.86a3.93 3.93 0 0 0 1.06-2.7V8.9a4 4 0 0 0-.15-1.95z" />
+      <circle cx="12" cy="12" r="3" />
+      {!reduced && active && (
+        <circle
+          cx="12"
+          cy="12"
+          r="0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1"
+        >
+          <animate
+            attributeName="r"
+            values="0;3"
+            dur="1s"
+            fill="freeze"
+            repeatCount="1"
+          />
+          <animate
+            attributeName="opacity"
+            values="1;0"
+            dur="1s"
+            fill="freeze"
+            repeatCount="1"
+          />
+        </circle>
+      )}
+    </svg>
+  );
+}
+
+const ICONS = {
+  RESEARCHER: ResearcherIcon,
+  ANALYST: AnalystIcon,
+  DESIGNER: DesignerIcon,
 };
 
 export default function HeroRoles({ active, onSelect }) {
   const reduced = usePrefersReducedMotion();
+
   return (
-    <div className="flex-1 flex flex-col">
+    <div className="flex flex-wrap gap-1 items-center">
       {ROLES.map((role, i) => {
         const isActive = active === role.label;
-        const Animation = ANIMATIONS[role.label];
+        const Icon = ICONS[role.label];
         return (
           <button
             key={role.label}
             type="button"
             aria-pressed={isActive}
             onClick={() => onSelect(i)}
-            className={`flex-1 flex items-center justify-center gap-4 border-b-2 last:border-b-0 transition-all duration-500 relative overflow-hidden ${
-              isActive ? "" : "opacity-60"
+            className={`role-chip flex items-center gap-1.5 px-4 py-2 label-mono text-xs font-medium transition-all duration-300 border rounded-none ${
+              isActive
+                ? "bg-ink text-base"
+                : "bg-transparent text-ink/40 hover:text-ink/70 hover:bg-ink/5"
             }`}
-            style={{
-              backgroundColor: isActive
-                ? role.accent
-                : "transparent",
-              borderColor: "var(--color-border)",
-            }}
+            style={isActive ? { backgroundColor: role.accent, color: "var(--color-base)" } : {}}
           >
-            {isActive && (
-              <div
-                className="absolute inset-0 pastel-blob"
-                style={{ backgroundColor: `var(--color-${role.pastel})`, opacity: 0.5 }}
-              />
-            )}
-            <span
-              className={`head-display text-3xl sm:text-5xl select-none relative transition-all duration-500 ${
-                isActive ? "" : "blur-[1px]"
-              }`}
-              style={{
-                color: isActive ? "var(--color-base)" : "var(--color-base)",
-                opacity: isActive ? 1 : 0.3,
-              }}
-            >
-              {role.label}
-            </span>
-            <span
-              className="relative transition-all duration-500"
-              style={{
-                color: isActive ? "var(--color-base)" : "var(--color-base)",
-                opacity: isActive ? 1 : 0.25,
-                filter: isActive ? "none" : "blur(1px)",
-              }}
-            >
-              <Animation reduced={reduced} />
-            </span>
+            <Icon active={isActive} reduced={reduced} />
+            {role.label}
           </button>
         );
       })}

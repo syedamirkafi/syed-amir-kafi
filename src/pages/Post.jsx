@@ -65,7 +65,7 @@ export default function Post() {
             ← ALL PROJECTS
           </Link>
 
-          <header className="mt-6 mb-10 border-b-2 border-ink pb-8">
+          <header className="mt-6 mb-10 pb-8">
             <div className="flex items-center gap-3 mb-4">
               <span className="px-2 py-1 label-mono text-base bg-ink">
                 {post.category}
@@ -83,7 +83,7 @@ export default function Post() {
               <img
                 src={post.coverImage}
                 alt=""
-                className="mt-8 w-full border-2 border-ink"
+                className="mt-8 w-full"
               />
             )}
             <p className="mt-5 text-lg text-ink/70 leading-relaxed">
@@ -97,12 +97,12 @@ export default function Post() {
             </ReactMarkdown>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-3 mt-10 pt-6 border-t border-ink/20">
+          <div className="flex flex-wrap items-center justify-between gap-3 mt-10 pt-6 border-t border-ink/10">
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="label-mono text-[0.65rem] px-2 py-1 border border-ink/30 text-ink/60"
+                  className="label-mono text-[0.65rem] px-2 py-1 border border-ink/20 text-ink/50"
                 >
                   #{tag}
                 </span>
@@ -113,7 +113,7 @@ export default function Post() {
                 href={shareLinkedIn}
                 target="_blank"
                 rel="noreferrer"
-                className="label-mono text-[0.65rem] px-3 py-1.5 border-2 border-ink hover:bg-ink hover:text-base transition-colors"
+                className="label-mono text-[0.65rem] px-3 py-1.5 border border-ink hover:bg-ink/5 transition-all duration-300"
               >
                 SHARE · IN
               </a>
@@ -121,26 +121,22 @@ export default function Post() {
                 href={shareX}
                 target="_blank"
                 rel="noreferrer"
-                className="label-mono text-[0.65rem] px-3 py-1.5 border-2 border-ink hover:bg-ink hover:text-base transition-colors"
+                className="label-mono text-[0.65rem] px-3 py-1.5 border border-ink hover:bg-ink/5 transition-all duration-300"
               >
                 POST · X
               </a>
             </div>
           </div>
 
-          <div className="mt-12 mb-4">
-            <span className="red-square" />
-          </div>
-
           {related.length > 0 && (
             <section className="mt-12">
-              <h2 className="head-display text-2xl mb-6">Related Reads</h2>
+              <h2 className="head-display section-title text-2xl mb-6">Related Reads</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {related.map((r) => (
                   <Link
                     key={r.slug}
                     to={`/blog/${r.slug}`}
-                    className="module-shift border-2 border-ink p-5 block"
+                    className="module-shift border border-ink/20 p-5 block transition-all duration-300"
                   >
                     <span className="label-mono text-ink/40 text-xs">
                       SHARED TAGS · {r.category}
@@ -158,7 +154,7 @@ export default function Post() {
             {prev ? (
               <Link
                 to={`/blog/${prev.slug}`}
-                className="module-shift border-2 border-ink p-5 block"
+                className="module-shift border border-ink/20 p-5 block transition-all duration-300"
               >
                 <span className="label-mono text-ink/40 text-xs">
                   ← PREVIOUS
@@ -173,7 +169,7 @@ export default function Post() {
             {next ? (
               <Link
                 to={`/blog/${next.slug}`}
-                className="module-shift border-2 border-ink p-5 block text-right"
+                className="module-shift border border-ink/20 p-5 block text-right transition-all duration-300"
               >
                 <span className="label-mono text-ink/40 text-xs">
                   NEXT →

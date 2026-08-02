@@ -4,6 +4,7 @@ export default function Reveal({
   as: Tag = "div",
   className = "",
   delay = 0,
+  threshold = 0.1,
   children,
 }) {
   const ref = useRef(null);
@@ -25,11 +26,11 @@ export default function Reveal({
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+      { threshold, rootMargin: "0px 0px -64px 0px" }
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [threshold]);
 
   return (
     <Tag

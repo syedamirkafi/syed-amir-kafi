@@ -13,9 +13,9 @@ export default function SkillGrid({ compact = false }) {
       {skillGroups.map((group) => (
         <div
           key={group.id}
-          className={`glass-card border-2 border-ink/40 hover:border-ink ${
+          className={`bg-base border border-ink/20 hover:border-ink/40 ${
             compact ? "p-5" : "p-6"
-          } space-y-4 transition-colors`}
+          } space-y-4 transition-all duration-300`}
         >
           <div className="flex items-center justify-between">
             <span

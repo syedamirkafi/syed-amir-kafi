@@ -36,52 +36,47 @@ export default function Home() {
     <main className="flex-1 pt-12 pb-20">
       <div className="px-4 sm:px-6 max-w-[1600px] mx-auto">
         {/* HERO */}
-        <Reveal className="grid grid-cols-1 md:grid-cols-12 gap-0 border-2 border-ink mt-6 min-h-[62vh] backdrop-blur-sm relative">
+        <Reveal className="mt-6 min-h-[62vh] flex flex-col justify-center relative">
           <div
-            className="md:col-span-7 p-8 sm:p-12 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink transition-colors duration-700 relative overflow-hidden grid-bg"
-            style={{ backgroundColor: "color-mix(in srgb, var(--color-vital) 9%, var(--color-base))" }}
+            className="pastel-blob hero-blob absolute top-0 right-0 w-96 h-96 -z-10 transition-colors duration-700"
+            style={{ backgroundColor: activeColor }}
+          />
+          <span
+            className="label-mono mb-6 relative transition-colors duration-300"
+            style={{ color: activeColor }}
           >
-            <div
-              className="pastel-blob absolute -top-24 -right-24 w-72 h-72 transition-colors duration-700"
-              style={{ backgroundColor: activeColor, animation: "orb-drift 6s ease-in-out infinite" }}
-            />
-            <span
-              className="label-mono mb-6 transition-colors duration-700 relative"
-              style={{ color: activeColor }}
+            {profile.mode}
+          </span>
+          <h1
+            className="head-display text-5xl sm:text-7xl lg:text-8xl leading-[0.85] relative mb-4 transition-all duration-700"
+            style={{ color: activeColor }}
+          >
+            {profile.headline}
+          </h1>
+          <p className="text-sm sm:text-base text-ink/70 max-w-2xl leading-relaxed mb-6 relative">
+            {profile.tagline}
+          </p>
+          <HeroRoles active={activeRole} onSelect={setRoleIndex} />
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              to="/projects"
+              className="px-6 py-3 bg-vital text-base label-mono font-semibold hover:bg-ink transition-all duration-300"
             >
-              {profile.mode}
-            </span>
-            <h1 className="head-display text-5xl sm:text-7xl lg:text-8xl leading-[0.85] relative">
-              {profile.headline}
-            </h1>
-            <p className="mt-6 text-sm sm:text-base text-ink/70 max-w-md leading-relaxed relative">
-              {profile.tagline}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3 relative">
-              <Link
-                to="/projects"
-                className="px-6 py-3 bg-vital text-base label-mono font-semibold hover:bg-ink transition-colors"
-              >
-                ENTER THE PROJECTS ›
-              </Link>
-              <Link
-                to="/wins"
-                className="px-6 py-3 border-2 border-ink label-mono font-semibold hover:bg-ink hover:text-base transition-colors"
-              >
-                VIEW THE WINS
-              </Link>
-            </div>
+              ENTER THE PROJECTS ›
+            </Link>
+            <Link
+              to="/wins"
+              className="px-6 py-3 border border-ink label-mono font-semibold hover:bg-ink/5 transition-all duration-300"
+            >
+              VIEW THE WINS
+            </Link>
           </div>
-
-          <div className="md:col-span-5 flex flex-col bg-ink text-base relative">
-            <HeroRoles active={activeRole} onSelect={setRoleIndex} />
-          </div>
-        </section>
+        </Reveal>
 
         {/* THE WINS */}
         <section className="mt-16">
-          <div className="flex items-baseline justify-between mb-8 border-b border-ink/30 pb-4">
-            <h2 className="head-display text-3xl sm:text-4xl">The Wins</h2>
+          <div className="flex items-baseline justify-between mb-6 pb-2">
+            <h2 className="head-display section-title text-3xl sm:text-4xl">The Wins</h2>
             <Link
               to="/wins"
               className="label-mono text-ink/60 hover:text-vital transition-colors"
@@ -89,41 +84,31 @@ export default function Home() {
               ALL WINS →
             </Link>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 border-2 border-ink divide-x divide-y sm:divide-y-0 divide-ink/20">
-            {posts.slice(0, 5).map((p, i) => {
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0.5">
+            {posts.slice(0, 3).map((p, i) => {
               const stat = p.stats && p.stats[0];
               return (
                 <Link
                   key={p.slug}
                   to={`/blog/${p.slug}`}
-                  className="p-6 flex flex-col justify-between min-h-[140px] glass-card hover:bg-ink hover:text-base transition-colors group"
+                  className="group p-6 flex flex-col justify-between min-h-[140px] bg-ink/3 hover:bg-ink/5 transition-all duration-300"
                 >
-                  <span className="label-mono text-ink/40 text-[0.6rem] group-hover:text-base/50">
-                    ● RECORDED {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <div className="head-display text-4xl sm:text-5xl">
-                      {stat ? stat.value : p.title}
-                    </div>
-                    <div className="label-mono text-ink/60 text-[0.6rem] mt-2 leading-relaxed group-hover:text-base/70">
-                      {stat ? stat.label : "READ THE FIELD LOG"}
-                    </div>
+                  <div className="head-display text-4xl sm:text-5xl group-hover:opacity-80 transition-opacity">
+                    {stat ? stat.value : p.title}
+                  </div>
+                  <div className="label-mono text-ink/50 text-xs mt-2">
+                    {stat ? stat.label : "READ THE FIELD LOG"}
                   </div>
                 </Link>
               );
             })}
           </div>
-          <div className="mt-8">
-            <span className="red-square" />
-          </div>
         </section>
 
         {/* INTELLECTUAL ARCHIVE */}
         <section className="mt-16">
-          <div className="flex items-baseline justify-between mb-8 border-b border-ink/30 pb-4">
-            <h2 className="head-display text-3xl sm:text-4xl">
-              Intellectual Archive
-            </h2>
+          <div className="flex items-baseline justify-between mb-6 pb-2">
+            <h2 className="head-display section-title text-3xl sm:text-4xl">Intellectual Archive</h2>
             <Link
               to="/projects"
               className="label-mono text-ink/60 hover:text-vital transition-colors"
@@ -136,29 +121,21 @@ export default function Home() {
               <PostCard key={post.slug} post={post} />
             ))}
           </div>
-          <div className="mt-8">
-            <span className="red-square" />
-          </div>
         </section>
 
         {/* TOOLBOX */}
         <section className="mt-16">
-          <div className="flex items-baseline justify-between mb-8 border-b border-ink/30 pb-4">
-            <h2 className="head-display text-3xl sm:text-4xl">Toolbox</h2>
+          <div className="flex items-baseline justify-between mb-6 pb-2">
+            <h2 className="head-display section-title text-3xl sm:text-4xl">Toolbox</h2>
             <span className="label-mono text-ink/50">HONEST LEVELS</span>
           </div>
           <SkillGrid compact />
-          <div className="mt-8">
-            <span className="red-square" />
-          </div>
         </section>
 
         {/* POLYMATH GALLERY */}
         <section className="mt-16">
-          <div className="flex items-baseline justify-between mb-8 border-b border-ink/30 pb-4">
-            <h2 className="head-display text-3xl sm:text-4xl">
-              Polymath Gallery
-            </h2>
+          <div className="flex items-baseline justify-between mb-6 pb-2">
+            <h2 className="head-display section-title text-3xl sm:text-4xl">Polymath Gallery</h2>
             <Link
               to="/projects"
               className="label-mono text-ink/60 hover:text-vital transition-colors"
@@ -173,36 +150,29 @@ export default function Home() {
                 href={withBase(item.href)}
                 target={item.href.startsWith("/") ? undefined : "_blank"}
                 rel="noreferrer"
-                className="module-shift block border-2 border-ink bg-base group"
+                className="group block bg-base transition-all duration-300"
               >
-                <div className="relative w-full h-56 overflow-hidden border-b-2 border-ink">
+                <div className="relative w-full h-48 overflow-hidden">
                   <div
                     className="w-full h-full flex items-center justify-center"
                     style={{ backgroundColor: item.color }}
                   >
-                    <span className="head-display text-base text-4xl opacity-90 px-6 text-center">
+                    <span className="head-display text-base text-3xl sm:text-4xl opacity-90 px-6 text-center group-hover:opacity-100 transition-opacity">
                       {item.title}
                     </span>
                   </div>
                   <span
-                    className="absolute top-0 left-0 px-2 py-1 label-mono text-base"
-                    style={{ backgroundColor: item.color }}
+                    className="absolute top-0 left-0 px-2 py-1 label-mono text-xs"
+                    style={{ backgroundColor: item.color, color: "var(--color-base)" }}
                   >
                     {item.tag}
                   </span>
                 </div>
-                <div className="p-5 space-y-2">
-                  <h3 className="head-display text-xl">{item.title}</h3>
+                <div className="p-5">
+                  <h3 className="head-display text-xl mb-2">{item.title}</h3>
                   <p className="text-sm text-ink/70 leading-relaxed line-clamp-2">
                     {item.description}
                   </p>
-                  <div className="flex flex-wrap gap-1 pt-1">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className="tag-chip">
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </a>
             ))}
@@ -210,26 +180,28 @@ export default function Home() {
         </section>
 
         {/* THE AUTHOR */}
-        <section className="mt-16 mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 border-2 border-ink">
-          <div className="md:col-span-5 bg-ink text-base p-8 flex flex-col justify-center">
-            <span className="label-mono opacity-60 mb-4">/// PROFILE 01</span>
-            <h2 className="head-display text-4xl">The Author</h2>
-          </div>
-          <div className="md:col-span-7 p-8 flex flex-col justify-center">
-            {profile.bio.map((paragraph, i) => (
-              <p
-                key={i}
-                className="text-base sm:text-lg text-ink/80 leading-relaxed max-w-prose"
+        <section className="mt-16 mb-16">
+          <div className="md:grid md:grid-cols-12 gap-8">
+            <div className="md:col-span-5 bg-ink text-base p-8 mb-8 md:mb-0">
+              <span className="label-mono opacity-50 mb-4 block">/// PROFILE 01</span>
+              <h2 className="head-display text-4xl">The Author</h2>
+            </div>
+            <div className="md:col-span-7 p-8">
+              {profile.bio.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="text-base sm:text-lg text-ink/80 leading-relaxed max-w-prose mb-4"
+                >
+                  {paragraph}
+                </p>
+              ))}
+              <Link
+                to="/about"
+                className="mt-4 label-mono text-vital font-semibold"
               >
-                {paragraph}
-              </p>
-            ))}
-            <Link
-              to="/about"
-              className="mt-6 label-mono text-vital font-semibold"
-            >
-              READ THE FULL CHRONICLE →
-            </Link>
+                READ THE FULL CHRONICLE →
+              </Link>
+            </div>
           </div>
         </section>
 

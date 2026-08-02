@@ -20,9 +20,9 @@ export default function PhotoSection() {
           <button
             key={photo.id}
             onClick={() => setOpen(photo)}
-            className="module-shift block w-full border-2 border-ink bg-base text-left group"
+            className="module-shift block w-full bg-base border border-ink/10 hover:border-ink/30 text-left group transition-all duration-300"
           >
-            <div className="relative overflow-hidden border-b-2 border-ink">
+            <div className="relative overflow-hidden border-b border-ink/20">
               <img
                 src={withBase(photo.src)}
                 alt={photo.alt}
@@ -47,7 +47,7 @@ export default function PhotoSection() {
           className="fixed inset-0 z-[70] bg-ink/90 flex items-center justify-center p-4"
           onClick={() => setOpen(null)}
         >
-          <div className="max-w-3xl w-full border-2 border-base/40 bg-ink p-2">
+          <div className="max-w-3xl w-full border border-base/30 bg-ink p-2">
             <img
               src={withBase(open.src)}
               alt={open.alt}

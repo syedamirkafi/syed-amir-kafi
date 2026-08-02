@@ -5,11 +5,11 @@ export default function AcademiaSection({ posts }) {
   return (
     <div className="space-y-6">
       {posts.map((post, i) => (
-        <Link
-          key={post.slug}
-          to={`/blog/${post.slug}`}
-          className="module-shift block border-2 border-ink/40 hover:border-ink glass-card group"
-        >
+          <Link
+            key={post.slug}
+            to={`/blog/${post.slug}`}
+            className="module-shift block bg-base border border-ink/10 hover:border-ink/30 group transition-all duration-300"
+          >
           <div className="flex items-start gap-6 p-6 sm:p-8">
             <div className="label-mono text-vital text-2xl sm:text-3xl pt-1 shrink-0">
               {String(i + 1).padStart(2, "0")}

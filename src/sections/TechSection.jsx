@@ -3,8 +3,8 @@ import { formatDate } from "../lib/posts.js";
 
 function BrowserFrame({ children }) {
   return (
-    <div className="border-2 border-ink bg-base">
-      <div className="flex items-center gap-2 border-b-2 border-ink px-3 py-2 bg-ink/5">
+    <div className="border border-ink bg-base">
+      <div className="flex items-center gap-2 border-b border-ink px-3 py-2 bg-ink/3">
         <span className="w-3 h-3 rounded-full bg-red" />
         <span className="w-3 h-3 rounded-full bg-vital" />
         <span className="w-3 h-3 rounded-full bg-blue" />
@@ -19,7 +19,7 @@ function BrowserFrame({ children }) {
 
 function TerminalFrame({ children }) {
   return (
-    <div className="border-2 border-ink bg-ink text-base">
+    <div className="border border-ink bg-ink text-base">
       <div className="flex items-center gap-2 px-3 py-2 border-b border-base/20">
         <span className="w-3 h-3 rounded-full bg-red" />
         <span className="w-3 h-3 rounded-full bg-vital" />
@@ -35,8 +35,8 @@ function TerminalFrame({ children }) {
 
 function ConsoleFrame({ children }) {
   return (
-    <div className="border-2 border-ink bg-base">
-      <div className="px-3 py-2 border-b-2 border-ink bg-ink text-base">
+    <div className="border border-ink bg-base">
+      <div className="px-3 py-2 border-b border-ink bg-ink text-base">
         <span className="label-mono text-[0.6rem]">SEGA® CLOUD — CONSOLE</span>
       </div>
       <div className="p-6">{children}</div>
@@ -46,8 +46,8 @@ function ConsoleFrame({ children }) {
 
 function DeviceFrame({ children }) {
   return (
-    <div className="border-2 border-ink bg-base p-3">
-      <div className="border-2 border-ink bg-base">
+    <div className="border border-ink bg-base p-3">
+      <div className="border border-ink bg-base">
         <div className="flex justify-center pt-2">
           <span className="w-16 h-1 rounded-full bg-ink/20" />
         </div>
