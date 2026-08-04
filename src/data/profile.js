@@ -1,8 +1,6 @@
 export const profile = {
   name: "SYED AMIR KAFI",
   nameShort: "SYED·AMIR·KAFI",
-  coordinates: "N 51.669 / E 7.821 — 2026",
-  coordinatesShort: "EST·MMXXVI",
   headline: "SYED AMIR KAFI",
   tagline:
     "Master's student in International Management & Information Systems — translating data into operational clarity through analytics, systems, and design.",
@@ -13,8 +11,6 @@ export const profile = {
   location: "Hamm, NRW, Germany",
   linkedin: "https://linkedin.com/in/syedamirkafi",
   github: "https://github.com/syedamirkafi",
-  pivotGitHub: "https://github.com/syedamirkafi/pivot",
-  careerOpsUrl: "https://career-ops.org",
   cvUrl: "/cv/SyedAmirKafi_CV.pdf",
   languages: [
     { name: "English", level: "C1 — Fluent", code: "EN" },

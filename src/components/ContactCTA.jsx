@@ -3,7 +3,7 @@ import { withBase } from "../lib/base.js";
 
 export default function ContactCTA({ compact = false }) {
   return (
-    <div className={`p-8 ${compact ? "p-6" : "p-8"} transition-all duration-300`}>
+    <div className={`${compact ? "p-6" : "p-8"} transition-all duration-300`}>
       <span className="label-mono text-ink/50">/// TRANSMISSION</span>
       <h3 className="head-display text-3xl sm:text-4xl mt-2 mb-4">
         {compact ? "Let's talk." : "Let's talk data, operations, and decisions."}

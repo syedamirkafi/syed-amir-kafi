@@ -10,7 +10,7 @@ export default function NotFound() {
       <div className="px-4 sm:px-6 max-w-3xl mx-auto pt-20 text-center">
         <Reveal className="space-y-8">
           <span className="label-mono text-ink/50">/// SIGNAL LOST</span>
-          <h1 className="head-display text-7xl sm:text-9xl text-red">
+          <h1 className="head-display text-7xl sm:text-9xl text-destructive">
             404
           </h1>
           <p className="text-ink/70 max-w-md mx-auto leading-relaxed">

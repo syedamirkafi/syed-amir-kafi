@@ -1,4 +1,5 @@
 import { copyFileSync, existsSync } from "node:fs";
+import "./build-rss.mjs";
 
 const src = "dist/index.html";
 const dst = "dist/404.html";

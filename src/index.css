@@ -33,36 +33,30 @@
   --color-vital: var(--color-accent);
   --color-ink: var(--color-foreground);
   --color-base: var(--color-background);
-}
-
-:root {
-  /* Light mode tokens - Swiss Modernism 2.0 */
-  --surface: #ffffff;
-  --text: #09090b;
-  --primary: #18181b;
-  --secondary: #3f3f46;
-  --accent: #2563eb;
-  --background: #fafafa;
-  --foreground: #09090b;
-  --muted: #e8ecf0;
-  --border: #e4e4e7;
-  --destructive: #dc2626;
-  --ring: #18181b;
+  --color-blue: #2563eb;
 }
 
 .dark {
-  /* Dark mode tokens - Swiss Modernism 2.0 */
-  --surface: #09090b;
-  --text: #fafafa;
-  --primary: #ffffff;
-  --secondary: #a1a1aa;
-  --accent: #3b82f6;
-  --background: #0f172a;
-  --foreground: #ffffff;
-  --muted: #27272a;
-  --border: #27272a;
-  --destructive: #ef4444;
-  --ring: #ffffff;
+  /* Dark mode tokens - override the actual --color-* tokens used by Tailwind utilities */
+  --color-primary: #ffffff;
+  --color-secondary: #a1a1aa;
+  --color-accent: #3b82f6;
+  --color-background: #0f172a;
+  --color-foreground: #fafafa;
+  --color-muted: #27272a;
+  --color-border: #27272a;
+  --color-destructive: #ef4444;
+  --color-ring: #ffffff;
+  --color-blue: #60a5fa;
+
+  /* Dark variants of the pastel palette */
+  --color-pastel-blue: #1e3a5f;
+  --color-pastel-yellow: #4d3b00;
+  --color-pastel-pink: #4a1730;
+  --color-pastel-mint: #0f3d2e;
+  --color-pastel-lavender: #32294d;
+  --color-pastel-peach: #4d2f1d;
+  --color-pastel-sky: #0e3442;
 }
 
 html {
@@ -372,22 +366,6 @@ button:not(:disabled),
   color: var(--color-base);
 }
 
-/* ---- Fine grid texture (Swiss) ---- */
-.grid-bg {
-  background-image:
-    linear-gradient(
-      to right,
-      color-mix(in srgb, var(--color-ink) 7%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--color-ink) 7%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 36px 36px;
-}
-
 /* ---- Scroll reveal ---- */
 .reveal {
   opacity: 0;
@@ -399,27 +377,6 @@ button:not(:disabled),
   opacity: 1;
   transform: none;
 }
-
-/* ---- Staggered children reveal ---- */
-.reveal-group .reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal-group.is-visible .reveal {
-  opacity: 1;
-  transform: none;
-}
-
-.reveal-group .reveal:nth-child(1) { transition-delay: 0ms; }
-.reveal-group .reveal:nth-child(2) { transition-delay: 60ms; }
-.reveal-group .reveal:nth-child(3) { transition-delay: 120ms; }
-.reveal-group .reveal:nth-child(4) { transition-delay: 180ms; }
-.reveal-group .reveal:nth-child(5) { transition-delay: 240ms; }
-.reveal-group .reveal:nth-child(6) { transition-delay: 300ms; }
-.reveal-group .reveal:nth-child(7) { transition-delay: 360ms; }
-.reveal-group .reveal:nth-child(8) { transition-delay: 420ms; }
 
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {

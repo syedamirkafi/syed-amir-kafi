@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import BottomNav from "./components/BottomNav.jsx";
+import BackToTop from "./components/BackToTop.jsx";
 import Home from "./pages/Home.jsx";
 import Projects from "./pages/Projects.jsx";
 import Post from "./pages/Post.jsx";
@@ -33,6 +34,7 @@ export default function App() {
       </Routes>
       <Footer />
       <BottomNav />
+      <BackToTop />
     </div>
   );
 }
