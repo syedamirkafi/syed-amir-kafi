@@ -138,7 +138,7 @@ export function KanbanShowcase({ item }) {
 }
 
 export function PipelineShowcase({ item }) {
-  const [offers] = useCountUp(700, { duration: 1600 });
+  const [offers, offersRef] = useCountUp(700, { duration: 1600 });
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-ink/20 module-shift bg-base">
       <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center order-2 lg:order-1">
@@ -167,7 +167,7 @@ export function PipelineShowcase({ item }) {
           </span>
           <div className="flex items-center gap-2 sm:gap-3 mt-8 flex-wrap">
             <div className="border border-base/30 px-4 py-3 text-center">
-              <div className="head-display text-3xl" ref={offers}>
+              <div className="head-display text-3xl" ref={offersRef}>
                 {offers}+
               </div>
               <div className="label-mono text-base/50 text-[0.55rem] mt-1">
@@ -255,7 +255,7 @@ export function PipelineShowcase({ item }) {
 
 export function ChartShowcase({ item }) {
   const bars = [38, 62, 45, 74, 58, 92, 66, 81, 54, 96, 70, 88];
-  const [growth] = useCountUp(18);
+  const [growth, growthRef] = useCountUp(18);
   return (
     <div className="border border-ink/20 module-shift bg-base p-6 sm:p-10">
       <div className="lg:grid lg:grid-cols-12 gap-10 items-center">
@@ -309,9 +309,13 @@ export function ChartShowcase({ item }) {
               { v: `${growth}%`, l: "TERRITORY GROWTH" },
               { v: "17", l: "PERSON TEAM" },
               { v: "3×", l: "DAILY/WEEKLY/MONTHLY" },
-            ].map((s) => (
+            ].map((s, si) => (
               <div key={s.l} className="border border-ink/20 p-3">
-                <div className="head-display text-2xl" style={{ color: "#D90429" }}>
+                <div
+                  className="head-display text-2xl"
+                  style={{ color: "#D90429" }}
+                  ref={si === 0 ? growthRef : undefined}
+                >
                   {s.v}
                 </div>
                 <div className="label-mono text-ink/40 text-[0.55rem] mt-1">
@@ -406,7 +410,7 @@ export function ProcessShowcase({ item }) {
 }
 
 export function ResearchShowcase({ item }) {
-  const [clients] = useCountUp(80, { duration: 1500 });
+  const [clients, clientsRef] = useCountUp(80, { duration: 1500 });
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-ink/20 module-shift bg-base">
       <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center order-2 lg:order-1">
@@ -452,7 +456,7 @@ export function ResearchShowcase({ item }) {
             ))}
           </div>
           <div>
-            <div className="head-display text-6xl sm:text-7xl text-base" ref={clients}>
+            <div className="head-display text-6xl sm:text-7xl text-base" ref={clientsRef}>
               {clients}+
             </div>
             <div className="label-mono text-base/70 text-[0.65rem] mt-2">
