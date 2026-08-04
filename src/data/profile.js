@@ -18,7 +18,7 @@ export const profile = {
     { name: "Bengali", level: "Native", code: "BN" },
   ],
   bio: [
-    "Master's student in International Management & Information Systems with hands-on experience in data analytics, CRM/ERP systems, and process optimization.",
-    "Skilled in SQL, Tableau, Power BI, Salesforce, and SAP/Oracle — with a proven ability to translate data into operational improvements and a creative eye for clear, structured design.",
+    "I'm Amer — a master's student in International Management & Information Systems. I think in numbers, processes, and clean design. I've been the person in the field reading route-level sales data until it became an 18% growth story, the research analyst serving 80+ clients, and the working student at Picnic cutting steps out of order-picking.",
+    "I work in SQL, Tableau, Power BI, Salesforce, and SAP/Oracle — and I build dashboards people actually open every morning. I document processes until they make sense, and I ship small tools (like the AI pipeline that ran my own German job search) to make my own work faster. Give me a messy, real-world situation and I'll turn it into something clear, measured, and moving.",
   ],
 };

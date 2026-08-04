@@ -154,6 +154,7 @@ export default function HeroRoles({ active, onSelect }) {
             key={role.label}
             type="button"
             aria-pressed={isActive}
+            onMouseEnter={() => onSelect(i)}
             onClick={() => onSelect(i)}
             className={`role-chip flex items-center gap-1.5 px-4 py-2 label-mono text-xs font-medium transition-all duration-300 border rounded-none ${
               isActive

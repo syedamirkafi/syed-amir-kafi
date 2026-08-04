@@ -15,74 +15,70 @@ export default function About() {
           <h1 className="head-display text-5xl sm:text-7xl mt-2">
             Full Chronicle
           </h1>
-          <p className="text-sm text-ink/60 mt-3 max-w-xl">
-            {profile.tagline}
-          </p>
         </header>
 
-        <section className="mb-16">
-          <div className="flex items-baseline justify-between mb-6 pb-2">
-            <h2 className="head-display section-title text-3xl sm:text-4xl">The Author</h2>
-            <span className="label-mono text-ink/50">WHO</span>
+        <section className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-0.5">
+          <div className="bg-ink/3 border border-ink/20 p-8 transition-all duration-300">
+            <span className="label-mono text-ink/40">LOCATION</span>
+            <p className="head-display text-2xl mt-4 leading-tight">
+              {profile.location}
+            </p>
+            <p className="label-mono text-ink/50 mt-3">HAMM · NRW · GERMANY</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-7 space-y-5">
-              {profile.bio.map((paragraph, i) => (
-                <p
-                  key={i}
-                  className="text-base sm:text-lg text-ink/80 leading-relaxed max-w-prose"
-                >
-                  {paragraph}
-                </p>
+          <div className="bg-ink/3 border border-ink/20 p-8 transition-all duration-300">
+            <span className="label-mono text-ink/40">CONTACT</span>
+            <a
+              href={`mailto:${profile.email}`}
+              className="head-display text-xl mt-4 block leading-tight break-all hover:text-vital transition-colors"
+            >
+              {profile.email}
+            </a>
+            <p className="label-mono text-ink/50 mt-3">{profile.phone}</p>
+          </div>
+          <div className="bg-ink/3 border border-ink/20 p-8 transition-all duration-300">
+            <span className="label-mono text-ink/40">LANGUAGES</span>
+            <div className="mt-4 space-y-2">
+              {profile.languages.map((lang) => (
+                <div key={lang.code} className="flex items-baseline justify-between gap-4">
+                  <span className="head-display text-xl">
+                    {lang.code}
+                    <span className="label-mono text-ink/40 ml-2">
+                      {lang.name}
+                    </span>
+                  </span>
+                  <span className="label-mono text-ink/50 text-right">
+                    {lang.level}
+                  </span>
+                </div>
               ))}
-              <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href={withBase(profile.cvUrl)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-6 py-3 bg-accent text-base label-mono font-semibold hover:bg-ink transition-all duration-300"
-                >
-                  CV ↓
-                </a>
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="px-6 py-3 border border-ink label-mono font-semibold hover:bg-ink/5 transition-all duration-300"
-                >
-                  EMAIL
-                </a>
-                  <a
-                    href={profile.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-6 py-3 border border-ink label-mono font-semibold hover:bg-ink/5 transition-all duration-300"
-                  >
-                    LINKEDIN
-                  </a>
-                </div>
-              </div>
-            <div className="md:col-span-5">
-              <div className="p-6 space-y-4">
-                <div>
-                  <span className="label-mono text-ink/40 text-xs">LOCATION</span>
-                  <p className="label-mono mt-1">{profile.location}</p>
-                </div>
-                <div>
-                  <span className="label-mono text-ink/40 text-xs">CONTACT</span>
-                  <p className="label-mono mt-1">{profile.email}</p>
-                  <p className="label-mono mt-1">{profile.phone}</p>
-                </div>
-                <div>
-                  <span className="label-mono text-ink/40 text-xs">LANGUAGES</span>
-                  {profile.languages.map((lang) => (
-                    <p key={lang.code} className="label-mono mt-1">
-                      {lang.code} · {lang.name} — {lang.level}
-                    </p>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </section>
+
+        <div className="flex flex-wrap gap-3 mb-16">
+          <a
+            href={withBase(profile.cvUrl)}
+            target="_blank"
+            rel="noreferrer"
+            className="px-6 py-3 bg-accent text-base label-mono font-semibold hover:bg-ink transition-all duration-300"
+          >
+            CV ↓
+          </a>
+          <a
+            href={`mailto:${profile.email}`}
+            className="px-6 py-3 border border-ink label-mono font-semibold hover:bg-ink/5 transition-all duration-300"
+          >
+            EMAIL
+          </a>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className="px-6 py-3 border border-ink label-mono font-semibold hover:bg-ink/5 transition-all duration-300"
+          >
+            LINKEDIN
+          </a>
+        </div>
 
         <section className="mb-16">
           <div className="flex items-baseline justify-between mb-6 pb-2">
@@ -127,33 +123,42 @@ export default function About() {
           </div>
         </section>
 
-        <section className="mb-16 grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="md:col-span-6">
+        <section className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
             <div className="flex items-baseline justify-between mb-6 pb-2">
               <h2 className="head-display section-title text-3xl">Education</h2>
+              <span className="label-mono text-ink/50">DEGREES</span>
             </div>
             <div className="space-y-4">
-              {education.map((edu) => (
-                <div key={edu.degree} className="border-b border-ink/20 pb-4 last:border-0">
-                  <h3 className="head-display text-lg">{edu.degree}</h3>
-                  <p className="label-mono text-vital text-xs mt-1">{edu.org}</p>
-                  <p className="label-mono text-ink/40 text-xs mt-1">
-                    {edu.period} · {edu.note}
+              {education.map((edu, i) => (
+                <div key={edu.degree} className="bg-base border border-ink/20 p-6 hover:border-ink/40 transition-all duration-300">
+                  <div className="flex items-baseline justify-between mb-3">
+                    <span className="label-mono text-vital text-xs">
+                      {String(i + 1).padStart(2, "0")} · {edu.period}
+                    </span>
+                  </div>
+                  <h3 className="head-display text-xl leading-tight">{edu.degree}</h3>
+                  <p className="label-mono text-ink/50 text-xs mt-3">
+                    {edu.org} · {edu.note}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="md:col-span-6">
+          <div>
             <div className="flex items-baseline justify-between mb-6 pb-2">
               <h2 className="head-display section-title text-3xl">Certifications</h2>
+              <span className="label-mono text-ink/50">VERIFIED TRACKS</span>
             </div>
-            <div className="space-y-2">
+            <div className="flex flex-wrap gap-2">
               {certifications.map((cert) => (
-                <li key={cert} className="flex gap-3 text-sm text-ink/75 list-none">
-                  <span className="label-mono text-vital shrink-0">✓</span>
-                  <span>{cert}</span>
-                </li>
+                <span
+                  key={cert}
+                  className="border border-ink/25 bg-ink/3 px-4 py-3 label-mono text-xs hover:border-ink transition-all duration-200"
+                >
+                  <span className="text-vital mr-2">✓</span>
+                  {cert}
+                </span>
               ))}
             </div>
           </div>

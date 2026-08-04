@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { profile } from "../data/profile.js";
 import { portfolio } from "../data/portfolio.js";
 import { getAllPosts } from "../lib/posts.js";
 import { useDocumentTitle } from "../lib/useDocumentTitle.js";
-import PostCard from "../components/PostCard.jsx";
 import SkillGrid from "../components/SkillGrid.jsx";
 import ContactCTA from "../components/ContactCTA.jsx";
 import HeroRoles from "../components/HeroRoles.jsx";
@@ -21,10 +20,15 @@ export default function Home() {
   useDocumentTitle(null);
   const posts = getAllPosts().slice(0, 4);
   const [roleIndex, setRoleIndex] = useState(0);
+  const [hovering, setHovering] = useState(false);
+  const hoveringRef = useRef(false);
+  hoveringRef.current = hovering;
 
   useEffect(() => {
     const id = setInterval(() => {
-      setRoleIndex((i) => (i + 1) % profile.roles.length);
+      if (!hoveringRef.current) {
+        setRoleIndex((i) => (i + 1) % profile.roles.length);
+      }
     }, 4000);
     return () => clearInterval(id);
   }, []);
@@ -41,12 +45,6 @@ export default function Home() {
             className="pastel-blob hero-blob absolute top-0 right-0 w-96 h-96 -z-10 transition-colors duration-700"
             style={{ backgroundColor: activeColor }}
           />
-          <span
-            className="label-mono mb-6 relative transition-colors duration-300"
-            style={{ color: activeColor }}
-          >
-            {profile.mode}
-          </span>
           <h1
             className="head-display text-5xl sm:text-7xl lg:text-8xl leading-[0.85] relative mb-4 transition-all duration-700"
             style={{ color: activeColor }}
@@ -56,7 +54,13 @@ export default function Home() {
           <p className="text-sm sm:text-base text-ink/70 max-w-2xl leading-relaxed mb-6 relative">
             {profile.tagline}
           </p>
-          <HeroRoles active={activeRole} onSelect={setRoleIndex} />
+          <div
+            className="relative"
+            onMouseEnter={() => setHovering(true)}
+            onMouseLeave={() => setHovering(false)}
+          >
+            <HeroRoles active={activeRole} onSelect={setRoleIndex} />
+          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/projects"
@@ -102,24 +106,6 @@ export default function Home() {
                 </Link>
               );
             })}
-          </div>
-        </section>
-
-        {/* INTELLECTUAL ARCHIVE */}
-        <section className="mt-16">
-          <div className="flex items-baseline justify-between mb-6 pb-2">
-            <h2 className="head-display section-title text-3xl sm:text-4xl">Intellectual Archive</h2>
-            <Link
-              to="/projects"
-              className="label-mono text-ink/60 hover:text-vital transition-colors"
-            >
-              ALL POSTS →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {posts.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
           </div>
         </section>
 
@@ -183,8 +169,8 @@ export default function Home() {
         <section className="mt-16 mb-16">
           <div className="md:grid md:grid-cols-12 gap-8">
             <div className="md:col-span-5 bg-ink text-base p-8 mb-8 md:mb-0">
-              <span className="label-mono opacity-50 mb-4 block">/// PROFILE 01</span>
-              <h2 className="head-display text-4xl">The Author</h2>
+              <span className="label-mono opacity-50 mb-4 block">/// ABOUT ME</span>
+              <h2 className="head-display text-4xl">Hello. This is me — Amer</h2>
             </div>
             <div className="md:col-span-7 p-8">
               {profile.bio.map((paragraph, i) => (

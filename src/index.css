@@ -378,6 +378,115 @@ button:not(:disabled),
   transform: none;
 }
 
+/* ---- Project showcase animations ---- */
+@keyframes kf-sweep {
+  0% {
+    transform: translateX(-16%) translateY(0);
+    opacity: 0;
+  }
+  12%,
+  78% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(240%) translateY(4px);
+    opacity: 0;
+  }
+}
+
+@keyframes kf-bar {
+  0%,
+  100% {
+    transform: scaleY(0.25);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes kf-dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes kf-pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes kf-rise {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes kf-step-out {
+  0%,
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.6);
+    opacity: 0.15;
+  }
+}
+
+@keyframes kf-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.term-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  background: var(--color-ink);
+  animation: kf-blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+.kf-pulse {
+  animation: kf-pulse-soft 2.2s ease-in-out infinite;
+}
+
+.kbar {
+  transform-origin: bottom;
+  animation: kf-bar 3.2s ease-in-out infinite;
+}
+
+.kcard {
+  animation: kf-sweep 5s linear infinite;
+}
+
+.kdoc {
+  animation: kf-rise 2.4s ease-in-out infinite alternate;
+}
+
+.kstep-remove {
+  animation: kf-step-out 4s ease-in-out infinite;
+}
+
+.pipeline-dash {
+  stroke-dasharray: 6;
+  animation: kf-dash 1.2s linear infinite;
+}
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *,
