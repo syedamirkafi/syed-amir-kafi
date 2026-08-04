@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>THE MONOLITH — Syed Amir Kafi</title>
-    <link>https://syedamirkafi.github.io/the-monolith</link>
+    <title>SYED AMIR KAFI</title>
+    <link>https://syedamirkafi.github.io/syed-amir-kafi</link>
     <description>Data analytics, business analysis, operations, and design — field logs from Syed Amir Kafi.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 01:18:46 GMT</lastBuildDate>
-    <atom:link href="https://syedamirkafi.github.io/the-monolith/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Aug 2026 01:25:27 GMT</lastBuildDate>
+    <atom:link href="https://syedamirkafi.github.io/syed-amir-kafi/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I Run My Job Search with AI</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/career-ops-ai-job-search</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/career-ops-ai-job-search</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/career-ops-ai-job-search</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/career-ops-ai-job-search</guid>
       <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
       <category>PROJECTS</category>
       <description>I evaluate every job offer against my CV with an AI pipeline, generate ATS-optimized CVs, and track everything — here&apos;s how it works and what I&apos;ve learned.</description>
     </item>
     <item>
       <title>Pivot: An AI-Powered Career Operations Platform</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/pivot-ai-career-platform</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/pivot-ai-career-platform</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/pivot-ai-career-platform</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/pivot-ai-career-platform</guid>
       <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
       <category>PROJECTS</category>
       <description>Building a web tool that automates document generation and data extraction from job postings — the project that turned my job search into a product.</description>
     </item>
     <item>
       <title>Deutsch lernen: Von A2 nach B1 in 2026</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/deutsch-a2-b1</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/deutsch-a2-b1</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/deutsch-a2-b1</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/deutsch-a2-b1</guid>
       <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
       <category>DEUTSCH</category>
       <description>Mein Plan, bis Ende 2026 das Niveau B1 zu erreichen — und warum Sprache für den Arbeitsmarkt in Deutschland so wichtig ist.</description>
     </item>
     <item>
       <title>BPMN, Requirements &amp; the Banking Ops Story</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/bpmn-banking-ops</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/bpmn-banking-ops</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/bpmn-banking-ops</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/bpmn-banking-ops</guid>
       <pubDate>Wed, 29 Jul 2026 00:00:00 GMT</pubDate>
       <category>BIZ-ANALYSIS</category>
       <description>A banking internship taught me the business-analysis stack: process mapping, requirements gathering, and documentation people actually use.</description>
     </item>
     <item>
       <title>80+ Clients, One Discipline: Structured Research</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/research-80-clients</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/research-80-clients</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/research-80-clients</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/research-80-clients</guid>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <category>BIZ-ANALYSIS</category>
       <description>What supporting 80+ university clients taught me about turning unstructured questions into structured, defensible answers.</description>
     </item>
     <item>
       <title>Cutting Two Steps from Order Picking at Picnic</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/picnic-order-picking</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/picnic-order-picking</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/picnic-order-picking</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/picnic-order-picking</guid>
       <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
       <category>OPERATIONS</category>
       <description>How documenting process gaps — and mapping cross-functional workflows — removed 2 steps from the order picking process.</description>
     </item>
     <item>
       <title>Tableau Dashboards Across a 17-Person Team</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/tableau-sales-dashboards</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/tableau-sales-dashboards</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/tableau-sales-dashboards</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/tableau-sales-dashboards</guid>
       <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
       <category>ANALYTICS</category>
       <description>Building daily, weekly, and monthly performance dashboards that a 17-person field team actually used — and upper management actually acted on.</description>
     </item>
     <item>
       <title>Territory Sales Optimization: 18% Through Data</title>
-      <link>https://syedamirkafi.github.io/the-monolith/blog/territory-sales-optimization</link>
-      <guid>https://syedamirkafi.github.io/the-monolith/blog/territory-sales-optimization</guid>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/territory-sales-optimization</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/territory-sales-optimization</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
       <category>ANALYTICS</category>
       <description>How route-level analysis of sales patterns lifted territory sales 18% at Robi Axiata — and what the data taught me about distribution.</description>

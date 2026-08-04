@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://syedamirkafi.github.io/the-monolith/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/projects</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/wins</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/territory-sales-optimization</loc><priority>0.7</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/tableau-sales-dashboards</loc><priority>0.7</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/picnic-order-picking</loc><priority>0.7</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/research-80-clients</loc><priority>0.7</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/bpmn-banking-ops</loc><priority>0.7</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/pivot-ai-career-platform</loc><priority>0.6</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/career-ops-ai-job-search</loc><priority>0.6</priority></url>
-  <url><loc>https://syedamirkafi.github.io/the-monolith/blog/deutsch-a2-b1</loc><priority>0.6</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/projects</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/wins</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/territory-sales-optimization</loc><priority>0.7</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/tableau-sales-dashboards</loc><priority>0.7</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/picnic-order-picking</loc><priority>0.7</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/research-80-clients</loc><priority>0.7</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/bpmn-banking-ops</loc><priority>0.7</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/pivot-ai-career-platform</loc><priority>0.6</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/career-ops-ai-job-search</loc><priority>0.6</priority></url>
+  <url><loc>https://syedamirkafi.github.io/syed-amir-kafi/blog/deutsch-a2-b1</loc><priority>0.6</priority></url>
 </urlset>
