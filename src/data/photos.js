@@ -3,7 +3,7 @@ export const photos = [
     id: "photo-01",
     src: "/photos/placeholder-1.svg",
     thumb: "/photos/placeholder-1.svg",
-    caption: "The Monolith — somewhere in NRW",
+    caption: "Field note — somewhere in NRW",
     date: "2026",
     place: "Hamm / NRW",
     alt: "Placeholder image — replace with a real photo",

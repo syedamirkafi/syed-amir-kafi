@@ -10,7 +10,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <span className="label-mono text-ink/30 text-xs">
-            © {new Date().getFullYear()} THE MONOLITH
+            © {new Date().getFullYear()} SYED AMIR KAFI
           </span>
           <div className="label-mono text-ink/30 text-xs">
             <a

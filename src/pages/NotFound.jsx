@@ -14,8 +14,8 @@ export default function NotFound() {
             404
           </h1>
           <p className="text-ink/70 max-w-md mx-auto leading-relaxed">
-            This coordinate does not exist in the archive. The monolith stands,
-            but the signal you're looking for was never recorded here.
+            This coordinate does not exist in the archive. The signal you're
+            looking for was never recorded here.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link

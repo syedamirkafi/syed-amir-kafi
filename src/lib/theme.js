@@ -1,5 +1,5 @@
-const KEY = "monolith-theme";
-const COLOR_KEY = "monolith-theme-color";
+const KEY = "sak-theme";
+const COLOR_KEY = "sak-theme-color";
 
 function setMetaThemeColor(color) {
   const meta = document.querySelector('meta[name="theme-color"]');

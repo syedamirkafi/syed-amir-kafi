@@ -46,7 +46,7 @@ export default function Post() {
     .slice(0, 2);
   const mins = readingTime(post);
   const encoded = encodeURIComponent(post.title);
-  const shareUrl = `https://syedamirkafi.github.io/the-monolith/blog/${slug}`;
+  const shareUrl = `${window.location.origin}${import.meta.env.BASE_URL}blog/${slug}`;
   const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
   const shareX = `https://twitter.com/intent/tweet?text=${encoded}&url=${encodeURIComponent(shareUrl)}`;
 

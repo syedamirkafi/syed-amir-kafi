@@ -60,8 +60,8 @@ export const portfolio = [
     href: "/blog/research-80-clients",
   },
   {
-    id: "monolith",
-    title: "The Monolith — This Site",
+    id: "site",
+    title: "This Site — Personal Portfolio",
     tag: "DESIGN",
     status: "in-progress",
     color: "#F4B400",

@@ -5,7 +5,7 @@ import matter from "gray-matter";
 const ROOT = join(import.meta.dirname, "..");
 const POSTS_DIR = join(ROOT, "content", "posts");
 const DIST_DIR = join(ROOT, "dist");
-const SITE_URL = "https://syedamirkafi.github.io/the-monolith";
+const SITE_URL = "https://syedamirkafi.github.io/syed-amir-kafi";
 
 function escapeXml(text) {
   return String(text)
@@ -50,7 +50,7 @@ function buildRss() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>THE MONOLITH — Syed Amir Kafi</title>
+    <title>SYED AMIR KAFI</title>
     <link>${SITE_URL}</link>
     <description>Data analytics, business analysis, operations, and design — field logs from Syed Amir Kafi.</description>
     <language>en</language>

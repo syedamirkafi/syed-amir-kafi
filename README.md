@@ -1,4 +1,4 @@
-# THE MONOLITH — Personal Blog
+# SYED AMIR KAFI — Personal Site
 
 A markdown-powered personal blog and job-search portfolio for **Syed Amir Kafi**:
 data analytics, business analysis, operations, and design.
@@ -10,30 +10,14 @@ npm run dev      # local dev
 npm run build    # production build (outputs to dist/)
 ```
 
-## Testing the New Design
+## Design System
 
-This repo now uses the **Swiss Modernism 2.0** design system:
+This repo uses the **Swiss Modernism** design system:
 
 - **Typography**: Archivo + Space Grotesk
-- **Colors**: Professional blue accent (#2563EB) with full dark/light mode
+- **Colors**: Professional gold accent (#F4B400) with full dark/light mode
 - **Grid**: 12-column layout with mathematical spacing
 - **Theme**: Persistent color system with design token variables
-
-### Test the New Theme
-
-1. **Local Testing**: `npm run dev` - see fresh changes immediately
-2. **Live Preview**: https://syedamirkafi.github.io/the-monolith/
-3. **Theme Toggle**: Look for **blue** accent colors (not red) in the UI
-
-### Key Design Updates
-
-The design system overhaul includes:
-- Complete typography refresh (Archivo/Space Grotesk)
-- Color system overhaul (blue accent + dark mode support)
-- Grid-based layout improvements with 12-column system
-- Enhanced hover states and transitions
-- Responsive design fixes
-- Professional portfolio aesthetics
 
 ## Content
 

@@ -25,7 +25,7 @@ function refresh() {
 }
 
 window.addEventListener("storage", (e) => {
-  if (e.key === "monolith-theme") refresh();
+  if (e.key === "sak-theme") refresh();
 });
 
 function SunIcon() {

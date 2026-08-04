@@ -474,7 +474,7 @@ export function ResearchShowcase({ item }) {
 
 export function TerminalShowcase({ item }) {
   const lines = [
-    "$ vite build --base /the-monolith",
+    "$ vite build --base /syed-amir-kafi",
     "✓ 555 modules transformed",
     "✓ zero database",
     "✓ markdown-powered posts",
@@ -570,5 +570,5 @@ export const SHOWCASES = {
   "tableau-dashboards": ChartShowcase,
   "process-mapping": ProcessShowcase,
   "research-practice": ResearchShowcase,
-  monolith: TerminalShowcase,
+  site: TerminalShowcase,
 };
