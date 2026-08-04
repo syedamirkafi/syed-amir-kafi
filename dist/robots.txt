@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://syedamirkafi.github.io/the-monolith/sitemap.xml
