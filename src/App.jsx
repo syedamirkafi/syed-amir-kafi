@@ -22,7 +22,7 @@ export default function App() {
       <ScrollToTop />
       <Rail />
       <RailMobile />
-      <div className="flex-1 lg:pl-56 pt-16 lg:pt-0">
+      <div className="flex-1 pt-16 lg:pt-0">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog/:slug" element={<Post />} />
