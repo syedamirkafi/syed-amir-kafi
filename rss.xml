@@ -5,8 +5,16 @@
     <link>https://syedamirkafi.github.io/syed-amir-kafi</link>
     <description>Business analyst — field notes on requirements, dashboards, process work, and digital transformation.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2026 19:38:05 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 21:14:31 GMT</lastBuildDate>
     <atom:link href="https://syedamirkafi.github.io/syed-amir-kafi/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Spreadsheet That Ran a Keyboard Startup</title>
+      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/keyb-stock-pricing</link>
+      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/keyb-stock-pricing</guid>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+      <category>OPERATIONS</category>
+      <description>How a stock &amp; pricing spreadsheet — every SKU, its level, its price, and money in versus out — turned a friend&apos;s keyboard hobby into an operation that could restock and price on facts.</description>
+    </item>
     <item>
       <title>How I Run My Job Search with AI</title>
       <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/career-ops-ai-job-search</link>
