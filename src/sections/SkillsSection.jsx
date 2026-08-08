@@ -42,7 +42,7 @@ export default function SkillsSection() {
     <section id="skills" className="scroll-mt-24 pt-32">
       <SectionHeading
         kicker="Skills"
-        number="04"
+        number="05"
         title="Skills."
         description="The things I reach for in day-to-day work — no proficiency bars, just what I actually use."
       />

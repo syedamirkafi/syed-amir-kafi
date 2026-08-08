@@ -35,7 +35,7 @@ export const profile = {
     "AI-assisted analysis",
   ],
   bio: [
-    "I started four years ago leading the territory team at a Robi distribution house — 14 sales reps, IT, and back-office — reading the route-level data every morning until it explained why some corridors grew and others didn't. The territory grew 18% in a season. At Picnic I walked the warehouse floor, watched how orders actually moved, and found two steps nobody needed. Between those, I delivered structured research to 80+ clients.",
+    "I started four years ago leading the territory team at a Robi distribution house — 14 sales reps, IT, and back-office — reading the route-level data every morning until it explained why some corridors grew and others didn't. The territory grew 18% in a season. At Picnic I walked the warehouse floor, watched how orders actually moved, and found two steps nobody needed. Between those, I researched, wrote, and coordinated 80+ university assignments for UK clients.",
     "What I genuinely enjoy is the untangling: watching how people work, asking why a step exists, then turning the mess into something a team can actually read — a BPMN map, a dashboard, a requirement everyone agrees on.",
   ],
 };

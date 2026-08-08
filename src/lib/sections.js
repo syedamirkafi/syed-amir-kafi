@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 export const NAV_SECTIONS = [
   { id: "about", label: "About", number: "01" },
   { id: "experience", label: "Experience", number: "02" },
-  { id: "projects", label: "Projects", number: "03" },
-  { id: "skills", label: "Skills", number: "04" },
-  { id: "education", label: "Education", number: "05" },
-  { id: "certifications", label: "Certifications", number: "06" },
-  { id: "work-samples", label: "Work samples", number: "07" },
+  { id: "work-samples", label: "Work samples", number: "03" },
+  { id: "projects", label: "Projects", number: "04" },
+  { id: "skills", label: "Skills", number: "05" },
+  { id: "education", label: "Education", number: "06" },
+  { id: "certifications", label: "Certifications", number: "07" },
   { id: "contact", label: "Contact", number: "08" },
 ];
 

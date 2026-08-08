@@ -11,7 +11,7 @@ export default function EducationSection() {
     <section id="education" className="scroll-mt-24 pt-32">
       <SectionHeading
         kicker="Education"
-        number="05"
+        number="06"
         title="Where I studied."
         description="Started in business administration, detoured through an MBA in HR, and landed on information systems — the people side and the systems side of change."
       />

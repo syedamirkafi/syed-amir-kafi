@@ -35,11 +35,11 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-6">
         <AboutSection />
         <ExperienceSection />
+        <WorkSamplesSection />
         <ProjectsSection />
         <SkillsSection />
         <EducationSection />
         <CertificationsSection />
-        <WorkSamplesSection />
         <ContactSection />
       </div>
     </main>

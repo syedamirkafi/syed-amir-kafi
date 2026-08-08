@@ -126,7 +126,7 @@ export default function WorkSamplesSection() {
     >
       <SectionHeading
         kicker="Work samples"
-        number="07"
+        number="03"
         title="Work samples."
         description="Real output from the kind of work I do — dashboards and process maps, and the decision each one enabled."
       />

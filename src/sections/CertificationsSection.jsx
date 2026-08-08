@@ -19,7 +19,7 @@ export default function CertificationsSection() {
     <section id="certifications" className="scroll-mt-24 pt-32">
       <SectionHeading
         kicker="Certifications"
-        number="06"
+        number="07"
         title="Certifications."
         description="The credentials backing the day-to-day work — earned, in progress, or planned."
       />

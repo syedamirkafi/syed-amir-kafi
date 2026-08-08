@@ -100,7 +100,7 @@ export default function ProjectsSection() {
     <section id="projects" className="scroll-mt-24 pt-32">
       <SectionHeading
         kicker="Projects"
-        number="03"
+        number="04"
         title="Projects."
         description="Two pieces of work I can walk through in real detail — the problem, my role, and what changed."
       />

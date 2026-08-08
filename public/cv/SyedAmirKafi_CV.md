@@ -39,13 +39,15 @@ translate data into operational improvements.
   - Led a 17-person unit (14 sales reps, IT officer, supervisor, office manager); built the daily and weekly Tableau reports (rep scorecards, route rankings) the team ran on.
   - Ranked 13th of 200+ territory officers nationwide; managed Salesforce CRM pipeline and ERP data accuracy.
 - **Assignoholic Research & Consultancy** — Research Analyst (Nov 2022 – Jun 2023, Remote)
-  - Research and data-driven insights for 80+ UK university clients across business and IT domains.
+  - Researched business and IT topics for UK university assignments and wrote parts of the work myself — 80+ orders end to end.
+  - Broke down assignment briefs into clear scope (requirements, word count, referencing style) and served as the client-facing point of contact through revisions and delivery.
 - **KeyB Imports** — Operations Team Lead (Jun 2022 – Oct 2022, Dhaka)
   - Built the operations side of a friend's mechanical-keyboard startup — stock & pricing system, supplier and import coordination, and money-in/money-out records.
   - Split the work into roles (orders, marketing, accounts) and ran the team so nothing fell through the cracks.
   - Coordinated import logistics for the QK65 group buy — the first official keyboard group buy by a local vendor in Bangladesh; launched a custom keyboard dust-cover line.
-- **Dhaka Bank Ltd.** — Banking Intern, Operations & Reporting (Mar 2022 – May 2022)
-  - Process documentation and workflow improvements on Flexcube; financial reporting with Excel.
+- **Dhaka Bank Ltd.** — Banking Intern, Operations & Reporting (Mar 2022 – May 2022, Rajshahi Branch)
+  - Worked the Rajshahi branch counter (account opening, clearing, deposits/withdrawals) and entered & validated transactions in FLEXCUBE.
+  - Compiled branch MIS reports in Excel and documented branch procedures so anyone could follow them.
 
 ## Projects
 
