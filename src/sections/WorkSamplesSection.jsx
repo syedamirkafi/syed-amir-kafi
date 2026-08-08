@@ -23,61 +23,89 @@ function SampleThumb({ item }) {
 function SamplePlaceholder({ type }) {
   if (type === "Dashboard") {
     return (
-      <div className="w-full h-full flex flex-col gap-3 max-w-xs">
-        <div className="flex items-center justify-between mb-1">
-          <div className="h-2 w-20 bg-border-strong" />
-          <div className="h-2 w-10 bg-accent/60" />
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          <div className="rounded-md border border-border bg-card p-2">
-            <div className="h-1.5 w-8 bg-border-strong mb-1" />
-            <div className="h-4 bg-ink/80" />
-            <div className="h-1.5 w-6 bg-accent/60 mt-1" />
-          </div>
-          <div className="rounded-md border border-border bg-card p-2">
-            <div className="h-1.5 w-8 bg-border-strong mb-1" />
-            <div className="h-4 bg-ink/80" />
-            <div className="h-1.5 w-8 bg-soft/60 mt-1" />
-          </div>
-          <div className="rounded-md border border-border bg-card p-2">
-            <div className="h-1.5 w-8 bg-border-strong mb-1" />
-            <div className="h-4 bg-ink/80" />
-            <div className="h-1.5 w-7 bg-soft/60 mt-1" />
-          </div>
-        </div>
-        <div className="flex-1 flex flex-col gap-2 rounded-md border border-border bg-card p-3">
-          <div className="h-1.5 w-16 bg-border-strong mb-0.5" />
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-2 bg-border-strong/70" />
-            <div className="flex-1 h-2 rounded-full bg-soft/30">
-              <div className="h-full rounded-full bg-accent/80" style={{ width: "100%" }} />
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-2 bg-border-strong/50" />
-            <div className="flex-1 h-2 rounded-full bg-soft/30">
-              <div className="h-full rounded-full bg-accent/60" style={{ width: "72%" }} />
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-2 bg-border-strong/50" />
-            <div className="flex-1 h-2 rounded-full bg-soft/30">
-              <div className="h-full rounded-full bg-accent/50" style={{ width: "55%" }} />
-            </div>
-          </div>
-        </div>
-        <div className="rounded-md border border-border bg-card p-2">
-          <div className="h-1.5 w-12 bg-border-strong mb-1" />
-          <svg viewBox="0 0 200 40" className="w-full h-8" fill="none">
-            <line x1="0" y1="8" x2="200" y2="8" stroke="#8c8a82" strokeWidth="1" strokeDasharray="4 3" />
-            <polyline
-              points="0,32 40,26 80,28 120,20 160,16 200,11"
-              stroke="#F4B400"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
-      </div>
+      <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
+        <rect x="16" y="10" width="288" height="26" rx="3" fill="#f3f1ea" stroke="#d4d0c4" strokeWidth="1" />
+        <circle cx="28" cy="23" r="4" fill="#F4B400" />
+        <text x="40" y="27" fontFamily="Inter, sans-serif" fontSize="9" fill="#5c594f" fontWeight="600">
+          Rep scorecards
+        </text>
+        <text x="280" y="27" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="8" fill="#8c8a82">
+          WK 12
+        </text>
+
+        <rect x="16" y="44" width="90" height="40" rx="3" fill="#ffffff" stroke="#e2dfd5" strokeWidth="1" />
+        <text x="24" y="58" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="#5c594f" fontWeight="600">
+          101%
+        </text>
+        <text x="24" y="68" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          target met
+        </text>
+        <rect x="24" y="74" width="40" height="3" rx="1.5" fill="#F4B400" />
+
+        <rect x="115" y="44" width="90" height="40" rx="3" fill="#ffffff" stroke="#e2dfd5" strokeWidth="1" />
+        <text x="123" y="58" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="#5c594f" fontWeight="600">
+          14
+        </text>
+        <text x="123" y="68" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          of 15 routes
+        </text>
+
+        <rect x="214" y="44" width="90" height="40" rx="3" fill="#ffffff" stroke="#e2dfd5" strokeWidth="1" />
+        <text x="222" y="58" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="#5c594f" fontWeight="600">
+          +18%
+        </text>
+        <text x="222" y="68" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          vs last season
+        </text>
+
+        <rect x="16" y="92" width="288" height="62" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="106" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">
+          Route ranking
+        </text>
+        {[
+          ["R-07", 92],
+          ["R-02", 71],
+          ["R-11", 55],
+        ].map((r, i) => {
+          const y = 116 + i * 14;
+          return (
+            <g key={r[0]}>
+              <text x="24" y={y + 5} fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">
+                {r[0]}
+              </text>
+              <rect x="54" y={y - 1} width="180" height="8" rx="4" fill="#f3f1ea" />
+              <rect x="54" y={y - 1} width={(180 * r[1]) / 100} height="8" rx="4" fill="#F4B400" />
+              <text x="242" y={y + 5} fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#5c594f">
+                {r[1]}%
+              </text>
+            </g>
+          );
+        })}
+
+        <rect x="16" y="162" width="288" height="62" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="176" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">
+          Sales trend vs target
+        </text>
+        <line x1="24" y1="200" x2="296" y2="200" stroke="#8c8a82" strokeWidth="1" strokeDasharray="4 3" />
+        <text x="236" y="196" fontFamily="Inter, sans-serif" fontSize="6" fill="#8c8a82">
+          target
+        </text>
+        <line x1="24" y1="216" x2="296" y2="216" stroke="#e2dfd5" strokeWidth="1" />
+        <polyline
+          points="24,216 68,208 112,212 156,196 200,188 244,180 296,172"
+          stroke="#F4B400"
+          strokeWidth="2"
+        />
+        <text x="24" y="222" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">
+          W1
+        </text>
+        <text x="152" y="222" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">
+          W6
+        </text>
+        <text x="296" y="222" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">
+          W12
+        </text>
+      </svg>
     );
   }
   if (type === "Process map") {
