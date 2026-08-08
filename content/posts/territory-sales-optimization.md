@@ -19,7 +19,7 @@ When I joined Robi Axiata as a Territory Officer, the standard playbook was simp
 
 ## The problem
 
-The territory had 17 team members covering a large geographic area. Sales patterns were tracked, but only in aggregate. No one had asked: *which routes underperform and why? Which retailers deserve more coverage? Where is demand clustering?*
+The territory was a distribution house operation — 14 sales reps, an IT officer, a supervisor, and an office manager — covering a large geographic area. Sales patterns were tracked, but only in aggregate. No one had asked: *which routes underperform and why? Which retailers deserve more coverage? Where is demand clustering?*
 
 ## The method
 
@@ -32,7 +32,7 @@ I pulled daily, weekly, and monthly performance data and broke it down by route,
 ## The result
 
 - **+18% territory sales** through data-driven distribution and route optimization.
-- **Data-backed decisions for upper management** via Tableau dashboards tracking daily, weekly, and monthly performance.
+- **Data-backed decisions for upper management** via Tableau reports tracking daily, weekly, and monthly performance.
 - **Ranked 13th nationwide out of 200+ Territory Officers** — measured impact through analysis, not just effort.
 
 ## The reflection

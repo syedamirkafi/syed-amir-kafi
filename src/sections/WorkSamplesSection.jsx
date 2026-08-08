@@ -28,35 +28,54 @@ function SamplePlaceholder({ type }) {
           <div className="h-2 w-20 bg-border-strong" />
           <div className="h-2 w-10 bg-accent/60" />
         </div>
-        <div className="flex-1 grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2">
           <div className="rounded-md border border-border bg-card p-2">
-            <div className="h-1.5 w-10 bg-border-strong mb-1" />
-            <div className="h-6 flex items-end gap-0.5">
-              <div className="flex-1 bg-accent/70" style={{ height: "40%" }} />
-              <div className="flex-1 bg-accent/70" style={{ height: "70%" }} />
-              <div className="flex-1 bg-accent/70" style={{ height: "55%" }} />
-            </div>
+            <div className="h-1.5 w-8 bg-border-strong mb-1" />
+            <div className="h-4 bg-ink/80" />
+            <div className="h-1.5 w-6 bg-accent/60 mt-1" />
           </div>
           <div className="rounded-md border border-border bg-card p-2">
-            <div className="h-1.5 w-10 bg-border-strong mb-1" />
-            <div className="h-6 flex items-end gap-0.5">
-              <div className="flex-1 bg-soft/40" style={{ height: "30%" }} />
-              <div className="flex-1 bg-soft/40" style={{ height: "60%" }} />
-              <div className="flex-1 bg-soft/40" style={{ height: "85%" }} />
-            </div>
+            <div className="h-1.5 w-8 bg-border-strong mb-1" />
+            <div className="h-4 bg-ink/80" />
+            <div className="h-1.5 w-8 bg-soft/60 mt-1" />
           </div>
           <div className="rounded-md border border-border bg-card p-2">
-            <div className="h-1.5 w-10 bg-border-strong mb-1" />
-            <div className="h-6 flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full border-2 border-accent border-dashed opacity-60" />
+            <div className="h-1.5 w-8 bg-border-strong mb-1" />
+            <div className="h-4 bg-ink/80" />
+            <div className="h-1.5 w-7 bg-soft/60 mt-1" />
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col gap-2 rounded-md border border-border bg-card p-3">
+          <div className="h-1.5 w-16 bg-border-strong mb-0.5" />
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-2 bg-border-strong/70" />
+            <div className="flex-1 h-2 rounded-full bg-soft/30">
+              <div className="h-full rounded-full bg-accent/80" style={{ width: "100%" }} />
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-2 bg-border-strong/50" />
+            <div className="flex-1 h-2 rounded-full bg-soft/30">
+              <div className="h-full rounded-full bg-accent/60" style={{ width: "72%" }} />
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-2 bg-border-strong/50" />
+            <div className="flex-1 h-2 rounded-full bg-soft/30">
+              <div className="h-full rounded-full bg-accent/50" style={{ width: "55%" }} />
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-1.5 mt-1">
-          <div className="h-1 bg-border-strong" />
-          <div className="h-1 bg-border-strong" />
-          <div className="h-1 bg-border-strong" />
-          <div className="h-1 bg-border-strong" />
+        <div className="rounded-md border border-border bg-card p-2">
+          <div className="h-1.5 w-12 bg-border-strong mb-1" />
+          <svg viewBox="0 0 200 40" className="w-full h-8" fill="none">
+            <line x1="0" y1="8" x2="200" y2="8" stroke="#8c8a82" strokeWidth="1" strokeDasharray="4 3" />
+            <polyline
+              points="0,32 40,26 80,28 120,20 160,16 200,11"
+              stroke="#F4B400"
+              strokeWidth="2"
+            />
+          </svg>
         </div>
       </div>
     );

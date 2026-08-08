@@ -1,11 +1,11 @@
 export const workSamples = [
   {
     id: "tableau-dashboard",
-    title: "Territory performance dashboards",
+    title: "Territory reports & dashboards",
     type: "Dashboard",
     context: "Sales analytics at Robi Axiata Ltd.",
     summary:
-      "Daily, weekly, and monthly Tableau dashboards that tracked route performance across a 17-person field team. Management opened them every morning; the team acted on them.",
+      "Rep scorecards with target vs. actual, weekly route rankings, and shop-level breakdowns — KPI cards up top, target lines on the trends. The whole 17-person territory checked them every morning.",
     outcome: "+18% territory sales in a season",
     image: null,
     link: "/blog/tableau-sales-dashboards",

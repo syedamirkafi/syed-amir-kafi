@@ -35,7 +35,7 @@ export const profile = {
     "AI-assisted analysis",
   ],
   bio: [
-    "I started four years ago reading route-level sales data at Robi until it explained why some corridors grew and others didn't — the territory grew 18%. At Picnic I walked the warehouse floor, watched how orders actually moved, and found two steps nobody needed. Between those, I delivered structured research to 80+ clients.",
+    "I started four years ago leading the territory team at a Robi distribution house — 14 sales reps, IT, and back-office — reading the route-level data every morning until it explained why some corridors grew and others didn't. The territory grew 18% in a season. At Picnic I walked the warehouse floor, watched how orders actually moved, and found two steps nobody needed. Between those, I delivered structured research to 80+ clients.",
     "What I genuinely enjoy is the untangling: watching how people work, asking why a step exists, then turning the mess into something a team can actually read — a BPMN map, a dashboard, a requirement everyone agrees on.",
   ],
 };
@@ -70,7 +70,7 @@ export const lifeTimeline = [
   {
     period: "2022 — 2024",
     label: "Professional experience",
-    text: "Research analyst, banking intern, operations lead — and territory sales analytics that grew a region 18%.",
+    text: "Research analyst, banking intern, operations lead — and territory team lead whose data grew a distribution house's sales 18% in a season.",
   },
   {
     period: "2025",

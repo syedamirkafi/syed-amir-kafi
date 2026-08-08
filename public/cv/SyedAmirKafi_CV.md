@@ -35,9 +35,9 @@ translate data into operational improvements.
   - Analyzed order fulfillment data using WMS; coordinated warehouse/logistics/customer-service workflows.
   - Documented process gaps; 2 fewer steps in the order picking process.
 - **Robi Axiata Ltd.** — Territory Officer, Sales & Data Analysis (Jan 2024 – Sep 2024, Bangladesh)
-  - +18% territory sales through data-driven route and distribution optimization.
-  - Built Tableau dashboards across a 17-person team; ranked 13th of 200+ nationwide.
-  - Managed Salesforce CRM pipeline and ERP data accuracy.
+  - Managed a distribution house's full territory operation — sales, IT, and back-office — delivering 18% territory growth in a season.
+  - Led a 17-person unit (14 sales reps, IT officer, supervisor, office manager); built the daily and weekly Tableau reports (rep scorecards, route rankings) the team ran on.
+  - Ranked 13th of 200+ territory officers nationwide; managed Salesforce CRM pipeline and ERP data accuracy.
 - **Assignoholic Research & Consultancy** — Research Analyst (Nov 2022 – Jun 2023, Remote)
   - Research and data-driven insights for 80+ UK university clients across business and IT domains.
 - **KeyB Imports** — Operations Team Lead (Jun 2022 – Oct 2022, Dhaka)
