@@ -66,16 +66,19 @@ export const timeline = [
     period: "Jun 2022 — Oct 2022",
     location: "Dhaka, Bangladesh (Hybrid)",
     points: [
-      "Ran end-to-end operations for a gaming-peripherals startup — orders, inventory, fulfillment across every channel.",
-      "Mapped the order-to-delivery flow, cut the bottlenecks, and tightened turnaround.",
+      "Joined a friend's mechanical-keyboard startup and built its operations side from scratch — a stock & pricing system, supplier and import coordination, and records for money in versus out.",
+      "Split the work into roles — orders, marketing, accounts — and ran the team, so nothing fell through the cracks.",
+      "Coordinated the import logistics for the QK65 group buy — the first official keyboard group buy by a local vendor in Bangladesh's custom-keyboard community.",
+      "Launched a custom keyboard dust-cover line alongside the stock, from sourcing to listing.",
     ],
     impact:
-      "Faster delivery on every channel — with a workflow the team could run without me.",
+      "A founder-held hobby became an organized operation with clear roles, tracked stock, and honest books.",
     transferableSkills: [
-      "Workflow design",
       "Operations management",
+      "Stock & pricing systems",
+      "Supplier & import coordination",
+      "Role design",
       "Process documentation",
-      "Team leadership",
     ],
   },
   {
