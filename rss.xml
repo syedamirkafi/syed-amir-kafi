@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SYED AMIR KAFI</title>
+    <title>Syed Amir Kafi — Field notes</title>
     <link>https://syedamirkafi.github.io/syed-amir-kafi</link>
-    <description>Data analytics, business analysis, operations, and design — field logs from Syed Amir Kafi.</description>
+    <description>Business analyst — field notes on requirements, dashboards, process work, and digital transformation.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Aug 2026 01:25:27 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 17:10:37 GMT</lastBuildDate>
     <atom:link href="https://syedamirkafi.github.io/syed-amir-kafi/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I Run My Job Search with AI</title>
@@ -14,22 +14,6 @@
       <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
       <category>PROJECTS</category>
       <description>I evaluate every job offer against my CV with an AI pipeline, generate ATS-optimized CVs, and track everything — here&apos;s how it works and what I&apos;ve learned.</description>
-    </item>
-    <item>
-      <title>Pivot: An AI-Powered Career Operations Platform</title>
-      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/pivot-ai-career-platform</link>
-      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/pivot-ai-career-platform</guid>
-      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
-      <category>PROJECTS</category>
-      <description>Building a web tool that automates document generation and data extraction from job postings — the project that turned my job search into a product.</description>
-    </item>
-    <item>
-      <title>Deutsch lernen: Von A2 nach B1 in 2026</title>
-      <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/deutsch-a2-b1</link>
-      <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/deutsch-a2-b1</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <category>DEUTSCH</category>
-      <description>Mein Plan, bis Ende 2026 das Niveau B1 zu erreichen — und warum Sprache für den Arbeitsmarkt in Deutschland so wichtig ist.</description>
     </item>
     <item>
       <title>BPMN, Requirements &amp; the Banking Ops Story</title>
