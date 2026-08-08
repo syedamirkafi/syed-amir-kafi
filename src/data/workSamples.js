@@ -11,6 +11,17 @@ export const workSamples = [
     link: "/blog/tableau-sales-dashboards",
   },
   {
+    id: "keyb-stock",
+    title: "Stock & pricing system",
+    type: "Stock table",
+    context: "Operations at KeyB Imports",
+    summary:
+      "One table behind every stock and pricing call — each SKU with its level, its price, a low-stock flag, and money in versus out, so restock decisions ran on facts.",
+    outcome: "Restock and pricing decisions moved off guesswork",
+    image: null,
+    link: "/blog/keyb-stock-pricing",
+  },
+  {
     id: "bpmn-orders",
     title: "Order-picking BPMN workflow",
     type: "Process map",
@@ -24,12 +35,23 @@ export const workSamples = [
   {
     id: "banking-bpmn",
     title: "Banking ops process documentation",
-    type: "Process map",
+    type: "Process docs",
     context: "Branch operations at Dhaka Bank",
     summary:
-      "Mapped the Flexcube branch-operation flows in BPMN and wrote the SOPs, so the team could run the branch without supervision.",
+      "The FLEXCUBE branch-operation flows written into numbered SOPs, so the team could run the branch without supervision.",
     outcome: "Documented processes anyone could follow",
     image: null,
     link: "/blog/bpmn-banking-ops",
+  },
+  {
+    id: "assignoholic-brief",
+    title: "Brief-breakdown framework",
+    type: "Brief framework",
+    context: "Client handling at Assignoholic",
+    summary:
+      "A vague assignment brief turned into agreed scope — topic, word count, referencing, deadline — before research began. The same skeleton held across 80+ UK university clients.",
+    outcome: "Vague briefs became scope the writer and client agreed on",
+    image: null,
+    link: "/blog/research-80-clients",
   },
 ];

@@ -115,6 +115,112 @@ function SamplePlaceholder({ type }) {
       </svg>
     );
   }
+  if (type === "Stock table") {
+    return (
+      <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
+        <rect x="16" y="10" width="288" height="30" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <rect x="22" y="19" width="64" height="4" rx="2" fill="#d4d0c4" />
+        <rect x="22" y="26" width="84" height="4" rx="2" fill="#5c594f" />
+        <text x="180" y="29" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#4a3c00" fontWeight="600">IN ৳840K</text>
+        <text x="262" y="29" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#8c8a82">OUT ৳520K</text>
+        <rect x="238" y="48" width="66" height="14" rx="7" fill="#F4B400" />
+        <text x="271" y="58" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00" fontWeight="600">LOW STOCK</text>
+        <rect x="16" y="50" width="288" height="20" rx="3" fill="#f3f1ea" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">SKU</text>
+        <text x="88" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">ITEM</text>
+        <text x="186" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">STOCK</text>
+        <text x="240" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">PRICE</text>
+        {[
+          ["QK65", "Keyboard", "42", "৳18,500"],
+          ["PC-01", "PCB kit", "120", "৳4,200"],
+          ["SW-01", "Switches", "8", "৳950"],
+          ["DM-00", "Deskmat", "64", "৳2,100"],
+          ["CV-01", "Dust cover", "37", "৳750"],
+        ].map((row, i) => {
+          const y = 74 + i * 26;
+          const low = row[2] === "8";
+          return (
+            <g key={row[0]}>
+              <rect
+                x="16"
+                y={y}
+                width="288"
+                height="22"
+                rx="3"
+                fill={low ? "#fff7d6" : "#ffffff"}
+                stroke={low ? "#F4B400" : "#e2dfd5"}
+                strokeWidth="1"
+              />
+              <text x="24" y={y + 14} fontFamily="JetBrains Mono, monospace" fontSize="8" fill={low ? "#4a3c00" : "#8c8a82"}>{row[0]}</text>
+              <text x="88" y={y + 14} fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f">{row[1]}</text>
+              <text x="186" y={y + 14} fontFamily="JetBrains Mono, monospace" fontSize="8" fill={low ? "#4a3c00" : "#5c594f"}>{row[2]}</text>
+              <text x="240" y={y + 14} fontFamily="JetBrains Mono, monospace" fontSize="8" fill="#5c594f">{row[3]}</text>
+            </g>
+          );
+        })}
+      </svg>
+    );
+  }
+  if (type === "Brief framework") {
+    return (
+      <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
+        <rect x="16" y="16" width="132" height="120" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <rect x="24" y="26" width="44" height="8" rx="2" fill="#d4d0c4" />
+        <text x="24" y="46" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90">"Analyse the impact of</text>
+        <text x="24" y="57" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90">cloud computing on</text>
+        <text x="24" y="68" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90">SMEs in the UK..."</text>
+        <rect x="24" y="84" width="92" height="3" rx="1.5" fill="#e8e5dc" />
+        <rect x="24" y="92" width="76" height="3" rx="1.5" fill="#e8e5dc" />
+        <text x="24" y="122" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82" fontStyle="italic">raw brief from the client</text>
+        <line x1="152" y1="76" x2="166" y2="76" stroke="#F4B400" strokeWidth="2" />
+        <polygon points="168,76 158,70 158,82" fill="#F4B400" />
+        <rect x="172" y="16" width="132" height="120" rx="3" fill="#ffffff" stroke="#F4B400" strokeWidth="1" />
+        <text x="180" y="30" fontFamily="Inter, sans-serif" fontSize="8" fill="#4a3c00" fontWeight="600">SCOPED</text>
+        {[
+          ["Topic", "Cloud → SME strategy"],
+          ["Words", "2,500"],
+          ["Referencing", "Harvard"],
+          ["Deadline", "10 days"],
+          ["Deliverable", "Essay + plan"],
+        ].map((r, i) => {
+          const y = 44 + i * 17;
+          return (
+            <g key={r[0]}>
+              <polygon points={`184,${y + 3} 188,${y + 7} 194,${y + 0}`} fill="#F4B400" />
+              <text x="200" y={y + 8} fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">{r[0]}</text>
+              <text x="242" y={y + 8} fontFamily="Inter, sans-serif" fontSize="7" fill="#5c594f">{r[1]}</text>
+            </g>
+          );
+        })}
+      </svg>
+    );
+  }
+  if (type === "Process docs") {
+    return (
+      <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
+        <rect x="40" y="16" width="240" height="208" rx="4" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <rect x="40" y="16" width="240" height="28" rx="4" fill="#f3f1ea" />
+        <rect x="48" y="24" width="90" height="6" rx="3" fill="#5c594f" />
+        <text x="240" y="35" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">SOP-03 · v2</text>
+        {[0, 1, 2, 3].map((i) => {
+          const y = 62 + i * 38;
+          return (
+            <g key={i}>
+              <circle cx="58" cy={y + 6} r="7" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
+              <text x="58" y={y + 9} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00" fontWeight="600">{i + 1}</text>
+              <rect x="76" y={y} width="110" height="5" rx="2.5" fill="#d4d0c4" />
+              <rect x="76" y={y + 9} width="84" height="5" rx="2.5" fill="#e8e5dc" />
+              <text x="196" y={y + 9} fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">→ FLEXCUBE</text>
+            </g>
+          );
+        })}
+        <polygon points="110,196 120,206 110,216 100,206" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
+        <text x="110" y="209" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="6" fill="#4a3c00">ok?</text>
+        <rect x="196" y="184" width="70" height="18" rx="3" fill="#ffffff" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 2" />
+        <text x="231" y="196" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">REVIEWED</text>
+      </svg>
+    );
+  }
   return null;
 }
 
@@ -128,7 +234,7 @@ export default function WorkSamplesSection() {
         kicker="Work samples"
         number="03"
         title="Work samples."
-        description="Real output from the kind of work I do — dashboards and process maps, and the decision each one enabled."
+        description="Real output from the kind of work I do — dashboards, process maps, stock systems, and the documents that keep an operation honest. Each card is a stylized demo of the actual thing."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

@@ -1,11 +1,11 @@
 export const profile = {
   name: "Syed Amir Kafi",
   nameShort: "Amir·Kafi",
-  headline: "I ask how things actually work — then make them work better.",
+  headline: "Hi, I'm Amir.",
   subheadline:
-    "Dashboards, process maps, and the questions that find what's actually wrong.",
+    "Welcome to my portfolio — where I've shared my journey so far.",
   positioning:
-    "I sit between the people who run the operation and the people who build the system. I ask a lot of questions, map how work actually happens, and turn the mess into something clear — a dashboard, a process map, requirements the whole team can agree on. Honestly, the part I enjoy most is untangling a messy process and understanding the people caught up in it.",
+    "I'm a business-analysis master's student in Germany, working as a Working Student at Picnic while I finish my degree. Before that I worked across banking, research, operations, and sales analytics in Bangladesh — so this site maps the professional and educational journey that got me here. Take a look around: experience, work samples, and the résumé are all a click away.",
   eyebrow: "Business analysis · Digital transformation · Germany",
   availability: "Open to Working Student / BA roles in Germany",
   tagline:

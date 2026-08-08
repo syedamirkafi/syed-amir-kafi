@@ -16,7 +16,7 @@ export default function AboutSection() {
       <SectionHeading
         kicker="About"
         number="01"
-        title="Hi, I'm Amir."
+        title="Who I am."
         description="Master's student in Hamm, Germany — hunting a working-student role in business analysis and digital transformation, with real field experience behind me."
       />
 
