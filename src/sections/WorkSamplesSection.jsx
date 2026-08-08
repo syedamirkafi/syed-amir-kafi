@@ -111,34 +111,77 @@ function SamplePlaceholder({ type }) {
   if (type === "Process map") {
     return (
       <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
-        <rect x="20" y="28" width="280" height="36" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
-        <text x="160" y="50" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fill="#5c594f">
-          Customer
+        <rect x="16" y="10" width="288" height="26" rx="3" fill="#f3f1ea" stroke="#d4d0c4" strokeWidth="1" />
+        <circle cx="28" cy="23" r="4" fill="#F4B400" />
+        <text x="40" y="27" fontFamily="Inter, sans-serif" fontSize="9" fill="#5c594f" fontWeight="600">
+          Order picking · BPMN
         </text>
-        <line x1="160" y1="64" x2="160" y2="88" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 3" />
-        <rect x="20" y="88" width="130" height="36" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
-        <text x="85" y="110" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fill="#5c594f">
-          Start
+        <text x="280" y="27" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="8" fill="#8c8a82">
+          AS-IS
         </text>
-        <rect x="170" y="88" width="130" height="36" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
-        <text x="235" y="110" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fill="#5c594f">
-          Verify
+
+        <rect x="16" y="44" width="288" height="74" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="58" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82" fontWeight="600">
+          WAREHOUSE
         </text>
-        <path d="M150 106 L168 106" stroke="#8c8a82" strokeWidth="1" />
-        <line x1="85" y1="124" x2="85" y2="148" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 3" />
-        <line x1="235" y1="124" x2="235" y2="148" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 3" />
-        <rect x="20" y="148" width="130" height="36" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
-        <text x="85" y="170" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fill="#5c594f">
-          Process
+        <circle cx="40" cy="98" r="8" fill="#F4B400" />
+        <text x="40" y="101" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="6" fill="#4a3c00" fontWeight="600">
+          S
         </text>
-        <polygon points="170,156 195,166 170,176 195,186 170,196" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
-        <text x="195" y="182" textAnchor="start" fontFamily="Inter, sans-serif" fontSize="9" fill="#4a3c00">
-          validate
+        <rect x="60" y="84" width="66" height="28" rx="3" fill="#ffffff" stroke="#5c594f" strokeWidth="1" />
+        <text x="93" y="101" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f">
+          Pick
         </text>
-        <line x1="85" y1="184" x2="85" y2="208" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 3" />
-        <rect x="20" y="208" width="130" height="24" rx="12" fill="#F4B400" stroke="none" />
-        <text x="85" y="223" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="10" fill="#4a3c00" fontWeight="600">
+        <line x1="128" y1="98" x2="150" y2="98" stroke="#8c8a82" strokeWidth="1" />
+        <polygon points="150,98 142,94 142,102" fill="#8c8a82" />
+        <rect x="152" y="84" width="66" height="28" rx="3" fill="#ffffff" stroke="#5c594f" strokeWidth="1" />
+        <text x="185" y="101" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f">
+          Stage
+        </text>
+        <line x1="220" y1="98" x2="240" y2="98" stroke="#8c8a82" strokeWidth="1" />
+        <polygon points="240,98 232,94 232,102" fill="#8c8a82" />
+        <rect x="242" y="84" width="54" height="28" rx="3" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
+        <text x="269" y="101" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00">
+          Recheck
+        </text>
+        <line x1="248" y1="89" x2="290" y2="107" stroke="#c9a100" strokeWidth="1.5" />
+        <line x1="290" y1="89" x2="248" y2="107" stroke="#c9a100" strokeWidth="1.5" />
+
+        <line x1="185" y1="118" x2="185" y2="130" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 3" />
+        <polygon points="185,130 181,122 189,122" fill="#8c8a82" />
+
+        <rect x="16" y="130" width="288" height="74" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="144" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82" fontWeight="600">
+          LOGISTICS
+        </text>
+        <polygon points="40,184 56,168 72,184 56,200" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
+        <text x="56" y="187" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="6" fill="#4a3c00" fontWeight="600">
+          ok?
+        </text>
+        <line x1="72" y1="184" x2="88" y2="184" stroke="#8c8a82" strokeWidth="1" />
+        <polygon points="88,184 80,180 80,188" fill="#8c8a82" />
+        <rect x="90" y="170" width="66" height="28" rx="3" fill="#ffffff" stroke="#5c594f" strokeWidth="1" />
+        <text x="123" y="187" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f">
+          Dispatch
+        </text>
+        <line x1="158" y1="184" x2="176" y2="184" stroke="#8c8a82" strokeWidth="1" />
+        <polygon points="176,184 168,180 168,188" fill="#8c8a82" />
+        <rect x="178" y="170" width="54" height="28" rx="3" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
+        <text x="205" y="187" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00">
+          Handoff
+        </text>
+        <line x1="184" y1="175" x2="226" y2="193" stroke="#c9a100" strokeWidth="1.5" />
+        <line x1="226" y1="175" x2="184" y2="193" stroke="#c9a100" strokeWidth="1.5" />
+        <line x1="234" y1="184" x2="248" y2="184" stroke="#8c8a82" strokeWidth="1" />
+        <polygon points="248,184 240,180 240,188" fill="#8c8a82" />
+        <rect x="250" y="170" width="46" height="28" rx="14" fill="#F4B400" />
+        <text x="273" y="187" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fill="#4a3c00" fontWeight="600">
           End
+        </text>
+
+        <rect x="16" y="212" width="288" height="18" rx="9" fill="#fff7d6" />
+        <text x="160" y="224" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00" fontWeight="600">
+          2 redundant steps removed
         </text>
       </svg>
     );
@@ -146,106 +189,218 @@ function SamplePlaceholder({ type }) {
   if (type === "Stock table") {
     return (
       <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
-        <rect x="16" y="10" width="288" height="30" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
-        <rect x="22" y="19" width="64" height="4" rx="2" fill="#d4d0c4" />
-        <rect x="22" y="26" width="84" height="4" rx="2" fill="#5c594f" />
-        <text x="180" y="29" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#4a3c00" fontWeight="600">IN ৳840K</text>
-        <text x="262" y="29" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="#8c8a82">OUT ৳520K</text>
-        <rect x="238" y="48" width="66" height="14" rx="7" fill="#F4B400" />
-        <text x="271" y="58" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00" fontWeight="600">LOW STOCK</text>
-        <rect x="16" y="50" width="288" height="20" rx="3" fill="#f3f1ea" stroke="#d4d0c4" strokeWidth="1" />
-        <text x="24" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">SKU</text>
-        <text x="88" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">ITEM</text>
-        <text x="186" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">STOCK</text>
-        <text x="240" y="63" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">PRICE</text>
+        <rect x="16" y="10" width="288" height="26" rx="3" fill="#f3f1ea" stroke="#d4d0c4" strokeWidth="1" />
+        <circle cx="28" cy="23" r="4" fill="#F4B400" />
+        <text x="40" y="27" fontFamily="Inter, sans-serif" fontSize="9" fill="#5c594f" fontWeight="600">
+          Stock & pricing
+        </text>
+        <text x="280" y="27" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="8" fill="#8c8a82">
+          KEYB IMPORTS
+        </text>
+
+        <rect x="16" y="44" width="90" height="40" rx="3" fill="#ffffff" stroke="#e2dfd5" strokeWidth="1" />
+        <text x="24" y="58" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="#5c594f" fontWeight="600">
+          ৳2.1M
+        </text>
+        <text x="24" y="68" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          stock on hand
+        </text>
+        <rect x="24" y="74" width="40" height="3" rx="1.5" fill="#F4B400" />
+
+        <rect x="115" y="44" width="90" height="40" rx="3" fill="#ffffff" stroke="#e2dfd5" strokeWidth="1" />
+        <text x="123" y="58" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="#5c594f" fontWeight="600">
+          8 SKUs
+        </text>
+        <text x="123" y="68" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          tracked live
+        </text>
+
+        <rect x="214" y="44" width="90" height="40" rx="3" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
+        <text x="222" y="58" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="#4a3c00" fontWeight="600">
+          1 low
+        </text>
+        <text x="222" y="68" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00">
+          stock flag
+        </text>
+
+        <rect x="16" y="92" width="288" height="84" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="106" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">
+          Stock by SKU
+        </text>
+        <text x="24" y="122" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          SKU
+        </text>
+        <text x="86" y="122" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          ITEM
+        </text>
+        <text x="186" y="122" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          STOCK
+        </text>
+        <text x="240" y="122" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          PRICE
+        </text>
         {[
           ["QK65", "Keyboard", "42", "৳18,500"],
-          ["PC-01", "PCB kit", "120", "৳4,200"],
           ["SW-01", "Switches", "8", "৳950"],
           ["DM-00", "Deskmat", "64", "৳2,100"],
           ["CV-01", "Dust cover", "37", "৳750"],
         ].map((row, i) => {
-          const y = 74 + i * 26;
-          const low = row[2] === "8";
+          const y = 128 + i * 11;
+          const low = row[0] === "SW-01";
           return (
             <g key={row[0]}>
-              <rect
-                x="16"
-                y={y}
-                width="288"
-                height="22"
-                rx="3"
-                fill={low ? "#fff7d6" : "#ffffff"}
-                stroke={low ? "#F4B400" : "#e2dfd5"}
-                strokeWidth="1"
-              />
-              <text x="24" y={y + 14} fontFamily="JetBrains Mono, monospace" fontSize="8" fill={low ? "#4a3c00" : "#8c8a82"}>{row[0]}</text>
-              <text x="88" y={y + 14} fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f">{row[1]}</text>
-              <text x="186" y={y + 14} fontFamily="JetBrains Mono, monospace" fontSize="8" fill={low ? "#4a3c00" : "#5c594f"}>{row[2]}</text>
-              <text x="240" y={y + 14} fontFamily="JetBrains Mono, monospace" fontSize="8" fill="#5c594f">{row[3]}</text>
+              <rect x="16" y={y - 1} width="288" height="9" rx="2" fill={low ? "#fff7d6" : "#ffffff"} />
+              <text x="24" y={y + 5} fontFamily="JetBrains Mono, monospace" fontSize="7" fill={low ? "#4a3c00" : "#8c8a82"}>{row[0]}</text>
+              <text x="86" y={y + 5} fontFamily="Inter, sans-serif" fontSize="7" fill="#5c594f">{row[1]}</text>
+              <text x="186" y={y + 5} fontFamily="JetBrains Mono, monospace" fontSize="7" fill={low ? "#4a3c00" : "#5c594f"}>{row[2]}</text>
+              <text x="240" y={y + 5} fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#5c594f">{row[3]}</text>
             </g>
           );
         })}
+
+        <rect x="16" y="184" width="288" height="44" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="198" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">
+          Money in vs out
+        </text>
+        <text x="24" y="213" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          IN
+        </text>
+        <rect x="54" y="208" width="150" height="6" rx="3" fill="#f3f1ea" />
+        <rect x="54" y="208" width="112" height="6" rx="3" fill="#F4B400" />
+        <text x="212" y="213" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#5c594f">
+          ৳840K
+        </text>
+        <text x="24" y="225" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          OUT
+        </text>
+        <rect x="54" y="220" width="150" height="6" rx="3" fill="#f3f1ea" />
+        <rect x="54" y="220" width="80" height="6" rx="3" fill="#d4d0c4" />
+        <text x="212" y="225" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#5c594f">
+          ৳520K
+        </text>
       </svg>
     );
   }
   if (type === "Brief framework") {
     return (
       <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
-        <rect x="16" y="16" width="132" height="120" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
-        <rect x="24" y="26" width="44" height="8" rx="2" fill="#d4d0c4" />
-        <text x="24" y="46" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90">"Analyse the impact of</text>
-        <text x="24" y="57" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90">cloud computing on</text>
-        <text x="24" y="68" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90">SMEs in the UK..."</text>
-        <rect x="24" y="84" width="92" height="3" rx="1.5" fill="#e8e5dc" />
-        <rect x="24" y="92" width="76" height="3" rx="1.5" fill="#e8e5dc" />
-        <text x="24" y="122" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82" fontStyle="italic">raw brief from the client</text>
-        <line x1="152" y1="76" x2="166" y2="76" stroke="#F4B400" strokeWidth="2" />
-        <polygon points="168,76 158,70 158,82" fill="#F4B400" />
-        <rect x="172" y="16" width="132" height="120" rx="3" fill="#ffffff" stroke="#F4B400" strokeWidth="1" />
-        <text x="180" y="30" fontFamily="Inter, sans-serif" fontSize="8" fill="#4a3c00" fontWeight="600">SCOPED</text>
+        <rect x="16" y="10" width="288" height="26" rx="3" fill="#f3f1ea" stroke="#d4d0c4" strokeWidth="1" />
+        <circle cx="28" cy="23" r="4" fill="#F4B400" />
+        <text x="40" y="27" fontFamily="Inter, sans-serif" fontSize="9" fill="#5c594f" fontWeight="600">
+          Brief breakdown
+        </text>
+        <text x="280" y="27" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="8" fill="#8c8a82">
+          80+ CLIENTS
+        </text>
+
+        <rect x="16" y="44" width="136" height="124" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <rect x="24" y="52" width="52" height="14" rx="7" fill="#f3f1ea" />
+        <text x="50" y="61" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="6" fill="#8c8a82" fontWeight="600">
+          RAW BRIEF
+        </text>
+        <text x="24" y="78" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90" fontStyle="italic">
+          "Analyse the impact
+        </text>
+        <text x="24" y="89" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90" fontStyle="italic">
+          of cloud computing on
+        </text>
+        <text x="24" y="100" fontFamily="Inter, sans-serif" fontSize="8" fill="#a09c90" fontStyle="italic">
+          SMEs in the UK..."
+        </text>
+        <rect x="24" y="112" width="92" height="3" rx="1.5" fill="#e8e5dc" />
+        <rect x="24" y="120" width="76" height="3" rx="1.5" fill="#e8e5dc" />
+        <text x="24" y="152" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82" fontStyle="italic">
+          as the client sent it
+        </text>
+
+        <line x1="156" y1="106" x2="164" y2="106" stroke="#F4B400" strokeWidth="2" />
+        <polygon points="166,106 156,100 156,112" fill="#F4B400" />
+
+        <rect x="168" y="44" width="136" height="124" rx="3" fill="#ffffff" stroke="#F4B400" strokeWidth="1" />
+        <rect x="176" y="52" width="66" height="14" rx="7" fill="#F4B400" />
+        <text x="209" y="61" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="6" fill="#4a3c00" fontWeight="600">
+          AGREED SCOPE
+        </text>
         {[
-          ["Topic", "Cloud → SME strategy"],
+          ["Topic", "Cloud & SMEs"],
           ["Words", "2,500"],
           ["Referencing", "Harvard"],
           ["Deadline", "10 days"],
           ["Deliverable", "Essay + plan"],
         ].map((r, i) => {
-          const y = 44 + i * 17;
+          const y = 74 + i * 17;
           return (
             <g key={r[0]}>
-              <polygon points={`184,${y + 3} 188,${y + 7} 194,${y + 0}`} fill="#F4B400" />
-              <text x="200" y={y + 8} fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">{r[0]}</text>
-              <text x="242" y={y + 8} fontFamily="Inter, sans-serif" fontSize="7" fill="#5c594f">{r[1]}</text>
+              <polygon points={`178,${y + 3} 182,${y + 7} 188,${y + 0}`} fill="#F4B400" />
+              <text x="194" y={y + 8} fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">{r[0]}</text>
+              <text x="238" y={y + 8} fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#5c594f">{r[1]}</text>
             </g>
           );
         })}
+
+        <rect x="16" y="176" width="288" height="42" rx="3" fill="#fff7d6" />
+        <text x="160" y="192" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="8" fill="#4a3c00" fontWeight="600">
+          80+ assignments scoped on one skeleton
+        </text>
+        <text x="160" y="206" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          topic · words · referencing · deadline · deliverable
+        </text>
       </svg>
     );
   }
   if (type === "Process docs") {
     return (
       <svg viewBox="0 0 320 240" className="w-full h-full max-w-xs" fill="none">
-        <rect x="40" y="16" width="240" height="208" rx="4" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
-        <rect x="40" y="16" width="240" height="28" rx="4" fill="#f3f1ea" />
-        <rect x="48" y="24" width="90" height="6" rx="3" fill="#5c594f" />
-        <text x="240" y="35" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">SOP-03 · v2</text>
-        {[0, 1, 2, 3].map((i) => {
-          const y = 62 + i * 38;
+        <rect x="16" y="10" width="288" height="26" rx="3" fill="#f3f1ea" stroke="#d4d0c4" strokeWidth="1" />
+        <circle cx="28" cy="23" r="4" fill="#F4B400" />
+        <text x="40" y="27" fontFamily="Inter, sans-serif" fontSize="9" fill="#5c594f" fontWeight="600">
+          Branch SOP
+        </text>
+        <text x="280" y="27" textAnchor="end" fontFamily="JetBrains Mono, monospace" fontSize="8" fill="#8c8a82">
+          SOP-03 · v2
+        </text>
+
+        <rect x="16" y="44" width="288" height="162" rx="3" fill="#ffffff" stroke="#d4d0c4" strokeWidth="1" />
+        <text x="24" y="60" fontFamily="Inter, sans-serif" fontSize="8" fill="#5c594f" fontWeight="600">
+          Account opening
+        </text>
+        <rect x="270" y="50" width="26" height="13" rx="6.5" fill="#F4B400" />
+        <text x="283" y="59" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="6" fill="#4a3c00" fontWeight="600">
+          LIVE
+        </text>
+        {[
+          ["Collect KYC & ID copy", 0],
+          ["Run eligibility check", 1],
+          ["Open account in FLEXCUBE", 2],
+          ["Issue cheque book & card", 3],
+        ].map((step, i) => {
+          const y = 78 + i * 27;
           return (
-            <g key={i}>
-              <circle cx="58" cy={y + 6} r="7" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
-              <text x="58" y={y + 9} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00" fontWeight="600">{i + 1}</text>
-              <rect x="76" y={y} width="110" height="5" rx="2.5" fill="#d4d0c4" />
-              <rect x="76" y={y + 9} width="84" height="5" rx="2.5" fill="#e8e5dc" />
-              <text x="196" y={y + 9} fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">→ FLEXCUBE</text>
+            <g key={step[1]}>
+              <circle cx="30" cy={y + 6} r="7" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
+              <text x="30" y={y + 9} textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00" fontWeight="600">
+                {i + 1}
+              </text>
+              <rect x="46" y={y} width="150" height="5" rx="2.5" fill="#d4d0c4" />
+              <rect x="46" y={y + 9} width="118" height="5" rx="2.5" fill="#e8e5dc" />
+              <text x="206" y={y + 9} fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+                → FLEXCUBE
+              </text>
             </g>
           );
         })}
-        <polygon points="110,196 120,206 110,216 100,206" fill="#fff7d6" stroke="#F4B400" strokeWidth="1" />
-        <text x="110" y="209" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="6" fill="#4a3c00">ok?</text>
-        <rect x="196" y="184" width="70" height="18" rx="3" fill="#ffffff" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 2" />
-        <text x="231" y="196" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">REVIEWED</text>
+        <text x="24" y="196" fontFamily="Inter, sans-serif" fontSize="7" fill="#8c8a82">
+          written for the reader, not the author
+        </text>
+        <rect x="216" y="178" width="72" height="18" rx="3" fill="#ffffff" stroke="#8c8a82" strokeWidth="1" strokeDasharray="3 2" />
+        <text x="252" y="190" textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontSize="7" fill="#8c8a82">
+          REVIEWED
+        </text>
+
+        <rect x="16" y="212" width="288" height="18" rx="9" fill="#fff7d6" />
+        <text x="160" y="224" textAnchor="middle" fontFamily="Inter, sans-serif" fontSize="7" fill="#4a3c00" fontWeight="600">
+          a newcomer can run the branch from the docs
+        </text>
       </svg>
     );
   }
