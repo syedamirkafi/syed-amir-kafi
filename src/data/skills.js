@@ -3,7 +3,7 @@ export const skillGroups = [
     id: "business",
     label: "Business Analysis",
     icon: "briefcase",
-    description: "Understanding the problem and the people before touching the tool.",
+    description: "Understanding the problem and the people before touching a tool.",
     skills: [
       "Business Analysis",
       "Requirements Gathering",
@@ -19,7 +19,7 @@ export const skillGroups = [
     id: "data",
     label: "Data & Dashboards",
     icon: "grid",
-    description: "Turning operational data into dashboards people actually open.",
+    description: "Taking operational data and turning it into something teams actually look at.",
     skills: [
       "SQL",
       "Power BI",
@@ -35,7 +35,7 @@ export const skillGroups = [
     id: "aiassisted",
     label: "AI-assisted BA",
     icon: "sparkles",
-    description: "Using AI to cut hours off the repetitive parts of analysis.",
+    description: "Cutting hours off the repetitive parts of analysis.",
     skills: [
       "AI-assisted analysis",
       "AI Workflow Design",
@@ -47,7 +47,7 @@ export const skillGroups = [
     id: "tools",
     label: "Tools",
     icon: "grid",
-    description: "The stack BA teams actually run on.",
+    description: "The everyday stack teams like this run on.",
     skills: [
       "Jira",
       "Notion",

@@ -6,13 +6,13 @@ export const portfolio = [
     status: "in-progress",
     cover: "#F4B400",
     problem:
-      "Evaluating job offers is a stakeholder-decision problem disguised as a tracking problem — requirements, criteria, and trade-offs scattered across spreadsheets, calendars, and inboxes.",
+      "Comparing job offers is a decision problem pretending to be a tracking problem. Everything lives in a spreadsheet, a calendar, and half a dozen emails — and the criteria aren't written down anywhere.",
     solution:
-      "A structured decision tool that captures requirements and criteria upfront, then scores, ranks, and tracks each opportunity against them — with supporting documents attached and a clear audit trail.",
+      "I built a tool that forces the criteria out first — what matters, what's non-negotiable. Then every offer gets scored, ranked, and tracked against it, with documents attached and decisions recorded.",
     role: "Business Analyst — requirements & workflow design",
     tech: ["Requirements gathering", "Process mapping", "Decision framework", "Gemini API (for analysis)", "Notion"],
     impact:
-      "One structured workflow replaced four separate tools — every decision now auditable against defined criteria.",
+      "One structured workflow replaced four separate tools, and every decision I made was traceable to the criteria I'd set.",
     lessons:
       "The most valuable work wasn't the tool — it was forcing the stakeholder (me) to define requirements before evaluating options.",
     tags: ["business-analysis", "requirements", "decision-framework", "ai-assisted-analysis"],
@@ -26,13 +26,13 @@ export const portfolio = [
     status: "shipped",
     cover: "#5c594f",
     problem:
-      "UK university clients needed rigorous, structured research and reports on business and IT topics — at scale and on deadline.",
+      "UK university clients needed serious, structured research — across business and IT — done well and done on deadline.",
     solution:
-      "Built analytical frameworks and delivered data-driven research and structured reports for 80+ clients, run remotely from Bangladesh.",
+      "I built the analytical frameworks and delivered the reports myself, remotely from Bangladesh — 80+ clients.",
     role: "Research analyst",
     tech: ["Research methods", "Report writing", "Data analysis", "Frameworks"],
     impact:
-      "80+ clients served with repeatable quality — a business built on reliable delivery.",
+      "80+ clients and repeat business — reliability did the marketing.",
     lessons:
       "Clear frameworks make quality repeatable even when the team and topics change.",
     tags: ["research", "reporting", "analysis"],

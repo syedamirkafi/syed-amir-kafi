@@ -12,8 +12,8 @@ export default function EducationSection() {
       <SectionHeading
         kicker="Education"
         number="05"
-        title="Academic path."
-        description="From business administration to MBA in human resources, then back to information systems — the people and the systems side of business change."
+        title="Where I studied."
+        description="Started in business administration, detoured through an MBA in HR, and landed on information systems — the people side and the systems side of change."
       />
 
       <div className="space-y-5">

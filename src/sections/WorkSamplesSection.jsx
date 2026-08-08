@@ -108,8 +108,8 @@ export default function WorkSamplesSection() {
       <SectionHeading
         kicker="Work samples"
         number="07"
-        title="Concrete artifacts, not just claims."
-        description="Real outputs from the kind of work a BA does — dashboards and process maps, with the decision each one enabled."
+        title="Work samples."
+        description="Real output from the kind of work I do — dashboards and process maps, and the decision each one enabled."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

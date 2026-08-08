@@ -1,30 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { profile } from "../data/profile.js";
-import { wins } from "../data/wins.js";
 import { withBase } from "../lib/base.js";
-import { useCountUp } from "../lib/useCountUp.js";
-
-function Stat({ value, suffix, label }) {
-  const m = value.match(/^([^0-9]*)(\d+)(.*)$/);
-  const prefix = m ? m[1] : "";
-  const num = m ? parseInt(m[2], 10) : 0;
-  const tail = m ? m[3] : value;
-  const [count, ref] = useCountUp(num, { duration: 1500 });
-
-  return (
-    <div ref={ref}>
-      <div className="serif text-3xl sm:text-4xl text-ink tabular-nums leading-none">
-        {prefix}
-        {count}
-        {tail}
-      </div>
-      <div className="label-mono text-muted text-[0.6rem] mt-2 max-w-[12rem]">
-        {label}
-      </div>
-    </div>
-  );
-}
 
 function PortraitFrame() {
   const [failed, setFailed] = useState(false);
@@ -53,7 +30,7 @@ function PortraitFrame() {
 
       <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-accent bg-base/90 backdrop-blur px-3 py-1.5 label-mono text-[0.58rem] text-accent-ink">
         <span className="w-1.5 h-1.5 rounded-full bg-accent kf-pulse" />
-        Open to BA roles
+        Open to BA roles · Germany
       </div>
 
       <div className="absolute -bottom-3 -right-3 rounded-full border border-border-strong bg-base px-3 py-1.5 label-mono text-[0.58rem] text-soft">
@@ -64,8 +41,6 @@ function PortraitFrame() {
 }
 
 export default function HeroSection() {
-  const topWins = wins.slice(0, 4);
-
   useEffect(() => {
     const onHash = () => {
       const id = window.location.hash.replace("#", "");
@@ -80,7 +55,7 @@ export default function HeroSection() {
 
   return (
     <section id="top" className="relative">
-      <div className="max-w-4xl mx-auto px-6 pt-20 lg:pt-32 pb-16">
+      <div className="max-w-5xl mx-auto px-6 pt-20 lg:pt-32 pb-16">
         <div className="lg:grid lg:grid-cols-12 lg:gap-10 items-center">
           {/* Left column — text */}
           <div className="lg:col-span-7">
@@ -126,12 +101,6 @@ export default function HeroSection() {
               >
                 LinkedIn →
               </a>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-border pt-7">
-              {topWins.map((w) => (
-                <Stat key={w.label} value={w.value} label={w.label} />
-              ))}
             </div>
           </div>
 

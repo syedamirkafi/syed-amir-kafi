@@ -18,8 +18,8 @@ export default function ExperienceSection() {
       <SectionHeading
         kicker="Experience"
         number="02"
-        title="Work that built the transferable skills."
-        description="Every role below contributed something a business analysis team needs — data, process discipline, and clear communication. Read in sequence, it traces the path from field operations to requirements."
+        title="Where I've worked."
+        description="Five roles that taught me how operations actually run — from telecom field data in Bangladesh to a warehouse floor in Germany."
       />
 
       <div className="relative">

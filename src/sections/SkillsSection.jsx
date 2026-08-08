@@ -43,8 +43,8 @@ export default function SkillsSection() {
       <SectionHeading
         kicker="Skills"
         number="04"
-        title="Skills grouped by what they do."
-        description="No percentages — just the capabilities, organized by the kind of work each one enables."
+        title="Skills."
+        description="The things I reach for in day-to-day work — no proficiency bars, just what I actually use."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

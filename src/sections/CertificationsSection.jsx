@@ -20,8 +20,8 @@ export default function CertificationsSection() {
       <SectionHeading
         kicker="Certifications"
         number="06"
-        title="A deliberate track toward BA."
-        description="Recognized credentials for business analysis and analytics dashboards — earned, in progress, or planned, in priority order."
+        title="Certifications."
+        description="The credentials backing the day-to-day work — earned, in progress, or planned."
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">

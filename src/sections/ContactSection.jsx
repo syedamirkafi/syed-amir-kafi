@@ -39,7 +39,7 @@ export default function ContactSection() {
         kicker="Contact"
         number="08"
         title="Get in touch."
-        description="Looking for a Working Student or intern role in Germany in business analysis, digital transformation, or information systems. Open to quick calls — happy to find a 30-min slot."
+        description="Hunting a working-student or intern role in Germany — business analysis, digital transformation, or anywhere my data and process skills fit. Open to a quick call; happy to grab 30 minutes."
       />
 
       <Reveal>

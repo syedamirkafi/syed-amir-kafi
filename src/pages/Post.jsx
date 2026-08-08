@@ -190,9 +190,9 @@ export default function Post() {
               Working on something similar?
             </h2>
             <p className="text-soft text-sm leading-relaxed mb-4">
-              I'm looking for Working Student or intern roles in business analysis,
-              digital transformation, and information systems in Germany — happy to
-              talk about this work or yours.
+              I'm looking for working-student and intern roles in business
+              analysis, digital transformation, and information systems in
+              Germany. Happy to talk about this work or yours.
             </p>
             <a
               href={`mailto:${profile.email}`}

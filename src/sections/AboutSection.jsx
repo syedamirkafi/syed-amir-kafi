@@ -16,8 +16,8 @@ export default function AboutSection() {
       <SectionHeading
         kicker="About"
         number="01"
-        title="Business analyst-in-training."
-        description="A Working Student in Germany who's spent the last few years in the field — and is now working where business problems meet process and data."
+        title="Hi, I'm Amir."
+        description="Master's student in Hamm, Germany — hunting a working-student role in business analysis and digital transformation, with real field experience behind me."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

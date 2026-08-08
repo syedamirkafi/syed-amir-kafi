@@ -6,12 +6,12 @@ export const timeline = [
     period: "Oct 2024 — Present",
     location: "Hamm, Germany",
     points: [
-      "Analyzed order fulfillment data with the warehouse management system to drive daily processing efficiency within the team.",
-      "Coordinated cross-functional workflows across warehouse, logistics, and customer service via Slack — keeping real-time visibility on operational issues.",
-      "Documented process gaps and proposed workflow improvements, removing two steps from the order-picking process.",
+      "Analyzed order-fulfillment data in the warehouse system to keep our daily processing on track.",
+      "Coordinated across warehouse, logistics, and customer service on Slack — the early-warning system for operational issues.",
+      "Mapped order picking end to end and found two steps nobody needed. Removed them.",
     ],
     impact:
-      "Order picking now takes two fewer steps per order — a process change that scaled across every shift.",
+      "Every shift now picks orders in two fewer steps — a change that scaled across the whole warehouse.",
     transferableSkills: [
       "Stakeholder communication",
       "Process mapping",
@@ -26,13 +26,12 @@ export const timeline = [
     period: "Jan 2024 — Sep 2024",
     location: "Bangladesh",
     points: [
-      "Grew territory sales 18% through data-driven analysis of sales patterns, identifying high-potential routes and optimizing distribution coverage.",
-      "Built and maintained Tableau dashboards tracking daily, weekly, and monthly performance across a 17-person field team.",
-      "Ranked 13th nationwide out of 200+ Territory Officers.",
-      "Managed the sales pipeline and customer engagement using Salesforce and ERP systems, improving data accuracy and conversion.",
+      "Grew my territory 18% by reading route-level data until it told me which corridors deserved more attention — then moved coverage there.",
+      "Built the Tableau dashboards my 17-person field team opened every morning to see where they stood.",
+      "Ranked 13th of 200+ territory officers nationwide.",
+      "Ran the sales pipeline in Salesforce and ERP, keeping the data accurate and the conversions honest.",
     ],
-    impact:
-      "18% territory sales growth in a season — the second-best officer ranking in the country's top percentile.",
+    impact: "18% growth in a season, and a top-percentile national ranking.",
     transferableSkills: [
       "Dashboard design",
       "Sales analytics",
@@ -47,11 +46,10 @@ export const timeline = [
     period: "Nov 2022 — Jun 2023",
     location: "Remote, Bangladesh",
     points: [
-      "Delivered research analysis and data-driven insights for 80+ UK university clients across business and IT domains.",
-      "Developed analytical frameworks and structured reports that turned complex research into actionable recommendations.",
+      "Delivered structured, referenced research for 80+ UK university clients across business and IT topics.",
+      "Built the frameworks that made the analysis repeatable — same quality, different topic, every time.",
     ],
-    impact:
-      "80+ clients served with structured, referenced analysis — a repeat-business model built on reliability.",
+    impact: "80+ clients, repeat business built on reliability.",
     transferableSkills: [
       "Structured communication",
       "Requirements framing",
@@ -66,11 +64,11 @@ export const timeline = [
     period: "Jun 2022 — Oct 2022",
     location: "Dhaka, Bangladesh (Hybrid)",
     points: [
-      "Managed end-to-end operations for a gaming peripherals startup — order processing, inventory, and fulfillment across channels.",
-      "Mapped order-to-delivery workflows and removed bottlenecks, reducing average turnaround time.",
+      "Ran end-to-end operations for a gaming-peripherals startup — orders, inventory, fulfillment across every channel.",
+      "Mapped the order-to-delivery flow, cut the bottlenecks, and tightened turnaround.",
     ],
     impact:
-      "Faster order-to-delivery on every channel, with a documented workflow the team could run without supervision.",
+      "Faster delivery on every channel — with a workflow the team could run without me.",
     transferableSkills: [
       "Workflow design",
       "Operations management",
@@ -85,11 +83,11 @@ export const timeline = [
     period: "Mar 2022 — May 2022",
     location: "Bangladesh",
     points: [
-      "Streamlined operational processes through documentation and workflow improvements using the Flexcube core banking system.",
-      "Supported financial data analysis and reporting with Excel for branch operations.",
+      "Documented branch operations on the Flexcube core-banking system and cleaned up the workflows.",
+      "Supported monthly financial reporting in Excel.",
     ],
     impact:
-      "Cleaner, documented processes for branch operations and financial reporting that anyone could follow.",
+      "Cleaner, documented processes anyone on the branch team could follow.",
     transferableSkills: [
       "Process documentation",
       "Requirements gathering",

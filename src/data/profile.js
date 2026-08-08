@@ -1,11 +1,12 @@
 export const profile = {
   name: "Syed Amir Kafi",
   nameShort: "Amir·Kafi",
-  headline: "Business analyst.",
-  subheadline: "Requirements, dashboards, and process work for digital transformation.",
+  headline: "I ask how things actually work — then make them work better.",
+  subheadline:
+    "Dashboards, process maps, and the questions that find what's actually wrong.",
   positioning:
-    "I sit between the team that runs the operation and the team that runs the system. I gather and structure requirements, map processes in BPMN, and turn messy operational data into dashboards and decisions people actually act on.",
-  eyebrow: "Business Analyst — Requirements · Dashboards · Process",
+    "I sit between the people who run the operation and the people who build the system. I ask a lot of questions, map how work actually happens, and turn the mess into something clear — a dashboard, a process map, requirements the whole team can agree on. Honestly, the part I enjoy most is untangling a messy process and understanding the people caught up in it.",
+  eyebrow: "Business analysis · Digital transformation · Germany",
   availability: "Open to Working Student / BA roles in Germany",
   tagline:
     "Master's student in International Management & Information Systems, Germany — I work where business problems meet process and data.",
@@ -34,8 +35,8 @@ export const profile = {
     "AI-assisted analysis",
   ],
   bio: [
-    "I've spent the last few years in the field: reading route-level sales data until it became an 18% growth story, serving 80+ research clients with structured analysis, and cutting two steps out of the order-picking workflow as a Working Student at Picnic.",
-    "I work where business problems meet process and data — gathering requirements, mapping workflows in BPMN, and designing dashboards in Tableau, Power BI, and Excel that people actually open. I document processes until they make sense, and turn messy situations into something clear, measured, and moving.",
+    "I started four years ago reading route-level sales data at Robi until it explained why some corridors grew and others didn't — the territory grew 18%. At Picnic I walked the warehouse floor, watched how orders actually moved, and found two steps nobody needed. Between those, I delivered structured research to 80+ clients.",
+    "What I genuinely enjoy is the untangling: watching how people work, asking why a step exists, then turning the mess into something a team can actually read — a BPMN map, a dashboard, a requirement everyone agrees on.",
   ],
 };
 
@@ -89,11 +90,11 @@ export const lifeTimeline = [
 ];
 
 export const currentFocus = [
-  "Business analysis and requirements engineering",
-  "Stakeholder interviews and requirements traceability",
-  "Process mapping with BPMN",
-  "Dashboard design in Power BI / Tableau",
-  "German language (targeting B1)",
+  "Requirements gathering and business analysis",
+  "Interviewing stakeholders and tracing requirements",
+  "Mapping processes in BPMN",
+  "Designing dashboards in Power BI / Tableau",
+  "German — working toward B1",
 ];
 
 export const learningNow = [

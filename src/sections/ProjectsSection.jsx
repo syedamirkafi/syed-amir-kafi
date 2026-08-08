@@ -101,8 +101,8 @@ export default function ProjectsSection() {
       <SectionHeading
         kicker="Projects"
         number="03"
-        title="Two case studies, end to end."
-        description="Presented the way they actually happened: the business problem first, then the role, the methods, and what changed."
+        title="Projects."
+        description="Two pieces of work I can walk through in real detail — the problem, my role, and what changed."
       />
 
       <div className="space-y-10">
