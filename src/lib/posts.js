@@ -12,7 +12,7 @@ function slugFromPath(path) {
   return file;
 }
 
-export function getAllPosts() {
+export function getAllPosts({ includeDrafts = false } = {}) {
   const posts = Object.entries(modules).map(([path, raw]) => {
     const { data, content } = matter(raw);
     return {
@@ -26,22 +26,28 @@ export function getAllPosts() {
       stats: Array.isArray(data.stats) ? data.stats : [],
       tags: data.tags || [],
       excerpt: data.excerpt || "",
-      cover: data.cover || "#121212",
+      cover: data.cover || "#161513",
       coverImage: data.coverImage ? withBase(data.coverImage) : null,
       featured: Boolean(data.featured),
       order: data.order || 99,
+      draft: Boolean(data.draft),
       content,
     };
   });
 
-  return posts.sort((a, b) => {
+  const filtered = includeDrafts
+    ? posts
+    : posts.filter((p) => !p.draft);
+
+  return filtered.sort((a, b) => {
     if (a.order !== b.order) return a.order - b.order;
     return new Date(b.date) - new Date(a.date);
   });
 }
 
 export function getPostBySlug(slug) {
-  return getAllPosts().find((p) => p.slug === slug) || null;
+  return getAllPosts({ includeDrafts: true }).find(
+    (p) => p.slug === slug) || null;
 }
 
 export function getCategories() {

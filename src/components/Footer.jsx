@@ -1,34 +1,23 @@
-import { Link } from "react-router";
 import { profile } from "../data/profile.js";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t border-ink/5 pb-6">
-      <div className="px-4 sm:px-6 max-w-[1600px] mx-auto">
-        <div className="label-mono text-ink/40 text-xs mb-3">
-          SYED AMIR KAFI — DATA ANALYTICS · BUSINESS ANALYSIS · OPERATIONS · DESIGN
-        </div>
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <span className="label-mono text-ink/30 text-xs">
-            © {new Date().getFullYear()} SYED AMIR KAFI
-          </span>
-          <div className="label-mono text-ink/30 text-xs">
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-ink transition-colors"
-            >
-              LINKEDIN
-            </a>
-            {" · "}
-            <a
-              href={`mailto:${profile.email}`}
-              className="hover:text-ink transition-colors"
-            >
-              EMAIL
-            </a>
+    <footer className="mt-32">
+      <div className="px-6 max-w-4xl mx-auto py-10 border-t border-border">
+        <div className="flex flex-col sm:flex-row items-baseline justify-between gap-3 text-sm text-soft">
+          <div className="flex items-baseline gap-2">
+            <span className="serif text-base text-ink">Syed Amir Kafi</span>
+            <span className="text-muted text-xs">· Business Analyst</span>
           </div>
+          <a
+            href={`mailto:${profile.email}`}
+            className="hover:text-ink transition-colors"
+          >
+            {profile.email}
+          </a>
+          <span className="label-mono text-muted text-[0.6rem]">
+            Last updated {new Date().toLocaleDateString("en-US", { month: "short", year: "numeric" })}
+          </span>
         </div>
       </div>
     </footer>

@@ -56,7 +56,7 @@ export const wins = [
     pastel: "pastel-peach",
     accent: "#F4B400",
     story:
-      "Ran my own German job search through an AI evaluation pipeline — every offer scored, ranked, and tracked, never by email-anxiety.",
+      "Built an analytical decision-framework to evaluate 700+ job offers — every opportunity scored, ranked, and tracked against explicit criteria, so the decision was evidence-based instead of email-anxiety.",
     source: "/blog/career-ops-ai-job-search",
   },
 ];

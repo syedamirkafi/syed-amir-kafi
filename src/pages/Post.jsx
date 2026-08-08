@@ -9,7 +9,7 @@ import {
   readingTime,
 } from "../lib/posts.js";
 import { useDocumentTitle } from "../lib/useDocumentTitle.js";
-import ContactCTA from "../components/ContactCTA.jsx";
+import { profile } from "../data/profile.js";
 
 export default function Post() {
   const { slug } = useParams();
@@ -21,7 +21,7 @@ export default function Post() {
 
   useEffect(() => {
     if (!post) {
-      navigate("/projects", { replace: true });
+      navigate("/", { replace: true });
       return;
     }
     window.scrollTo(0, 0);
@@ -45,64 +45,64 @@ export default function Post() {
     .filter((p) => p.slug !== slug && p.tags.some((t) => post.tags.includes(t)))
     .slice(0, 2);
   const mins = readingTime(post);
-  const encoded = encodeURIComponent(post.title);
   const shareUrl = `${window.location.origin}${import.meta.env.BASE_URL}blog/${slug}`;
   const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
-  const shareX = `https://twitter.com/intent/tweet?text=${encoded}&url=${encodeURIComponent(shareUrl)}`;
+  const shareX = `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`;
 
   return (
-    <main className="flex-1 pt-12 pb-20">
+    <main className="flex-1 pt-16 lg:pt-24 pb-20 lg:pl-56">
       <div
         className="reading-bar"
         style={{ width: `${progress}%` }}
       />
       <article className="relative">
-        <div className="px-4 sm:px-6 max-w-3xl mx-auto pt-10">
+        <div className="px-6 max-w-3xl mx-auto pt-8">
           <Link
-            to="/projects"
-            className="label-mono text-ink/50 hover:text-vital transition-colors"
+            to="/"
+            className="label-mono text-muted hover:text-ink transition-colors text-[0.7rem]"
           >
-            ← ALL PROJECTS
+            ← Back to home
           </Link>
 
-          <header className="mt-6 mb-10 pb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="px-2 py-1 label-mono text-base bg-ink">
+          <header className="mt-8 mb-12">
+            <div className="flex flex-wrap items-center gap-3 mb-5">
+              <span className="px-2.5 py-1 rounded-full bg-accent/15 text-accent-ink label-mono text-[0.6rem]">
                 {post.category}
               </span>
-              <span className="label-mono text-ink/50">
+              <span className="mono text-muted text-[0.65rem]">
                 {formatDateLong(post.date)}
               </span>
-              <span className="label-mono text-ink/50">·</span>
-              <span className="label-mono text-ink/50">{mins} MIN READ</span>
+              <span className="mono text-muted text-[0.65rem]">
+                · {mins} MIN READ
+              </span>
             </div>
-            <h1 className="head-display text-4xl sm:text-6xl">
+            <h1 className="head-display text-3xl sm:text-5xl text-ink">
               {post.title}
             </h1>
             {post.coverImage && (
               <img
                 src={post.coverImage}
                 alt=""
-                className="mt-8 w-full"
+                className="mt-8 w-full rounded-2xl border border-border"
               />
             )}
-            <p className="mt-5 text-lg text-ink/70 leading-relaxed">
+            <p className="serif mt-6 text-lg sm:text-xl text-ink/80 leading-snug">
               {post.excerpt}
             </p>
           </header>
 
-          <div className="prose-content max-w-none space-y-5">
+          <div className="prose-content">
             <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
               {post.content}
             </ReactMarkdown>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-3 mt-10 pt-6 border-t border-ink/10">
+          <div className="flex flex-wrap items-center justify-between gap-3 mt-10 pt-6 border-t border-border">
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="label-mono text-[0.65rem] px-2 py-1 border border-ink/20 text-ink/50"
+                  className="mono text-[0.6rem] px-2.5 py-1 rounded-full border border-border text-soft"
                 >
                   #{tag}
                 </span>
@@ -113,35 +113,37 @@ export default function Post() {
                 href={shareLinkedIn}
                 target="_blank"
                 rel="noreferrer"
-                className="label-mono text-[0.65rem] px-3 py-1.5 border border-ink hover:bg-ink/5 transition-all duration-300"
+                className="label-mono text-[0.65rem] px-3.5 py-1.5 rounded-full border border-border-strong text-soft hover:border-ink hover:text-ink transition-all"
               >
-                SHARE · IN
+                Share · IN
               </a>
               <a
                 href={shareX}
                 target="_blank"
                 rel="noreferrer"
-                className="label-mono text-[0.65rem] px-3 py-1.5 border border-ink hover:bg-ink/5 transition-all duration-300"
+                className="label-mono text-[0.65rem] px-3.5 py-1.5 rounded-full border border-border-strong text-soft hover:border-ink hover:text-ink transition-all"
               >
-                POST · X
+                Post · X
               </a>
             </div>
           </div>
 
           {related.length > 0 && (
             <section className="mt-12">
-              <h2 className="head-display section-title text-2xl mb-6">Related Reads</h2>
+              <h2 className="head-display text-2xl text-ink mb-6">
+                Related case studies
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {related.map((r) => (
                   <Link
                     key={r.slug}
                     to={`/blog/${r.slug}`}
-                    className="module-shift border border-ink/20 p-5 block transition-all duration-300"
+                    className="rounded-2xl border border-border bg-card p-5 block module-shift"
                   >
-                    <span className="label-mono text-ink/40 text-xs">
+                    <span className="label-mono text-muted text-[0.6rem]">
                       SHARED TAGS · {r.category}
                     </span>
-                    <span className="head-display text-lg block mt-2">
+                    <span className="serif text-ink font-medium text-base block mt-2">
                       {r.title}
                     </span>
                   </Link>
@@ -154,12 +156,12 @@ export default function Post() {
             {prev ? (
               <Link
                 to={`/blog/${prev.slug}`}
-                className="module-shift border border-ink/20 p-5 block transition-all duration-300"
+                className="rounded-2xl border border-border bg-card p-5 block module-shift"
               >
-                <span className="label-mono text-ink/40 text-xs">
+                <span className="label-mono text-muted text-[0.6rem]">
                   ← PREVIOUS
                 </span>
-                <span className="head-display text-xl block mt-2">
+                <span className="serif text-ink font-medium text-lg block mt-2">
                   {prev.title}
                 </span>
               </Link>
@@ -169,12 +171,12 @@ export default function Post() {
             {next ? (
               <Link
                 to={`/blog/${next.slug}`}
-                className="module-shift border border-ink/20 p-5 block text-right transition-all duration-300"
+                className="rounded-2xl border border-border bg-card p-5 block text-right module-shift"
               >
-                <span className="label-mono text-ink/40 text-xs">
+                <span className="label-mono text-muted text-[0.6rem]">
                   NEXT →
                 </span>
-                <span className="head-display text-xl block mt-2">
+                <span className="serif text-ink font-medium text-lg block mt-2">
                   {next.title}
                 </span>
               </Link>
@@ -183,9 +185,22 @@ export default function Post() {
             )}
           </nav>
 
-          <section className="mt-16 mb-4">
-            <ContactCTA compact />
-          </section>
+          <div className="mt-16 rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <h2 className="serif text-ink font-medium text-lg mb-2">
+              Working on something similar?
+            </h2>
+            <p className="text-soft text-sm leading-relaxed mb-4">
+              I'm looking for Working Student or intern roles in business analysis,
+              digital transformation, and information systems in Germany — happy to
+              talk about this work or yours.
+            </p>
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center gap-2 rounded-full bg-ink hover:bg-ink/85 text-base text-sm font-medium px-5 py-2.5 transition-colors"
+            >
+              Get in touch →
+            </a>
+          </div>
         </div>
       </article>
     </main>

@@ -1,14 +1,11 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router";
-import Header from "./components/Header.jsx";
+import Rail from "./components/Rail.jsx";
+import RailMobile from "./components/RailMobile.jsx";
 import Footer from "./components/Footer.jsx";
-import BottomNav from "./components/BottomNav.jsx";
 import BackToTop from "./components/BackToTop.jsx";
 import Home from "./pages/Home.jsx";
-import Projects from "./pages/Projects.jsx";
 import Post from "./pages/Post.jsx";
-import Wins from "./pages/Wins.jsx";
-import About from "./pages/About.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 function ScrollToTop() {
@@ -21,19 +18,18 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-base text-ink flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/blog/:slug" element={<Post />} />
-        <Route path="/wins" element={<Wins />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-      <BottomNav />
+      <Rail />
+      <RailMobile />
+      <div className="flex-1 lg:pl-56 pt-16 lg:pt-0">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog/:slug" element={<Post />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </div>
       <BackToTop />
     </div>
   );

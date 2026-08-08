@@ -9,6 +9,7 @@ excerpt: "Mein Plan, bis Ende 2026 das Niveau B1 zu erreichen — und warum Spra
 cover: "#D90429"
 featured: false
 order: 8
+draft: true
 ---
 
 Deutsch ist für meinen beruflichen Weg in Deutschland genauso wichtig wie SQL. Aktuell spreche ich Deutsch auf dem Niveau **A2**. Bis Ende 2026 ist mein Ziel: **B1**.

@@ -1,409 +1,176 @@
-import { useEffect, useState } from "react";
-import { withBase } from "../lib/base.js";
-import { usePrefersReducedMotion } from "../lib/usePrefersReducedMotion.js";
 import { useCountUp } from "../lib/useCountUp.js";
+import { withBase } from "../lib/base.js";
 
 function StatusBadge({ status }) {
   const inProgress = status === "in-progress";
   return (
     <span
-      className={`label-mono text-[0.6rem] px-2 py-1 border ${
+      className={`label-mono text-[0.6rem] px-2.5 py-1 rounded-full border ${
         inProgress
-          ? "border-vital text-ink bg-vital/20"
-          : "border-ink/40 text-ink/60"
+          ? "border-accent bg-accent/10 text-accent-ink"
+          : "border-emerald-700/40 bg-emerald-700/10 text-emerald-800"
       }`}
     >
-      {inProgress ? "● IN PROGRESS" : "✓ SHIPPED"}
+      {inProgress ? "● In progress" : "✓ Shipped"}
     </span>
   );
 }
 
 function ProjectLink({ item }) {
-  const external = /^https?:\/\//.test(item.href);
-  const label = external
-    ? item.id === "pivot"
-      ? "VIEW ON GITHUB ↗"
-      : "VISIT PLATFORM ↗"
-    : item.href === "/"
-      ? "EXPLORE THIS SITE →"
-      : "READ CASE STUDY →";
-  return (
-    <a
-      href={external ? item.href : withBase(item.href)}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noreferrer" : undefined}
-      className="mt-6 inline-block label-mono text-sm font-semibold text-vital hover:text-ink transition-colors"
-    >
-      {label}
-    </a>
-  );
+  if (item.github) {
+    return (
+      <a
+        href={item.github}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-accent-ink transition-colors"
+      >
+        View on GitHub ↗
+      </a>
+    );
+  }
+  if (item.caseStudy) {
+    return (
+      <a
+        href={withBase(item.caseStudy)}
+        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-accent-ink transition-colors"
+      >
+        Read case study →
+      </a>
+    );
+  }
+  return null;
 }
 
-function useTyping(totalChars, { charDelay = 26, startDelay = 400 } = {}) {
-  const reduced = usePrefersReducedMotion();
-  const [count, setCount] = useState(reduced ? totalChars : 0);
-
-  useEffect(() => {
-    if (reduced) return;
-    let interval = 0;
-    const timer = window.setTimeout(() => {
-      let c = 0;
-      interval = window.setInterval(() => {
-        c += 1;
-        setCount(c);
-        if (c >= totalChars) window.clearInterval(interval);
-      }, charDelay);
-    }, startDelay);
-    return () => {
-      window.clearTimeout(timer);
-      window.clearInterval(interval);
-    };
-  }, [totalChars, charDelay, startDelay, reduced]);
-
-  return count;
+function InfoPanel({ item, summary }) {
+  return (
+    <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+      <div className="flex items-center gap-3 mb-4">
+        <StatusBadge status={item.status} />
+        <span
+          className="label-mono text-[0.6rem] px-2 py-1 text-base rounded-full border border-border-strong"
+        >
+          {item.tag}
+        </span>
+      </div>
+      <h2 className="head-display text-2xl sm:text-3xl text-ink mb-3">
+        {item.title}
+      </h2>
+      <p className="text-sm text-soft leading-relaxed mb-5">{summary}</p>
+      <div className="label-mono text-muted text-[0.65rem]">
+        {item.tags.join(" · ")}
+      </div>
+      <ProjectLink item={item} />
+    </div>
+  );
 }
 
 export function KanbanShowcase({ item }) {
-  const lanes = ["APPLIED", "INTERVIEWING", "OFFER"];
-  const laneCards = [
-    ["Data Analyst @ FinCo", "Ops @ StartupX"],
-    ["BI Analyst @ Retail", "Process Eng @ Logi"],
-    ["Offer — Data Ops"],
+  const nav = [
+    { k: "DB", label: "Dashboard" },
+    { k: "BR", label: "Browser" },
+    { k: "JA", label: "Job Analyzer" },
+    { k: "SJ", label: "Saved Jobs", active: true },
+    { k: "AB", label: "Ask Bro" },
+    { k: "DC", label: "Documents" },
+    { k: "CA", label: "Calendar" },
+  ];
+  const lanes = [
+    { name: "DRAFT", count: 2 },
+    { name: "APPLIED", count: 3 },
+    { name: "INTERVIEW", count: 2 },
+    { name: "OFFER", count: 1 },
   ];
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-ink/20 module-shift bg-base">
-      <div className="lg:col-span-7 p-6 sm:p-10 bg-ink text-base flex items-center overflow-hidden">
-        <div className="w-full">
-          <div className="flex items-center gap-1.5 mb-6">
-            <span className="w-2.5 h-2.5 rounded-full bg-destructive" />
-            <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-            <span className="label-mono text-base/50 text-[0.6rem] ml-3">
-              PIVOT / JOB PIPELINE
+    <div className="grid grid-cols-1 lg:grid-cols-12 module-shift overflow-hidden rounded-2xl border border-border bg-card">
+      <div className="lg:col-span-7 p-5 sm:p-8 lg:p-10 relative flex items-center justify-center min-h-[320px] border-b lg:border-b-0 lg:border-r border-border">
+        <div className="relative w-full max-w-[560px] rounded-xl overflow-hidden border border-border bg-base">
+          <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-card">
+            <span className="w-2 h-2 rounded-full bg-border-strong" />
+            <span className="w-2 h-2 rounded-full bg-border-strong" />
+            <span className="w-2 h-2 rounded-full bg-border-strong" />
+            <span className="ml-2 label-mono text-muted text-[0.55rem] tracking-[0.18em]">
+              Pivot — Saved Jobs
             </span>
           </div>
-          <div className="grid grid-cols-3 gap-3 relative overflow-hidden">
-            {lanes.map((lane, li) => (
-              <div
-                key={lane}
-                className="border border-base/15 p-3 min-h-[170px]"
-              >
-                <span className="label-mono text-base/50 text-[0.6rem]">
-                  {lane}
+          <div className="flex">
+            <nav className="w-32 shrink-0 border-r border-border p-2 hidden sm:block">
+              <div className="px-1 py-2 flex items-center gap-1.5 border-b border-border mb-2">
+                <span className="mono text-accent-ink text-[0.6rem] font-bold tracking-tight">
+                  PIVOT
                 </span>
-                <div className="mt-3 space-y-2">
-                  {laneCards[li]?.map((card) => (
-                    <div
-                      key={card}
-                      className="border border-base/25 bg-base/5 p-2 label-mono text-[0.6rem] leading-snug"
+                <span className="label-mono text-muted text-[0.45rem]">v1</span>
+              </div>
+              <div className="space-y-1">
+                {nav.map((n) => (
+                  <div
+                    key={n.label}
+                    className={`flex items-center gap-2 rounded-md px-1.5 py-1 ${
+                      n.active ? "bg-accent/15" : ""
+                    }`}
+                  >
+                    <span
+                      className={`w-5 h-5 rounded-[5px] flex items-center justify-center text-[0.5rem] font-bold ${
+                        n.active
+                          ? "bg-accent text-accent-ink"
+                          : "bg-card border border-border text-muted"
+                      }`}
                     >
-                      {card}
+                      {n.k}
+                    </span>
+                    <span className="text-[0.55rem] tracking-wider uppercase text-soft">
+                      {n.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </nav>
+            <div className="flex-1 min-w-0 bg-card">
+              <div className="px-3 py-2.5 border-b border-border flex items-center justify-between">
+                <span className="label-mono text-ink/80 text-[0.6rem]">
+                  Saved Jobs
+                </span>
+                <span className="text-[0.5rem] px-1.5 py-0.5 rounded-full bg-base border border-border text-muted">
+                  7 apps
+                </span>
+              </div>
+              <div className="grid grid-cols-4 gap-1.5 p-2">
+                {lanes.map((lane) => (
+                  <div key={lane.name} className="rounded-md border border-border bg-base p-1.5">
+                    <div className="flex items-center gap-1 mb-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                      <span className="text-[0.5rem] font-semibold tracking-wider text-soft">
+                        {lane.name}
+                      </span>
                     </div>
-                  ))}
-                </div>
+                    <div className="space-y-1.5">
+                      {Array.from({ length: lane.count }).map((_, idx) => (
+                        <div
+                          key={idx}
+                          className="rounded-md border border-border bg-card p-1.5"
+                        >
+                          <div className="h-1.5 w-full bg-border-strong rounded-sm" />
+                          <div className="h-1 w-2/3 bg-border rounded-sm mt-1" />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-            <div className="absolute left-0 top-9 w-[30%] kcard pointer-events-none">
-              <div className="bg-vital text-base p-2 label-mono text-[0.6rem] shadow-lg">
-                ⚡ AI TAG + EXTRACT
-              </div>
-            </div>
-          </div>
-          <div className="label-mono text-base/50 text-[0.6rem] mt-6 kf-pulse">
-            DOC GENERATION · DATA EXTRACTION · KANBAN · CALENDAR · ANALYTICS
-          </div>
-        </div>
-      </div>
-      <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center">
-        <div className="flex items-center gap-3 mb-4">
-          <StatusBadge status={item.status} />
-          <span
-            className="label-mono text-[0.6rem] px-2 py-1 text-base"
-            style={{ backgroundColor: item.color }}
-          >
-            {item.tag}
-          </span>
-        </div>
-        <h2 className="head-display text-3xl sm:text-4xl mb-4">{item.title}</h2>
-        <p className="text-sm text-ink/70 leading-relaxed mb-5">
-          {item.description}
-        </p>
-        <div className="label-mono text-ink/40 text-xs">
-          {item.tags.join(" · ")}
-        </div>
-        <ProjectLink item={item} />
-      </div>
-    </div>
-  );
-}
-
-export function PipelineShowcase({ item }) {
-  const [offers, offersRef] = useCountUp(700, { duration: 1600 });
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-ink/20 module-shift bg-base">
-      <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center order-2 lg:order-1">
-        <div className="flex items-center gap-3 mb-4">
-          <StatusBadge status={item.status} />
-          <span
-            className="label-mono text-[0.6rem] px-2 py-1 text-base"
-            style={{ backgroundColor: item.color }}
-          >
-            {item.tag}
-          </span>
-        </div>
-        <h2 className="head-display text-3xl sm:text-4xl mb-4">{item.title}</h2>
-        <p className="text-sm text-ink/70 leading-relaxed mb-5">
-          {item.description}
-        </p>
-        <div className="label-mono text-ink/40 text-xs">
-          {item.tags.join(" · ")}
-        </div>
-        <ProjectLink item={item} />
-      </div>
-      <div className="lg:col-span-7 p-6 sm:p-10 bg-ink text-base flex items-center order-1 lg:order-2">
-        <div className="w-full">
-          <span className="label-mono text-base/50 text-[0.6rem]">
-            CAREER-OPS / AI EVALUATION PIPELINE
-          </span>
-          <div className="flex items-center gap-2 sm:gap-3 mt-8 flex-wrap">
-            <div className="border border-base/30 px-4 py-3 text-center">
-              <div className="head-display text-3xl" ref={offersRef}>
-                {offers}+
-              </div>
-              <div className="label-mono text-base/50 text-[0.55rem] mt-1">
-                OFFERS
-              </div>
-            </div>
-            <svg
-              className="w-8 sm:w-12 shrink-0"
-              height="8"
-              viewBox="0 0 60 8"
-              preserveAspectRatio="none"
-            >
-              <line
-                x1="0"
-                y1="4"
-                x2="60"
-                y2="4"
-                stroke="var(--color-base)"
-                strokeOpacity="0.4"
-                strokeWidth="2"
-                className="pipeline-dash"
-              />
-            </svg>
-            <div className="border border-base/30 px-4 py-3 text-center kf-pulse">
-              <div className="head-display text-3xl">AI</div>
-              <div className="label-mono text-base/50 text-[0.55rem] mt-1">
-                SCORE
-              </div>
-            </div>
-            <svg
-              className="w-8 sm:w-12 shrink-0"
-              height="8"
-              viewBox="0 0 60 8"
-              preserveAspectRatio="none"
-            >
-              <line
-                x1="0"
-                y1="4"
-                x2="60"
-                y2="4"
-                stroke="var(--color-base)"
-                strokeOpacity="0.4"
-                strokeWidth="2"
-                className="pipeline-dash"
-              />
-            </svg>
-            <div className="border border-base/30 px-4 py-3 text-center">
-              <div className="head-display text-3xl">#</div>
-              <div className="label-mono text-base/50 text-[0.55rem] mt-1">
-                RANK
-              </div>
-            </div>
-            <svg
-              className="w-8 sm:w-12 shrink-0"
-              height="8"
-              viewBox="0 0 60 8"
-              preserveAspectRatio="none"
-            >
-              <line
-                x1="0"
-                y1="4"
-                x2="60"
-                y2="4"
-                stroke="var(--color-base)"
-                strokeOpacity="0.4"
-                strokeWidth="2"
-                className="pipeline-dash"
-              />
-            </svg>
-            <div className="border border-base/30 px-4 py-3 text-center kf-pulse">
-              <div className="head-display text-3xl">CV</div>
-              <div className="label-mono text-base/50 text-[0.55rem] mt-1">
-                GENERATED
-              </div>
-            </div>
-          </div>
-          <div className="label-mono text-base/50 text-[0.6rem] mt-8">
-            ATS-OPTIMIZED · SCORED & RANKED · TRACKED END-TO-END
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function ChartShowcase({ item }) {
-  const bars = [38, 62, 45, 74, 58, 92, 66, 81, 54, 96, 70, 88];
-  const [growth, growthRef] = useCountUp(18);
-  return (
-    <div className="border border-ink/20 module-shift bg-base p-6 sm:p-10">
-      <div className="lg:grid lg:grid-cols-12 gap-10 items-center">
-        <div className="lg:col-span-7">
-          <div className="flex items-center justify-between mb-6">
-            <span className="label-mono text-ink/40 text-[0.6rem]">
-              TABLEAU / SALES PERFORMANCE
-            </span>
-            <span className="label-mono text-[0.6rem] border border-ink px-2 py-1 kf-pulse">
-              LIVE
-            </span>
-          </div>
-          <div className="flex items-end gap-1.5 sm:gap-2 h-40 sm:h-52 border-b border-ink/15">
-            {bars.map((h, i) => (
-              <div
-                key={i}
-                className="kbar flex-1"
-                style={{
-                  height: `${h}%`,
-                  backgroundColor: i % 4 === 3 ? "#D90429" : "#2563EB",
-                  opacity: i % 4 === 3 ? 1 : 0.35,
-                  animationDelay: `${i * 0.18}s`,
-                }}
-              />
-            ))}
-          </div>
-          <div className="flex justify-between label-mono text-ink/40 text-[0.55rem] mt-2">
-            {Array.from({ length: 12 }, (_, i) => (
-              <span key={i}>{String(i + 1).padStart(2, "0")}</span>
-            ))}
-          </div>
-        </div>
-        <div className="lg:col-span-5 mt-8 lg:mt-0">
-          <div className="flex items-center gap-3 mb-4">
-            <StatusBadge status={item.status} />
-            <span
-              className="label-mono text-[0.6rem] px-2 py-1 text-base"
-              style={{ backgroundColor: item.color }}
-            >
-              {item.tag}
-            </span>
-          </div>
-          <h2 className="head-display text-3xl sm:text-4xl mb-4">
-            {item.title}
-          </h2>
-          <p className="text-sm text-ink/70 leading-relaxed mb-6">
-            {item.description}
-          </p>
-          <div className="grid grid-cols-3 gap-2 mb-6">
-            {[
-              { v: `${growth}%`, l: "TERRITORY GROWTH" },
-              { v: "17", l: "PERSON TEAM" },
-              { v: "3×", l: "DAILY/WEEKLY/MONTHLY" },
-            ].map((s, si) => (
-              <div key={s.l} className="border border-ink/20 p-3">
-                <div
-                  className="head-display text-2xl"
-                  style={{ color: "#D90429" }}
-                  ref={si === 0 ? growthRef : undefined}
-                >
-                  {s.v}
-                </div>
-                <div className="label-mono text-ink/40 text-[0.55rem] mt-1">
-                  {s.l}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="label-mono text-ink/40 text-xs">
-            {item.tags.join(" · ")}
-          </div>
-          <ProjectLink item={item} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function ProcessShowcase({ item }) {
-  const steps = [
-    { label: "RECEIVE", removed: false },
-    { label: "STAGE", removed: false },
-    { label: "HANDOFF 1", removed: true },
-    { label: "RE-CHECK", removed: true },
-    { label: "PICK", removed: false },
-    { label: "SHIP", removed: false },
-  ];
-  return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-ink/20 module-shift bg-base">
-      <div className="lg:col-span-7 p-6 sm:p-10 bg-ink text-base flex items-center">
-        <div className="w-full">
-          <span className="label-mono text-base/50 text-[0.6rem]">
-            BPMN / ORDER PICKING
-          </span>
-          <div className="flex flex-wrap items-center gap-2 mt-8">
-            {steps.map((s, i) => (
-              <span key={i} className="flex items-center gap-2">
-                <div
-                  className={`px-3 py-2 label-mono text-[0.65rem] border ${
-                    s.removed
-                      ? "kstep-remove border-destructive/70 text-base/60"
-                      : "border-base/30"
-                  }`}
-                >
-                  {s.removed && (
-                    <span className="text-destructive mr-1">✕</span>
-                  )}
-                  {s.label}
-                </div>
-                {i < steps.length - 1 && (
-                  <span className="text-base/40">→</span>
-                )}
-              </span>
-            ))}
-          </div>
-          <div className="flex items-center gap-4 mt-10">
-            <span className="head-display text-5xl sm:text-6xl text-base">
-              −2
-            </span>
-            <div>
-              <div className="label-mono text-base/70 text-[0.65rem]">
-                STEPS REMOVED FROM THE PROCESS
-              </div>
-              <div className="label-mono text-base/50 text-[0.6rem] mt-1">
-                MAPPED · DOCUMENTED · CROSS-FUNCTIONAL
+              <div className="px-3 py-2 border-t border-border flex items-center justify-between">
+                <span className="text-[0.5rem] tracking-widest text-accent-ink">
+                  ● Requirements defined
+                </span>
+                <span className="label-mono text-muted text-[0.5rem]">
+                  Criteria weighted
+                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center">
-        <div className="flex items-center gap-3 mb-4">
-          <StatusBadge status={item.status} />
-          <span
-            className="label-mono text-[0.6rem] px-2 py-1 text-base"
-            style={{ backgroundColor: item.color }}
-          >
-            {item.tag}
-          </span>
-        </div>
-        <h2 className="head-display text-3xl sm:text-4xl mb-4">{item.title}</h2>
-        <p className="text-sm text-ink/70 leading-relaxed mb-5">
-          {item.description}
-        </p>
-        <div className="label-mono text-ink/40 text-xs">
-          {item.tags.join(" · ")}
-        </div>
-        <ProjectLink item={item} />
+      <div className="lg:col-span-5">
+        <InfoPanel item={item} summary={item.solution} />
       </div>
     </div>
   );
@@ -411,154 +178,75 @@ export function ProcessShowcase({ item }) {
 
 export function ResearchShowcase({ item }) {
   const [clients, clientsRef] = useCountUp(80, { duration: 1500 });
+  const sheets = [
+    "Business Process Analysis",
+    "IT Strategy Brief",
+    "Market Research",
+    "Data Summary",
+    "Feasibility Study",
+    "Client Report",
+  ];
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-ink/20 module-shift bg-base">
-      <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-center order-2 lg:order-1">
-        <div className="flex items-center gap-3 mb-4">
-          <StatusBadge status={item.status} />
-          <span
-            className="label-mono text-[0.6rem] px-2 py-1 text-base"
-            style={{ backgroundColor: item.color }}
-          >
-            {item.tag}
-          </span>
-        </div>
-        <h2 className="head-display text-3xl sm:text-4xl mb-4">{item.title}</h2>
-        <p className="text-sm text-ink/70 leading-relaxed mb-5">
-          {item.description}
-        </p>
-        <div className="label-mono text-ink/40 text-xs">
-          {item.tags.join(" · ")}
-        </div>
-        <ProjectLink item={item} />
-      </div>
-      <div className="lg:col-span-7 p-6 sm:p-10 bg-ink text-base flex items-center justify-center overflow-hidden order-1 lg:order-2">
-        <div className="w-full flex items-center gap-10 sm:gap-16">
-          <div className="relative h-56 sm:h-64 w-40 sm:w-52 shrink-0">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className="kdoc absolute inset-0 border border-base/20 bg-ink p-3"
-                style={{
-                  transform: `rotate(${(i - 2) * 5}deg)`,
-                  zIndex: i,
-                  animationDelay: `${i * 0.25}s`,
-                  boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
-                }}
-              >
-                <div className="h-2 w-3/5 bg-base/25 mb-2" />
-                <div className="h-1.5 w-4/5 bg-base/15 mb-1" />
-                <div className="h-1.5 w-2/3 bg-base/15 mb-4" />
-                <span className="label-mono text-base/40 text-[0.55rem]">
-                  CLIENT REPORT {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-            ))}
+    <div className="grid grid-cols-1 lg:grid-cols-12 module-shift overflow-hidden rounded-2xl border border-border bg-card">
+      <div className="lg:col-span-7 p-5 sm:p-8 lg:p-10 relative overflow-hidden flex items-center justify-center min-h-[320px] border-b lg:border-b-0 lg:border-r border-border">
+        <div className="relative w-full max-w-[560px] flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12">
+          <div className="relative h-60 w-72 sm:w-80 shrink-0">
+            {sheets.map((s, i) => {
+              return (
+                <div
+                  key={s}
+                  className="sk-paper absolute inset-0 rounded-[2px] p-4"
+                  style={{
+                    transform: `translateY(${
+                      (sheets.length - 1 - i) * 9
+                    }px) rotate(${(i - (sheets.length - 1) / 2) * 3}deg)`,
+                    zIndex: i,
+                  }}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="sk-paper-line h-2 w-16" />
+                    <div className="sk-paper-line h-2 w-8 opacity-60" />
+                  </div>
+                  <div className="mt-3 space-y-2">
+                    <div className="sk-paper-line h-1.5 w-full" />
+                    <div className="sk-paper-line h-1.5 w-4/5" />
+                    <div className="sk-paper-line h-1.5 w-3/5" />
+                    <div className="sk-paper-line h-1.5 w-2/3" />
+                  </div>
+                  <div className="mt-5">
+                    <div className="text-[0.8rem] font-bold tracking-tight text-slate-800">
+                      {s}
+                    </div>
+                    <div className="sk-paper-line h-[2px] w-20 mt-1" style={{ backgroundColor: "#F4B400", opacity: 0.6 }} />
+                    <div className="mt-1.5 text-[0.6rem] font-medium text-slate-500">
+                      Prepared for University Client · {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div className="absolute right-3 bottom-3 sk-stamp rounded-sm px-1.5 py-1 text-[0.55rem] font-bold tracking-[0.2em] rotate-[-12deg] opacity-90">
+                      APPROVED
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-          <div>
-            <div className="head-display text-6xl sm:text-7xl text-base" ref={clientsRef}>
+          <div className="rounded-xl border border-border bg-base px-6 py-5 text-center shrink-0">
+            <div
+              className="serif text-5xl sm:text-6xl text-accent-ink tabular-nums"
+              ref={clientsRef}
+            >
               {clients}+
             </div>
-            <div className="label-mono text-base/70 text-[0.65rem] mt-2">
-              UNIVERSITY CLIENTS SERVED
+            <div className="label-mono text-soft text-[0.6rem] mt-2">
+              University Clients Served
             </div>
-            <div className="label-mono text-base/50 text-[0.6rem] mt-1">
-              BUSINESS · IT · REMOTE
+            <div className="label-mono text-muted text-[0.55rem] mt-1">
+              Business · IT · Remote
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-export function TerminalShowcase({ item }) {
-  const lines = [
-    "$ vite build --base /syed-amir-kafi",
-    "✓ 555 modules transformed",
-    "✓ zero database",
-    "✓ markdown-powered posts",
-    "✓ night mode · RSS · accessible",
-    "$ ship → gh-pages",
-  ];
-  const total = lines.join("\n").length;
-  const count = useTyping(total);
-  const offsets = [];
-  let acc = 0;
-  lines.forEach((l) => {
-    offsets.push(acc);
-    acc += l.length + 1;
-  });
-  let activeLine = 0;
-  for (let i = 0; i < lines.length; i++) {
-    if (count >= offsets[i]) activeLine = i;
-  }
-
-  return (
-    <div className="border border-ink/20 module-shift bg-base p-6 sm:p-10">
-      <div className="bg-ink text-base">
-        <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-base/15">
-          <span className="w-2.5 h-2.5 rounded-full bg-destructive" />
-          <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-          <span className="label-mono text-base/50 text-[0.6rem] ml-3">
-            ~/this-site — zsh
-          </span>
-        </div>
-        <div className="p-5 sm:p-7 font-mono text-[0.75rem] sm:text-[0.85rem] leading-relaxed whitespace-pre-wrap">
-          {lines.map((line, i) => {
-            const shown = Math.max(0, Math.min(line.length, count - offsets[i]));
-            const isActive = i === activeLine;
-            return (
-              <div key={i}>
-                <span className={line.startsWith("✓") ? "text-emerald-400" : ""}>
-                  {line.slice(0, shown)}
-                </span>
-                {isActive && count < total && (
-                  <span className="term-cursor" style={{ background: "var(--color-base)" }} />
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="pt-8 sm:pt-10 lg:grid lg:grid-cols-12 gap-10 items-center">
-        <div className="lg:col-span-7">
-          <div className="flex items-center gap-3 mb-4">
-            <StatusBadge status={item.status} />
-            <span
-              className="label-mono text-[0.6rem] px-2 py-1 text-base"
-              style={{ backgroundColor: item.color }}
-            >
-              {item.tag}
-            </span>
-          </div>
-          <h2 className="head-display text-3xl sm:text-4xl mb-4">{item.title}</h2>
-          <p className="text-sm text-ink/70 leading-relaxed mb-5">
-            {item.description}
-          </p>
-          <div className="label-mono text-ink/40 text-xs">
-            {item.tags.join(" · ")}
-          </div>
-        </div>
-        <div className="lg:col-span-5 mt-6 lg:mt-0">
-          <div className="grid grid-cols-2 gap-2">
-            {[
-              { v: "0", l: "DATABASES" },
-              { v: "8", l: "MARKDOWN POSTS" },
-              { v: "100", l: "REACT COMPONENTS" },
-              { v: "24/7", l: "ON GITHUB PAGES" },
-            ].map((s) => (
-              <div key={s.l} className="border border-ink/20 p-4">
-                <div className="head-display text-2xl">{s.v}</div>
-                <div className="label-mono text-ink/40 text-[0.55rem] mt-1">
-                  {s.l}
-                </div>
-              </div>
-            ))}
-          </div>
-          <ProjectLink item={item} />
-        </div>
+      <div className="lg:col-span-5">
+        <InfoPanel item={item} summary={item.solution} />
       </div>
     </div>
   );
@@ -566,9 +254,5 @@ export function TerminalShowcase({ item }) {
 
 export const SHOWCASES = {
   pivot: KanbanShowcase,
-  "career-ops": PipelineShowcase,
-  "tableau-dashboards": ChartShowcase,
-  "process-mapping": ProcessShowcase,
   "research-practice": ResearchShowcase,
-  site: TerminalShowcase,
 };
