@@ -41,7 +41,9 @@ translate data into operational improvements.
 - **Assignoholic Research & Consultancy** — Research Analyst (Nov 2022 – Jun 2023, Remote)
   - Research and data-driven insights for 80+ UK university clients across business and IT domains.
 - **KeyB Imports** — Operations Team Lead (Jun 2022 – Oct 2022, Dhaka)
-  - End-to-end operations for a gaming peripherals startup; streamlined order-to-delivery.
+  - Built the operations side of a friend's mechanical-keyboard startup — stock & pricing system, supplier and import coordination, and money-in/money-out records.
+  - Split the work into roles (orders, marketing, accounts) and ran the team so nothing fell through the cracks.
+  - Coordinated import logistics for the QK65 group buy — the first official keyboard group buy by a local vendor in Bangladesh; launched a custom keyboard dust-cover line.
 - **Dhaka Bank Ltd.** — Banking Intern, Operations & Reporting (Mar 2022 – May 2022)
   - Process documentation and workflow improvements on Flexcube; financial reporting with Excel.
 
