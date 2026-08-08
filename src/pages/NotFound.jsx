@@ -4,7 +4,7 @@ import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 export default function NotFound() {
   useDocumentTitle("Not Found");
   return (
-    <main className="flex-1 lg:pl-56 pt-32 pb-24">
+    <main className="flex-1 pt-32 pb-24">
       <div className="max-w-md mx-auto px-6 text-center">
         <span className="label-mono text-accent text-[0.7rem]">404</span>
         <h1 className="head-display text-4xl sm:text-5xl text-ink mt-3 mb-4">

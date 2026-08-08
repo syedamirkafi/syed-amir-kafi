@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
@@ -16,7 +16,7 @@ export default function Post() {
   const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
 
-  const post = getPostBySlug(slug);
+  const post = useMemo(() => getPostBySlug(slug), [slug]);
   useDocumentTitle(post ? post.title : null);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function Post() {
   const shareX = `https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(shareUrl)}`;
 
   return (
-    <main className="flex-1 pt-16 lg:pt-24 pb-20 lg:pl-56">
+    <main className="flex-1 pt-16 lg:pt-24 pb-20">
       <div
         className="reading-bar"
         style={{ width: `${progress}%` }}
