@@ -5,7 +5,7 @@
     <link>https://syedamirkafi.github.io/syed-amir-kafi</link>
     <description>Business analyst — field notes on requirements, dashboards, process work, and digital transformation.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2026 17:52:33 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 18:16:04 GMT</lastBuildDate>
     <atom:link href="https://syedamirkafi.github.io/syed-amir-kafi/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I Run My Job Search with AI</title>
@@ -40,12 +40,12 @@
       <description>How documenting process gaps — and mapping cross-functional workflows — removed 2 steps from the order picking process.</description>
     </item>
     <item>
-      <title>Tableau Dashboards Across a 17-Person Team</title>
+      <title>Report Suite for a 17-Person Territory Team</title>
       <link>https://syedamirkafi.github.io/syed-amir-kafi/blog/tableau-sales-dashboards</link>
       <guid>https://syedamirkafi.github.io/syed-amir-kafi/blog/tableau-sales-dashboards</guid>
       <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
       <category>ANALYTICS</category>
-      <description>Building daily, weekly, and monthly performance dashboards that a 17-person field team actually used — and upper management actually acted on.</description>
+      <description>Rep scorecards, route rankings, and shop-level breakdowns — the Tableau reports a 17-person territory team actually used, and that management actually acted on.</description>
     </item>
     <item>
       <title>Territory Sales Optimization: 18% Through Data</title>
