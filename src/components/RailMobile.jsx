@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { profile } from "../data/profile.js";
 import { withBase } from "../lib/base.js";
 import { NAV_SECTIONS, goToSection, useActiveSection } from "../lib/sections.js";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 function SheetAnchor({ id, label, number, onNavigate }) {
   const { pathname } = useLocation();
@@ -76,6 +77,7 @@ export default function RailMobile() {
             >
               Résumé ↓
             </a>
+            <ThemeToggle className="flex" />
             <button
               type="button"
               aria-label="Toggle menu"
