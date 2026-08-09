@@ -18,6 +18,7 @@ export const timeline = [
       "Cross-functional coordination",
       "Continuous improvement",
     ],
+    workSamples: ["bpmn-orders"],
   },
   {
     kind: "work",
@@ -40,6 +41,7 @@ export const timeline = [
       "Dashboard design",
       "Stakeholder reporting",
     ],
+    workSamples: ["tableau-dashboard"],
   },
   {
     kind: "work",
@@ -60,6 +62,7 @@ export const timeline = [
       "Deadline management",
       "Academic writing & referencing",
     ],
+    workSamples: ["assignoholic-brief", "banking-bpmn"],
   },
   {
     kind: "work",
@@ -82,6 +85,7 @@ export const timeline = [
       "Role design",
       "Process documentation",
     ],
+    workSamples: ["keyb-stock"],
   },
   {
     kind: "work",
@@ -104,6 +108,7 @@ export const timeline = [
       "Process documentation",
       "Data accuracy",
     ],
+    workSamples: ["banking-bpmn"],
   },
 ];
 

@@ -37,14 +37,29 @@ function GroupIcon({ name }) {
   );
 }
 
+function SkillChip({ skill }) {
+  return (
+    <div className="group relative">
+      <span className="rounded-full border border-border bg-base px-3 py-1.5 text-soft text-xs hover:border-accent hover:text-ink transition-colors">
+        {skill.name}
+      </span>
+      {skill.evidence && skill.evidence.length > 0 && (
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1.5 bg-ink text-[0.6rem] text-base rounded opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+          {skill.evidence.join(" · ")}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function SkillsSection() {
   return (
     <section id="skills" className="scroll-mt-24 pt-32">
       <SectionHeading
         kicker="Skills"
-        number="05"
+        number="03"
         title="Skills."
-        description="The things I reach for in day-to-day work — no proficiency bars, just what I actually use."
+        description="The things I reach for in day-to-day work — hover a skill to see where I've applied it."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -62,12 +77,7 @@ export default function SkillsSection() {
               <p className="text-muted text-xs mb-4 ml-12">{group.description}</p>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-border bg-base px-3 py-1.5 text-soft text-xs hover:border-accent hover:text-ink transition-colors"
-                  >
-                    {skill}
-                  </span>
+                  <SkillChip key={skill.name} skill={skill} />
                 ))}
               </div>
             </div>

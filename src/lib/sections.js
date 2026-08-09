@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
 export const NAV_SECTIONS = [
-  { id: "about", label: "About", number: "01" },
-  { id: "experience", label: "Experience", number: "02" },
-  { id: "work-samples", label: "Work samples", number: "03" },
-  { id: "projects", label: "Projects", number: "04" },
-  { id: "skills", label: "Skills", number: "05" },
-  { id: "education", label: "Education", number: "06" },
-  { id: "certifications", label: "Certifications", number: "07" },
-  { id: "contact", label: "Contact", number: "08" },
+  { id: "top", label: "Home", number: "00" },
+  { id: "experience", label: "Experience", number: "01" },
+  { id: "work", label: "Selected Work", number: "02" },
+  { id: "skills", label: "Skills", number: "03" },
+  { id: "credentials", label: "Credentials", number: "04" },
+  { id: "contact", label: "Contact", number: "05" },
 ];
 
 export const MOBILE_NAV = [
-  { id: "about", label: "About" },
+  { id: "top", label: "Home" },
   { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
+  { id: "work", label: "Work" },
+  { id: "skills", label: "Skills" },
+  { id: "credentials", label: "Credentials" },
   { id: "contact", label: "Contact" },
 ];
 

@@ -3,13 +3,10 @@ import { useLocation } from "react-router";
 import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 import { goToSection } from "../lib/sections.js";
 import HeroSection from "../sections/HeroSection.jsx";
-import AboutSection from "../sections/AboutSection.jsx";
-import ExperienceSection from "../sections/ExperienceSection.jsx";
-import ProjectsSection from "../sections/ProjectsSection.jsx";
+import ExperienceTimeline from "../sections/ExperienceTimeline.jsx";
+import SelectedWork from "../sections/SelectedWork.jsx";
 import SkillsSection from "../sections/SkillsSection.jsx";
-import EducationSection from "../sections/EducationSection.jsx";
-import CertificationsSection from "../sections/CertificationsSection.jsx";
-import WorkSamplesSection from "../sections/WorkSamplesSection.jsx";
+import EducationCredentials from "../sections/EducationCredentials.jsx";
 import ContactSection from "../sections/ContactSection.jsx";
 
 export default function Home() {
@@ -33,13 +30,10 @@ export default function Home() {
     <main className="flex-1">
       <HeroSection />
       <div className="max-w-4xl mx-auto px-6">
-        <AboutSection />
-        <ExperienceSection />
-        <WorkSamplesSection />
-        <ProjectsSection />
+        <ExperienceTimeline />
+        <SelectedWork />
         <SkillsSection />
-        <EducationSection />
-        <CertificationsSection />
+        <EducationCredentials />
         <ContactSection />
       </div>
     </main>

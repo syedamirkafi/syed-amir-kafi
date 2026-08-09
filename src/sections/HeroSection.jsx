@@ -15,6 +15,8 @@ function PortraitFrame() {
             alt="Portrait of Syed Amir Kafi"
             className="w-full h-full object-cover"
             onError={() => setFailed(true)}
+            width={400}
+            height={500}
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-base">
@@ -39,6 +41,12 @@ function PortraitFrame() {
     </div>
   );
 }
+
+const proofPoints = [
+  { metric: "18%", label: "Territory sales growth in one season", context: "Robi Axiata Ltd." },
+  { metric: "80+", label: "Clients delivered — research & analysis", context: "Assignoholic" },
+  { metric: "14", label: "Sales reps + IT + back-office led", context: "Territory Officer" },
+];
 
 export default function HeroSection() {
   useEffect(() => {
@@ -70,13 +78,26 @@ export default function HeroSection() {
               {profile.headline}
             </h1>
 
-            <p className="serif text-xl sm:text-2xl text-ink/85 leading-snug max-w-xl mb-3">
+            <p className="serif text-xl sm:text-2xl text-ink/85 leading-snug max-w-xl mb-9">
               {profile.subheadline}
             </p>
 
-            <p className="text-soft text-base leading-relaxed max-w-xl mb-9">
-              {profile.positioning}
-            </p>
+            {/* Proof points */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+              {proofPoints.map((point, i) => (
+                <div key={i} className="rounded-xl border border-border bg-card p-4 module-shift">
+                  <div className="serif text-3xl sm:text-4xl text-ink font-medium tabular-nums">
+                    {point.metric}
+                  </div>
+                  <div className="text-soft text-sm leading-snug mt-1">
+                    {point.label}
+                  </div>
+                  <div className="label-mono text-muted text-[0.55rem] mt-2">
+                    {point.context}
+                  </div>
+                </div>
+              ))}
+            </div>
 
             <div className="flex flex-wrap items-center gap-3 mb-12">
               <a
