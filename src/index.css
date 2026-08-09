@@ -11,6 +11,10 @@
   --color-border-strong: #d4d0c4;
   --color-accent: #f4b400;
   --color-accent-ink: #4a3c00;
+  --color-goldtint: #fff7d6;
+  --color-goldtext: #4a3c00;
+  --color-panel: #f3f1ea;
+  --color-line-soft: #e2dfd5;
   --color-emerald: #047857;
   --color-destructive: #b91c1c;
 
@@ -33,6 +37,56 @@
   --color-accent: #f4b400;
   --color-border: #e6e3da;
   --color-border-strong: #d4d0c4;
+}
+
+/* ---- Dark mode (auto, prefers-color-scheme) ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-ink: #f2efe3;
+    --color-soft: #c2bdb0;
+    --color-muted: #948f80;
+    --color-base: #171610;
+    --color-card: #201e17;
+    --color-border: #2c2a22;
+    --color-border-strong: #3b382e;
+    --color-accent: #f4b400;
+    --color-accent-ink: #4a3c00;
+    --color-goldtint: #2e270e;
+    --color-goldtext: #ffd87a;
+    --color-panel: #26231b;
+    --color-line-soft: #333027;
+    --color-background: #171610;
+    --color-foreground: #f2efe3;
+    --color-emerald: #5ee6ad;
+  }
+
+  .sk-paper {
+    background: linear-gradient(180deg, #201e17 0%, #1b1a14 100%);
+  }
+
+  .sk-paper-line {
+    background: var(--color-border-strong);
+  }
+
+  .prose-content .hljs-keyword,
+  .prose-content .hljs-selector-tag,
+  .prose-content .hljs-literal,
+  .prose-content .hljs-doctag { color: #f0c94f; }
+  .prose-content .hljs-string,
+  .prose-content .hljs-regexp,
+  .prose-content .hljs-addition,
+  .prose-content .hljs-attribute { color: #7fd4b0; }
+  .prose-content .hljs-title,
+  .prose-content .hljs-section,
+  .prose-content .hljs-built_in { color: #a9c7f2; }
+  .prose-content .hljs-number,
+  .prose-content .hljs-symbol,
+  .prose-content .hljs-bullet { color: #f0b55a; }
+  .prose-content .hljs-params,
+  .prose-content .hljs-attr,
+  .prose-content .hljs-variable,
+  .prose-content .hljs-template-variable { color: #eda7c8; }
 }
 
 html {
@@ -381,7 +435,7 @@ button:not(:disabled),
 
 .sk-stamp {
   border: 2px solid var(--color-accent);
-  color: var(--color-accent-ink);
+  color: var(--color-goldtext);
   background: rgba(244, 180, 0, 0.08);
 }
 

@@ -60,10 +60,10 @@ export default function ExperienceSection() {
                   </ul>
 
                   <div className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 mb-5">
-                    <span className="label-mono text-accent-ink text-[0.6rem] block mb-1">
+                    <span className="label-mono text-goldtext text-[0.6rem] block mb-1">
                       Impact
                     </span>
-                    <p className="text-accent-ink text-sm leading-relaxed">
+                    <p className="text-goldtext text-sm leading-relaxed">
                       {job.impact}
                     </p>
                   </div>

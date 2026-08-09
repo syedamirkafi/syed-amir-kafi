@@ -66,7 +66,7 @@ export default function Post() {
 
           <header className="mt-8 mb-12">
             <div className="flex flex-wrap items-center gap-3 mb-5">
-              <span className="px-2.5 py-1 rounded-full bg-accent/15 text-accent-ink label-mono text-[0.6rem]">
+              <span className="px-2.5 py-1 rounded-full bg-accent/15 text-goldtext label-mono text-[0.6rem]">
                 {post.category}
               </span>
               <span className="mono text-muted text-[0.65rem]">

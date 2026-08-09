@@ -38,7 +38,7 @@ export default function EducationSection() {
                     key={c}
                     className={`rounded-full border px-3 py-1 text-xs ${
                       isHRChip(c)
-                        ? "border-accent bg-accent/15 text-accent-ink"
+                        ? "border-accent bg-accent/15 text-goldtext"
                         : "border-border bg-base text-soft"
                     }`}
                   >

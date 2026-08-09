@@ -3,8 +3,8 @@ import SectionHeading from "./SectionHeading.jsx";
 import Reveal from "../components/Reveal.jsx";
 
 const STATUS_STYLES = {
-  earned: "border-emerald-700/40 text-emerald-800",
-  "in-progress": "border-accent text-accent-ink",
+  earned: "border-emerald/40 text-emerald",
+  "in-progress": "border-accent text-goldtext",
   planned: "border-border-strong text-soft",
 };
 

@@ -1,4 +1,4 @@
-import { profile, currentFocus, learningNow, lifeTimeline } from "../data/profile.js";
+import { profile, currentFocus, learningNow, lifeTimeline, values } from "../data/profile.js";
 import SectionHeading from "./SectionHeading.jsx";
 import Reveal from "../components/Reveal.jsx";
 
@@ -56,6 +56,20 @@ export default function AboutSection() {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {values.map((value, i) => (
+          <div key={value} className="rounded-2xl border border-border bg-card p-5 module-shift">
+            <span className="w-2.5 h-2.5 rounded-sm bg-accent block mb-3" />
+            <span className="mono text-muted text-[0.6rem] block mb-1">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <p className="serif text-ink text-base font-medium leading-snug">
+              {value}
+            </p>
+          </div>
+        ))}
       </div>
 
       <div className="mt-12">

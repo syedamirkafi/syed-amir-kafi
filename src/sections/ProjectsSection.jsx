@@ -26,7 +26,7 @@ function CaseCard({ item }) {
             {item.role}
           </span>
         </Field>
-        <Field label="Impact" accent="text-accent-ink">
+        <Field label="Impact" accent="text-goldtext">
           {item.impact}
         </Field>
       </div>

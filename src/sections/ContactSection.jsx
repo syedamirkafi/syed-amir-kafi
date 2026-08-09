@@ -10,7 +10,7 @@ function ContactRow({ label, value, href, external }) {
       <span className="label-mono text-muted text-[0.6rem] shrink-0 pt-1">
         {label}
       </span>
-      <span className="serif text-ink text-lg text-right group-hover:text-accent-ink transition-colors break-all">
+      <span className="serif text-ink text-lg text-right group-hover:text-goldtext transition-colors break-all">
         {value}
         <span className="ml-2 text-soft group-hover:text-accent transition-colors">
           ↗

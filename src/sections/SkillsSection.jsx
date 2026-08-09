@@ -52,7 +52,7 @@ export default function SkillsSection() {
           <Reveal key={group.id} delay={Math.min(idx * 60, 180)}>
             <div className="h-full rounded-2xl border border-border bg-card p-6 module-shift">
               <div className="flex items-center gap-3 mb-1">
-                <span className="flex items-center justify-center w-9 h-9 rounded-lg border border-border bg-base text-accent-ink">
+                <span className="flex items-center justify-center w-9 h-9 rounded-lg border border-border bg-base text-goldtext">
                   <GroupIcon name={group.icon} />
                 </span>
                 <h3 className="serif text-ink font-medium text-base">

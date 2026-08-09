@@ -28,7 +28,7 @@ function PortraitFrame() {
         )}
       </div>
 
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-accent bg-base/90 backdrop-blur px-3 py-1.5 label-mono text-[0.58rem] text-accent-ink">
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-accent bg-base/90 backdrop-blur px-3 py-1.5 label-mono text-[0.58rem] text-goldtext">
         <span className="w-1.5 h-1.5 rounded-full bg-accent kf-pulse" />
         Open to BA roles · Germany
       </div>
@@ -107,6 +107,19 @@ export default function HeroSection() {
           {/* Right column — portrait */}
           <div className="mt-12 lg:mt-0 lg:col-span-5">
             <PortraitFrame />
+            <div className="mt-4 flex flex-wrap gap-2">
+              {profile.languages.map((lang) => (
+                <span
+                  key={lang.code}
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs text-soft"
+                >
+                  <span className="mono text-[0.65rem] text-accent font-semibold">
+                    {lang.code}
+                  </span>
+                  {lang.level}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

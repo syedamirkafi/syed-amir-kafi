@@ -7,8 +7,8 @@ function StatusBadge({ status }) {
     <span
       className={`label-mono text-[0.6rem] px-2.5 py-1 rounded-full border ${
         inProgress
-          ? "border-accent bg-accent/10 text-accent-ink"
-          : "border-emerald-700/40 bg-emerald-700/10 text-emerald-800"
+          ? "border-accent bg-accent/10 text-goldtext"
+          : "border-emerald/40 bg-emerald/10 text-emerald"
       }`}
     >
       {inProgress ? "● In progress" : "✓ Shipped"}
@@ -23,7 +23,7 @@ function ProjectLink({ item }) {
         href={item.github}
         target="_blank"
         rel="noreferrer"
-        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-accent-ink transition-colors"
+        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-goldtext transition-colors"
       >
         View on GitHub ↗
       </a>
@@ -33,7 +33,7 @@ function ProjectLink({ item }) {
     return (
       <a
         href={withBase(item.caseStudy)}
-        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-accent-ink transition-colors"
+        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-goldtext transition-colors"
       >
         Read case study →
       </a>
@@ -96,7 +96,7 @@ export function KanbanShowcase({ item }) {
           <div className="flex">
             <nav className="w-32 shrink-0 border-r border-border p-2 hidden sm:block">
               <div className="px-1 py-2 flex items-center gap-1.5 border-b border-border mb-2">
-                <span className="mono text-accent-ink text-[0.6rem] font-bold tracking-tight">
+                <span className="mono text-goldtext text-[0.6rem] font-bold tracking-tight">
                   PIVOT
                 </span>
                 <span className="label-mono text-muted text-[0.45rem]">v1</span>
@@ -158,7 +158,7 @@ export function KanbanShowcase({ item }) {
                 ))}
               </div>
               <div className="px-3 py-2 border-t border-border flex items-center justify-between">
-                <span className="text-[0.5rem] tracking-widest text-accent-ink">
+                <span className="text-[0.5rem] tracking-widest text-goldtext">
                   ● Requirements defined
                 </span>
                 <span className="label-mono text-muted text-[0.5rem]">
@@ -214,11 +214,11 @@ export function ResearchShowcase({ item }) {
                     <div className="sk-paper-line h-1.5 w-2/3" />
                   </div>
                   <div className="mt-5">
-                    <div className="text-[0.8rem] font-bold tracking-tight text-slate-800">
+                    <div className="text-[0.8rem] font-bold tracking-tight text-ink">
                       {s}
                     </div>
                     <div className="sk-paper-line h-[2px] w-20 mt-1" style={{ backgroundColor: "#F4B400", opacity: 0.6 }} />
-                    <div className="mt-1.5 text-[0.6rem] font-medium text-slate-500">
+                    <div className="mt-1.5 text-[0.6rem] font-medium text-muted">
                       Prepared for University Client · {String(i + 1).padStart(2, "0")}
                     </div>
                     <div className="absolute right-3 bottom-3 sk-stamp rounded-sm px-1.5 py-1 text-[0.55rem] font-bold tracking-[0.2em] rotate-[-12deg] opacity-90">
@@ -231,7 +231,7 @@ export function ResearchShowcase({ item }) {
           </div>
           <div className="rounded-xl border border-border bg-base px-6 py-5 text-center shrink-0">
             <div
-              className="serif text-5xl sm:text-6xl text-accent-ink tabular-nums"
+              className="serif text-5xl sm:text-6xl text-goldtext tabular-nums"
               ref={clientsRef}
             >
               {clients}+
