@@ -39,23 +39,23 @@ function TimelineLine({ isLast }) {
   );
 }
 
-function EducationCard({ edu }) {
+function EducationCard({ data }) {
   return (
     <div className="rounded-2xl border border-border bg-card p-6 sm:p-7 module-shift">
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
-        <h4 className="serif text-ink font-medium text-lg leading-snug">{edu.degree}</h4>
-        <span className="mono text-muted text-[0.65rem] whitespace-nowrap">{edu.period}</span>
+        <h4 className="serif text-ink font-medium text-lg leading-snug">{data.degree}</h4>
+        <span className="mono text-muted text-[0.65rem] whitespace-nowrap">{data.period}</span>
       </div>
       <p className="text-ink/70 text-sm mb-4 flex items-center gap-1.5">
         <svg className="w-4 h-4 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
-        <span>{edu.org}</span>
-        <span className="text-muted">· {edu.note}</span>
+        <span>{data.org}</span>
+        <span className="text-muted">· {data.note}</span>
       </p>
       <div className="flex flex-wrap gap-2">
-        {edu.coursework.map((c) => (
+        {data.coursework.map((c) => (
           <span
             key={c}
             className={`rounded-full border px-3 py-1 text-xs ${
@@ -72,44 +72,44 @@ function EducationCard({ edu }) {
   );
 }
 
-function WorkCard({ job }) {
+function WorkCard({ data }) {
   return (
     <div className="rounded-2xl border border-border bg-card p-6 sm:p-7 module-shift">
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
-        <h4 className="serif text-ink font-medium text-lg leading-snug">{job.role}</h4>
-        <span className="mono text-muted text-[0.65rem] whitespace-nowrap">{job.period}</span>
+        <h4 className="serif text-ink font-medium text-lg leading-snug">{data.role}</h4>
+        <span className="mono text-muted text-[0.65rem] whitespace-nowrap">{data.period}</span>
       </div>
       <p className="text-ink/70 text-sm mb-4 flex items-center gap-1.5">
         <svg className="w-4 h-4 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
-        <span>{job.org}</span>
-        <span className="text-muted">· {job.location}</span>
+        <span>{data.org}</span>
+        <span className="text-muted">· {data.location}</span>
       </p>
       <ul className="space-y-2 mb-4">
-        {job.points.slice(0, 3).map((point, i) => (
+        {data.points.slice(0, 3).map((point, i) => (
           <li key={i} className="flex gap-2.5 text-soft text-sm leading-relaxed">
             <span className="text-muted shrink-0 mt-0.5">▪</span>
             <span>{point}</span>
           </li>
         ))}
-        {job.points.length > 3 && (
-          <li className="text-muted text-sm italic">+{job.points.length - 3} more</li>
+        {data.points.length > 3 && (
+          <li className="text-muted text-sm italic">+{data.points.length - 3} more</li>
         )}
       </ul>
       <div className="rounded-xl border border-accent/30 bg-accent/10 px-4 py-3 mb-4">
         <span className="label-mono text-goldtext text-[0.6rem] block mb-1">Impact</span>
-        <p className="text-goldtext text-sm leading-relaxed">{job.impact}</p>
+        <p className="text-goldtext text-sm leading-relaxed">{data.impact}</p>
       </div>
       <div className="flex flex-wrap gap-2">
-        {job.transferableSkills.slice(0, 4).map((skill) => (
+        {data.transferableSkills.slice(0, 4).map((skill) => (
           <span key={skill} className="rounded-full border border-border bg-base px-3 py-1 text-soft text-xs">{skill}</span>
         ))}
-        {job.transferableSkills.length > 4 && (
-          <span className="rounded-full border border-border bg-base px-3 py-1 text-muted text-xs">+{job.transferableSkills.length - 4} more</span>
+        {data.transferableSkills.length > 4 && (
+          <span className="rounded-full border border-border bg-base px-3 py-1 text-muted text-xs">+{data.transferableSkills.length - 4} more</span>
         )}
       </div>
-      {job.workSamples && job.workSamples.length > 0 && (
+      {data.workSamples && data.workSamples.length > 0 && (
         <div className="mt-4 pt-4 border-t border-border">
           <a
             href={`#work`}
