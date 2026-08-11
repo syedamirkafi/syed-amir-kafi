@@ -20,7 +20,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/syedamirkafi",
   github: "https://github.com/syedamirkafi",
   cvUrl: "/cv/SyedAmirKafi_CV.pdf",
-  portrait: "/portrait.jpg",
+  portrait: "/portrait.svg",
   languages: [
     { name: "English", level: "Fluent (C1)", code: "EN" },
     { name: "German", level: "Intermediate (A2 → B1 by Dec 2026)", code: "DE" },
