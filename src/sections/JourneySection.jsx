@@ -184,12 +184,12 @@ export default function JourneySection() {
               <div key={`${item.type}-${item.data.period}`} className="relative">
                 <JourneyDot isCurrent={isCurrent} />
 
-                <div className={`relative lg:w-[calc(50%-2.5rem)] ${isEducation ? "lg:ml-auto" : "lg:mr-auto"}`}>
+                <div className={`relative lg:w-[calc(50%-1rem)] ${isEducation ? "lg:ml-auto" : "lg:mr-auto"}`}>
                   {/* Desktop connector to the center line */}
                   <span
                     aria-hidden="true"
-                    className={`hidden lg:block absolute top-[1.9rem] h-px w-8 bg-border-strong -translate-y-1/2 ${
-                      isEducation ? "-left-8" : "-right-8"
+                    className={`hidden lg:block absolute top-[1.9rem] h-px w-4 bg-border-strong -translate-y-1/2 ${
+                      isEducation ? "-left-4" : "-right-4"
                     }`}
                   />
                   <Reveal delay={Math.min(index * 60, 240)}>
