@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'>
+  <rect width='1200' height='675' fill='#fafaf8'/>
+  <rect width='1200' height='675' fill='url(#wash)'/>
+  <defs>
+    <linearGradient id='wash' x1='0' y1='0' x2='0' y2='1'>
+      <stop offset='0' stop-color='#f4b400' stop-opacity='0.08'/>
+      <stop offset='1' stop-color='#f4b400' stop-opacity='0.02'/>
+    </linearGradient>
+  </defs>
+  <rect x='48' y='48' width='1104' height='579' fill='none' stroke='#e8e5dc' stroke-width='2' stroke-dasharray='8 8'/>
+  <circle cx='600' cy='300' r='64' fill='none' stroke='#f4b400' stroke-width='3' opacity='0.8'/>
+  <text x='600' y='285' text-anchor='middle' font-family='Georgia, "Times New Roman", serif' font-size='44' font-weight='500' fill='#1a1a1a' letter-spacing='1'>Banking ops process documentation</text>
+  <text x='600' y='330' text-anchor='middle' font-family='"Courier New", monospace' font-size='17' letter-spacing='4' fill='#6b6b67'>PROCESS DOCS · DHAKA BANK</text>
+  <text x='600' y='392' text-anchor='middle' font-family='"Courier New", monospace' font-size='14' letter-spacing='3' fill='#6b6b67'>WORK SAMPLE PREVIEW</text>
+  <text x='600' y='420' text-anchor='middle' font-family='"Courier New", monospace' font-size='14' letter-spacing='3' fill='#6b6b67'>replace with a real screenshot</text>
+  <text x='48' y='640' font-family='"Courier New", monospace' font-size='13' letter-spacing='3' fill='#a8a49a'>16:9 · 1200 x 675</text>
+  <text x='1152' y='640' text-anchor='end' font-family='"Courier New", monospace' font-size='13' letter-spacing='3' fill='#a8a49a'>/work-samples/banking-bpmn</text>
+</svg>

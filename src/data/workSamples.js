@@ -1,3 +1,6 @@
+﻿// Image convention: drop a real screenshot at public/work-samples/<id>.png
+// (16:9, 1200x675 recommended) and point `image` at it, e.g. "/work-samples/<id>.png".
+// Until a real screenshot exists, the labeled SVG placeholder at the same path is used.
 export const workSamples = [
   {
     id: "tableau-dashboard",
@@ -7,7 +10,7 @@ export const workSamples = [
     summary:
       "Rep scorecards with target vs. actual, weekly route rankings, and shop-level breakdowns — KPI cards up top, target lines on the trends. The whole 17-person territory checked them every morning.",
     outcome: "+18% territory sales in a season",
-    image: null,
+    image: "/work-samples/tableau-dashboard.svg",
     link: "/blog/tableau-sales-dashboards",
   },
   {
@@ -18,7 +21,7 @@ export const workSamples = [
     summary:
       "One table behind every stock and pricing call — each SKU with its level, its price, a low-stock flag, and money in versus out, so restock decisions ran on facts.",
     outcome: "Restock and pricing decisions moved off guesswork",
-    image: null,
+    image: "/work-samples/keyb-stock.svg",
     link: "/blog/keyb-stock-pricing",
   },
   {
@@ -29,7 +32,7 @@ export const workSamples = [
     summary:
       "An end-to-end BPMN of order picking, then a gap analysis that flagged two redundant steps — documented before the change, so everyone started from the same baseline.",
     outcome: "2 steps removed across every shift",
-    image: null,
+    image: "/work-samples/bpmn-orders.svg",
     link: "/blog/picnic-order-picking",
   },
   {
@@ -40,7 +43,7 @@ export const workSamples = [
     summary:
       "The FLEXCUBE branch-operation flows written into numbered SOPs, so the team could run the branch without supervision.",
     outcome: "Documented processes anyone could follow",
-    image: null,
+    image: "/work-samples/banking-bpmn.svg",
     link: "/blog/bpmn-banking-ops",
   },
   {
@@ -51,7 +54,7 @@ export const workSamples = [
     summary:
       "A vague assignment brief turned into agreed scope — topic, word count, referencing, deadline — before research began. The same skeleton held across 80+ UK university clients.",
     outcome: "Vague briefs became scope the writer and client agreed on",
-    image: null,
+    image: "/work-samples/assignoholic-brief.svg",
     link: "/blog/research-80-clients",
   },
 ];

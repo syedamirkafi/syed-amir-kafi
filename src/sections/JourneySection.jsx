@@ -1,5 +1,7 @@
 import { timeline as workTimeline } from "../data/timeline.js";
 import { education } from "../data/timeline.js";
+import { workSamples } from "../data/workSamples.js";
+import { withBase } from "../lib/base.js";
 import SectionHeading from "./SectionHeading.jsx";
 import Reveal from "../components/Reveal.jsx";
 
@@ -51,6 +53,11 @@ function EducationCard({ data }) {
 }
 
 function WorkCard({ data }) {
+  const sample =
+    data.workSamples?.length > 0
+      ? workSamples.find((s) => s.id === data.workSamples[0])
+      : null;
+
   return (
     <div className="rounded-2xl border border-border bg-card p-6 sm:p-7 module-shift">
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
@@ -87,17 +94,22 @@ function WorkCard({ data }) {
           <span className="rounded-full border border-border bg-base px-3 py-1 text-muted text-xs">+{data.transferableSkills.length - 4} more</span>
         )}
       </div>
-      {data.workSamples && data.workSamples.length > 0 && (
+      {sample && (
         <div className="mt-4 pt-4 border-t border-border">
-          <a
-            href="#work"
-            className="inline-flex items-center gap-1.5 label-mono text-[0.6rem] text-accent hover:text-ink transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            View work sample →
+          <a href={withBase(sample.link)} className="block group">
+            {sample.image && (
+              <div className="relative aspect-video rounded-xl overflow-hidden border border-border bg-base">
+                <img
+                  src={withBase(sample.image)}
+                  alt={`${sample.title} — work sample preview`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <span className="inline-flex items-center gap-1.5 label-mono text-[0.6rem] text-accent hover:text-ink transition-colors mt-2.5">
+              View work sample →
+            </span>
           </a>
         </div>
       )}
