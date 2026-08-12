@@ -145,12 +145,12 @@ function JourneyDot({ isCurrent }) {
   if (isCurrent) {
     return (
       <span
-        className={`${base} -left-7 lg:left-1/2 bg-accent border-accent ring-4 ring-accent/20`}
+        className={`${base} -left-7 bg-accent border-accent ring-4 ring-accent/20`}
         aria-hidden="true"
       />
     );
   }
-  return <span className={`${base} -left-7 lg:left-1/2 bg-accent border-accent`} aria-hidden="true" />;
+  return <span className={`${base} -left-7 bg-accent border-accent`} aria-hidden="true" />;
 }
 
 function buildJourney() {
@@ -174,20 +174,13 @@ export default function JourneySection() {
       />
 
       <div className="relative">
-        {/* Mobile rail */}
         <span
           aria-hidden="true"
-          className="lg:hidden absolute left-0 top-1 bottom-1 w-px"
-          style={{ background: "linear-gradient(180deg, var(--color-border-strong) 0%, var(--color-border) 100%)" }}
-        />
-        {/* Desktop center line */}
-        <span
-          aria-hidden="true"
-          className="hidden lg:block absolute left-1/2 top-1 bottom-1 w-px -translate-x-1/2"
+          className="absolute left-0 top-1 bottom-1 w-px"
           style={{ background: "linear-gradient(180deg, var(--color-border-strong) 0%, var(--color-border) 100%)" }}
         />
 
-        <div className="space-y-10 pl-7 lg:pl-0">
+        <div className="space-y-10 pl-7">
           {journey.map((item, index) => {
             const isEducation = item.type === "education";
             const isCurrent = item.data.period.includes("Present");
@@ -196,14 +189,7 @@ export default function JourneySection() {
               <div key={`${item.type}-${item.data.period}`} className="relative">
                 <JourneyDot isCurrent={isCurrent} />
 
-                <div className={`relative lg:w-[calc(50%-1rem)] ${isEducation ? "lg:ml-auto" : "lg:mr-auto"}`}>
-                  {/* Desktop connector to the center line */}
-                  <span
-                    aria-hidden="true"
-                    className={`hidden lg:block absolute top-[1.9rem] h-px w-4 bg-border-strong -translate-y-1/2 ${
-                      isEducation ? "-left-4" : "-right-4"
-                    }`}
-                  />
+                <div className="relative">
                   <Reveal delay={Math.min(index * 60, 240)}>
                     <div className="mb-3">
                       <TypeChip type={item.type} />
