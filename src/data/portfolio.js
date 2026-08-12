@@ -5,6 +5,7 @@ export const portfolio = [
     tag: "BA",
     status: "in-progress",
     cover: "#F4B400",
+    image: "/work-samples/pivot.svg",
     problem:
       "Comparing job offers is a decision problem pretending to be a tracking problem. Everything lives in a spreadsheet, a calendar, and half a dozen emails — and the criteria aren't written down anywhere.",
     solution:
@@ -27,6 +28,7 @@ export const portfolio = [
     tag: "BA",
     status: "shipped",
     cover: "#D90429",
+    image: "/work-samples/assignoholic-brief.svg",
     problem:
       "UK university clients needed serious, structured research — across business and IT — done well and done on deadline.",
     solution:
@@ -48,6 +50,7 @@ export const portfolio = [
     tag: "Data",
     status: "shipped",
     cover: "#0077B6",
+    image: "/work-samples/tableau-dashboard.svg",
     problem:
       "A 17-person sales territory needed daily visibility on performance — but data lived in scattered ERP exports and no one had a single view.",
     solution:
@@ -69,6 +72,7 @@ export const portfolio = [
     tag: "Process",
     status: "shipped",
     cover: "#121212",
+    image: "/work-samples/bpmn-orders.svg",
     problem:
       "Picnic's warehouse order-picking flow had invisible waste — steps that added time but no value, undocumented and unquestioned.",
     solution:

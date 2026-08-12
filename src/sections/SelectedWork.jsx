@@ -1,19 +1,8 @@
+import { Link } from "react-router";
 import { portfolio } from "../data/portfolio.js";
-import { SHOWCASES } from "../components/ProjectShowcases.jsx";
 import { withBase } from "../lib/base.js";
 import SectionHeading from "./SectionHeading.jsx";
 import Reveal from "../components/Reveal.jsx";
-
-function Field({ label, children, accent = "text-soft" }) {
-  return (
-    <div>
-      <span className="label-mono text-muted text-[0.6rem] block mb-2">
-        {label}
-      </span>
-      <div className={`text-sm leading-relaxed ${accent}`}>{children}</div>
-    </div>
-  );
-}
 
 function StatusBadge({ status }) {
   const inProgress = status === "in-progress";
@@ -30,112 +19,60 @@ function StatusBadge({ status }) {
   );
 }
 
-function ProjectLink({ item }) {
-  if (item.github) {
-    return (
-      <a
-        href={item.github}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-goldtext transition-colors"
-      >
-        View on GitHub ↗
-      </a>
-    );
-  }
-  if (item.caseStudy) {
-    return (
-      <a
-        href={withBase(item.caseStudy)}
-        className="mt-6 inline-block label-mono text-sm font-semibold text-ink hover:text-goldtext transition-colors"
-      >
-        Read case study →
-      </a>
-    );
-  }
-  return null;
-}
-
-function WorkCard({ item, Showcase }) {
+function GalleryCard({ item, index }) {
+  const num = String(index + 1).padStart(2, "0");
   return (
-    <div className="rounded-2xl border border-border bg-card overflow-hidden module-shift">
-      {Showcase && <Showcase item={item} />}
-      <div className="p-6 sm:p-8">
-        <div className="flex items-center gap-3 mb-4">
-          <StatusBadge status={item.status} />
-          <span
-            className="label-mono text-[0.6rem] px-2 py-1 text-base rounded-full border border-border-strong"
-          >
-            {item.tag}
-          </span>
-        </div>
-
-        <h3 className="head-display text-xl sm:text-2xl text-ink mb-3">
-          {item.title}
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <Field label="Problem">{item.problem}</Field>
-          <Field label="Solution">{item.solution}</Field>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <Field label="Role">
-            <span className="inline-block rounded-full border border-border-strong bg-base px-3 py-1 text-xs text-ink">
-              {item.role}
+    <div className="group relative rounded-2xl border border-border bg-card overflow-hidden module-shift transition-all duration-300 hover:-translate-y-1 hover:border-ink/30 hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.35)]">
+      <Link to={item.caseStudy} className="block">
+        <div className="relative aspect-video overflow-hidden bg-base">
+          {item.image && (
+            <img
+              src={withBase(item.image)}
+              alt={`${item.title} — preview`}
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          )}
+          <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/35 transition-colors duration-300 flex items-center justify-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-ink text-paper label-mono text-[0.65rem] font-medium px-4 py-2 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              View case study →
             </span>
-          </Field>
-          <Field label="Impact" accent="text-goldtext">
-            {item.impact}
-          </Field>
-        </div>
-
-        <div className="mb-6">
-          <span className="label-mono text-muted text-[0.6rem] block mb-2">
-            Methods & tools
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {item.tech.map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-border bg-base px-3 py-1 text-soft text-xs"
-              >
-                {t}
-              </span>
-            ))}
           </div>
         </div>
 
-        <div className="mb-6">
-          <span className="label-mono text-muted text-[0.6rem] block mb-2">
-            What I learned
-          </span>
-          <p className="text-soft text-sm leading-relaxed serif italic">
-            {item.lessons}
-          </p>
-        </div>
+        <div className="p-5 sm:p-6">
+          <div className="flex items-center justify-between mb-3">
+            <span className="label-mono text-muted text-[0.6rem] tracking-[0.15em]">
+              {num}
+            </span>
+            <StatusBadge status={item.status} />
+          </div>
 
-        <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
-          {item.caseStudy && (
-            <a
-              href={withBase(item.caseStudy)}
-              className="inline-flex items-center gap-2 rounded-full bg-ink hover:bg-ink/85 text-paper text-xs font-medium px-4 py-2 transition-colors"
-            >
-              Case study →
-            </a>
-          )}
-          {item.github && (
-            <a
-              href={item.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border-strong hover:border-ink hover:text-ink text-soft text-xs font-medium px-4 py-2 transition-colors"
-            >
-              GitHub ↗
-            </a>
-          )}
+          <h3 className="head-display text-lg sm:text-xl text-ink leading-snug group-hover:text-goldtext transition-colors">
+            {item.title}
+          </h3>
+
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <span className="label-mono text-[0.6rem] px-2 py-1 rounded-full border border-border-strong text-soft">
+              {item.tag}
+            </span>
+            <span className="label-mono text-muted text-[0.55rem]">
+              {item.type}
+            </span>
+          </div>
         </div>
-      </div>
+      </Link>
+
+      {item.github && (
+        <a
+          href={item.github}
+          target="_blank"
+          rel="noreferrer"
+          className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-base/90 backdrop-blur border border-border px-2.5 py-1 label-mono text-[0.55rem] text-soft hover:text-ink transition-colors"
+        >
+          GitHub ↗
+        </a>
+      )}
     </div>
   );
 }
@@ -147,16 +84,13 @@ export default function SelectedWork() {
         kicker="Projects"
         number="02"
         title="Projects."
-        description="Four pieces that show how I frame problems, design solutions, and deliver artifacts teams actually use."
+        description="A short gallery of work I frame, build, and ship — hover to peek, click any card for the full case study."
       />
 
-      <div className="space-y-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {portfolio.map((item, idx) => (
-          <Reveal key={item.id} delay={Math.min(idx * 40, 160)}>
-            <WorkCard
-              item={item}
-              Showcase={SHOWCASES[item.id] || null}
-            />
+          <Reveal key={item.id} delay={Math.min(idx * 60, 180)}>
+            <GalleryCard item={item} index={idx} />
           </Reveal>
         ))}
       </div>
