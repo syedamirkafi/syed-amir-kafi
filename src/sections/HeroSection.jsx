@@ -32,7 +32,7 @@ function PortraitFrame() {
 
       <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-accent bg-base/90 backdrop-blur px-3 py-1.5 label-mono text-[0.58rem] text-goldtext">
         <span className="w-1.5 h-1.5 rounded-full bg-accent kf-pulse" />
-        Open to BA roles · Germany
+        {profile.availability}
       </div>
 
       <div className="absolute -bottom-3 -right-3 rounded-full border border-border-strong bg-base px-3 py-1.5 label-mono text-[0.58rem] text-soft">
@@ -104,7 +104,7 @@ export default function HeroSection() {
                 href={withBase(profile.cvUrl)}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-ink hover:bg-ink/85 text-base text-sm font-medium px-5 py-2.5 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-ink hover:bg-ink/85 text-paper text-sm font-medium px-5 py-2.5 transition-colors"
               >
                 Résumé ↓
               </a>
@@ -120,7 +120,7 @@ export default function HeroSection() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full text-soft hover:text-ink text-sm font-medium px-4 py-2.5 transition-colors"
               >
-                LinkedIn →
+                LinkedIn ↗
               </a>
             </div>
           </div>

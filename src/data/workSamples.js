@@ -11,7 +11,7 @@ export const workSamples = [
       "Rep scorecards with target vs. actual, weekly route rankings, and shop-level breakdowns — KPI cards up top, target lines on the trends. The whole 17-person territory checked them every morning.",
     outcome: "+18% territory sales in a season",
     image: "/work-samples/tableau-dashboard.svg",
-    link: "/blog/tableau-sales-dashboards",
+    link: "/blog/territory-sales-optimization",
   },
   {
     id: "keyb-stock",

@@ -1,7 +1,7 @@
 # SYED AMIR KAFI — Personal Site
 
 A markdown-powered personal blog and job-search portfolio for **Syed Amir Kafi**:
-data analytics, business analysis, operations, and design.
+business analysis, digital transformation, and data-driven process work.
 
 ## Quick Start
 
@@ -14,7 +14,7 @@ npm run build    # production build (outputs to dist/)
 
 This repo uses the **Swiss Modernism** design system:
 
-- **Typography**: Archivo + Space Grotesk
+- **Typography**: Fraunces + Inter + JetBrains Mono
 - **Colors**: Professional gold accent (#F4B400) with full dark/light mode
 - **Grid**: 12-column layout with mathematical spacing
 - **Theme**: Persistent color system with design token variables

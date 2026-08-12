@@ -1,6 +1,5 @@
 export const profile = {
   name: "Syed Amir Kafi",
-  nameShort: "Amir·Kafi",
   headline: "Hi, I'm Amir.",
   subheadline:
     "Welcome to my portfolio — where I've shared my journey so far.",
@@ -12,10 +11,9 @@ export const profile = {
     "Master's student in International Management & Information Systems, Germany — I work where business problems meet process and data.",
   intro:
     "I'm Amir, a master's student in Germany with hands-on experience in sales analytics, warehouse operations, and process improvement. I'm looking for a Working Student role as a business analyst — where I can contribute today and grow toward BA and digital transformation.",
-  roles: ["Business Analysis", "Digital Transformation", "Process Optimization"],
   email: "syedamirkafi@gmail.com",
   phone: "+49 1575 144 35 23",
-  location: "Hamburg region · NRW, Germany",
+  location: "Hamm, NRW · Germany",
   availabilityWindow: "Available immediately · 16–20h/week",
   linkedin: "https://linkedin.com/in/syedamirkafi",
   github: "https://github.com/syedamirkafi",
@@ -25,14 +23,6 @@ export const profile = {
     { name: "English", level: "Fluent (C1)", code: "EN" },
     { name: "German", level: "Intermediate (A2 → B1 by Dec 2026)", code: "DE" },
     { name: "Bengali", level: "Native", code: "BN" },
-  ],
-  focus: [
-    "Business Analysis",
-    "Digital Transformation",
-    "Information Systems",
-    "Data Analytics",
-    "Process Optimization",
-    "AI-assisted analysis",
   ],
   bio: [
     "I started four years ago leading the territory team at a Robi distribution house — 14 sales reps, IT, and back-office — reading the route-level data every morning until it explained why some corridors grew and others didn't. The territory grew 18% in a season. At Picnic I walked the warehouse floor, watched how orders actually moved, and found two steps nobody needed. Between those, I researched, wrote, and coordinated 80+ university assignments for UK clients.",
@@ -45,15 +35,6 @@ export const values = [
   "Outcomes over activity",
   "Curiosity as a habit",
   "Documentation as respect",
-];
-
-export const interests = [
-  "Digital transformation",
-  "Process optimization",
-  "Requirements engineering",
-  "Data-driven decision making",
-  "Dashboard design",
-  "AI-assisted analysis",
 ];
 
 export const lifeTimeline = [
@@ -70,12 +51,12 @@ export const lifeTimeline = [
   {
     period: "2022 — 2024",
     label: "Professional experience",
-    text: "Research analyst, banking intern, operations lead — and territory team lead whose data grew a distribution house's sales 18% in a season.",
+    text: "Research analyst, banking intern, operations lead — and Territory Officer whose data grew a distribution house's sales 18% in a season.",
   },
   {
-    period: "2025",
+    period: "2024 — 2025",
     label: "Move to Germany",
-    text: "Started the master's at Fachhochschule Südwestfalen and joined Picnic as a Working Student.",
+    text: "Moved to Germany and joined Picnic as a Working Student (Oct 2024); started the master's at Fachhochschule Südwestfalen in March 2025.",
   },
   {
     period: "2025 — now",
@@ -87,19 +68,4 @@ export const lifeTimeline = [
     label: "Career goal",
     text: "Graduate into Business Analysis or Digital Transformation — building on Working Student experience in process and data.",
   },
-];
-
-export const currentFocus = [
-  "Requirements gathering and business analysis",
-  "Interviewing stakeholders and tracing requirements",
-  "Mapping processes in BPMN",
-  "Designing dashboards in Power BI / Tableau",
-  "German — working toward B1",
-];
-
-export const learningNow = [
-  "Google Data Analytics (in progress)",
-  "IIBA ECBA preparation",
-  "Microsoft Power BI (PL-300)",
-  "BABOK knowledge areas",
 ];

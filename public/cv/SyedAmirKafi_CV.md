@@ -25,7 +25,7 @@ translate data into operational improvements.
 
 ## Education
 
-- **M.A. International Management & Information Systems** — FH Südwestfalen, Soest (Mar 2025 – Present, 4th semester)
+- **M.A. International Management & Information Systems** — Fachhochschule Südwestfalen, Soest (Mar 2025 – Present, 4th semester)
 - **M.B.A. Human Resources Management** — University of Rajshahi, Bangladesh (2022–2023, Grade 2.0)
 - **B.B.A. Management Studies** — University of Rajshahi, Bangladesh (2017–2022, Grade 2.0)
 

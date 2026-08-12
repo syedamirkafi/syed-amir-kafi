@@ -44,7 +44,7 @@ function SkillChip({ skill }) {
         {skill.name}
       </span>
       {skill.evidence && skill.evidence.length > 0 && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1.5 bg-ink text-[0.6rem] text-base rounded opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1.5 bg-ink text-[0.6rem] text-paper rounded opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
           {skill.evidence.join(" · ")}
         </div>
       )}

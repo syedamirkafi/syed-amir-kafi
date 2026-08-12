@@ -119,7 +119,7 @@ function WorkCard({ item, Showcase }) {
           {item.caseStudy && (
             <a
               href={withBase(item.caseStudy)}
-              className="inline-flex items-center gap-2 rounded-full bg-ink hover:bg-ink/85 text-base text-xs font-medium px-4 py-2 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-ink hover:bg-ink/85 text-paper text-xs font-medium px-4 py-2 transition-colors"
             >
               Case study →
             </a>

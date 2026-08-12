@@ -3,6 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://syedamirkafi.github.io/syed-amir-kafi/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedamirkafi/syed-amir-kafi.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/postbuild.mjs",

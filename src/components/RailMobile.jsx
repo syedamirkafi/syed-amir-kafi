@@ -108,7 +108,7 @@ export default function RailMobile() {
               href={withBase(profile.cvUrl)}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-block rounded-full bg-ink text-base text-[0.72rem] font-medium px-3.5 py-1.5"
+              className="hidden sm:inline-block rounded-full bg-ink text-paper text-[0.72rem] font-medium px-3.5 py-1.5"
             >
               Résumé ↓
             </a>
@@ -181,17 +181,17 @@ export default function RailMobile() {
               href={withBase(profile.cvUrl)}
               target="_blank"
               rel="noreferrer"
-              className="block text-center rounded-full bg-ink text-base text-[0.85rem] font-medium px-4 py-3 touch-manipulation"
+              className="block text-center rounded-full bg-ink text-paper text-[0.85rem] font-medium px-4 py-3 touch-manipulation"
               style={{ minHeight: "44px" }}
             >
               Résumé ↓
             </a>
             <div className="flex items-center gap-6 text-sm text-soft">
               <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-ink transition-colors touch-manipulation" style={{ minHeight: "44px", display: "flex", alignItems: "center" }}>
-                LinkedIn
+                LinkedIn ↗
               </a>
               <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-ink transition-colors touch-manipulation" style={{ minHeight: "44px", display: "flex", alignItems: "center" }}>
-                GitHub
+                GitHub ↗
               </a>
               <a href={`mailto:${profile.email}`} className="hover:text-ink transition-colors touch-manipulation" style={{ minHeight: "44px", display: "flex", alignItems: "center" }}>
                 Email

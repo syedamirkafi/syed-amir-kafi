@@ -10,7 +10,6 @@ excerpt: "Building a web tool that automates document generation and data extrac
 cover: "#F4B400"
 featured: true
 order: 6
-draft: true
 ---
 
 Job searching is a data problem wrapped in a document problem. Every application needs a tailored CV, a cover letter, and a tracker — and doing it by hand is repetitive, error-prone work. So I built **Pivot**, an AI-powered career operations platform.
