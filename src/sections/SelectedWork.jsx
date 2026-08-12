@@ -144,9 +144,9 @@ export default function SelectedWork() {
   return (
     <section id="work" className="scroll-mt-24 pt-32">
       <SectionHeading
-        kicker="Selected work"
+        kicker="Projects"
         number="02"
-        title="Selected work."
+        title="Projects."
         description="Four pieces that show how I frame problems, design solutions, and deliver artifacts teams actually use."
       />
 

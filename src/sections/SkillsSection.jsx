@@ -57,7 +57,7 @@ export default function SkillsSection() {
     <section id="skills" className="scroll-mt-24 pt-32">
       <SectionHeading
         kicker="Skills"
-        number="03"
+        number="01"
         title="Skills."
         description="The things I reach for in day-to-day work — hover a skill to see where I've applied it."
       />
