@@ -141,16 +141,14 @@ function TypeChip({ type }) {
 }
 
 function JourneyDot({ isCurrent }) {
-  const base = "absolute top-[1.9rem] w-3 h-3 rounded-full border-3 -translate-x-1/2";
-  if (isCurrent) {
-    return (
-      <span
-        className={`${base} -left-7 bg-accent border-accent ring-4 ring-accent/20`}
-        aria-hidden="true"
-      />
-    );
-  }
-  return <span className={`${base} -left-7 bg-accent border-accent`} aria-hidden="true" />;
+  return (
+    <span
+      className={`absolute -left-7 top-[1.9rem] lg:-left-auto lg:left-1/2 lg:top-[4.75rem] w-3 h-3 rounded-full border-3 -translate-x-1/2 z-10 ${
+        isCurrent ? "bg-accent border-accent ring-4 ring-accent/20" : "bg-accent border-accent"
+      }`}
+      aria-hidden="true"
+    />
+  );
 }
 
 function buildJourney() {
@@ -176,18 +174,32 @@ export default function JourneySection() {
       <div className="relative">
         <span
           aria-hidden="true"
-          className="absolute left-0 top-1 bottom-1 w-px"
+          className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-1 bottom-1 w-px"
           style={{ background: "linear-gradient(180deg, var(--color-border-strong) 0%, var(--color-border) 100%)" }}
         />
 
-        <div className="space-y-10 pl-7">
+        <div className="space-y-10 lg:space-y-16">
           {journey.map((item, index) => {
             const isEducation = item.type === "education";
             const isCurrent = item.data.period.includes("Present");
             const Card = isEducation ? EducationCard : WorkCard;
+            const onLeft = index % 2 === 0;
             return (
-              <div key={`${item.type}-${item.data.period}`} className="relative">
+              <div
+                key={`${item.type}-${item.data.period}`}
+                className={`relative pl-7 lg:pl-0 ${
+                  onLeft ? "lg:pr-[calc(50%+2.5rem)]" : "lg:pl-[calc(50%+2.5rem)]"
+                }`}
+              >
                 <JourneyDot isCurrent={isCurrent} />
+
+                <span
+                  aria-hidden="true"
+                  className={`hidden lg:block absolute top-[4.75rem] h-px w-10 ${
+                    onLeft ? "left-[calc(50%-2.5rem)]" : "right-[calc(50%-2.5rem)]"
+                  }`}
+                  style={{ background: "var(--color-border-strong)" }}
+                />
 
                 <div className="relative">
                   <Reveal delay={Math.min(index * 60, 240)}>

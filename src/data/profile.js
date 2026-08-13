@@ -1,5 +1,6 @@
 export const profile = {
   name: "Syed Amir Kafi",
+  role: "Business Analysis · Working Student",
   headline: "Hi, I'm Amir.",
   subheadline:
     "Welcome to my portfolio — where I've shared my journey so far.",

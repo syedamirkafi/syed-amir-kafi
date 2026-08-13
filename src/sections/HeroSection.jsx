@@ -1,42 +1,75 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { useEffect, useRef, useState } from "react";
 import { profile } from "../data/profile.js";
 import { withBase } from "../lib/base.js";
+import { usePrefersReducedMotion } from "../lib/usePrefersReducedMotion.js";
+
+function useHeroFold() {
+  const ref = useRef(null);
+  const reduced = usePrefersReducedMotion();
+  const [fold, setFold] = useState(0);
+
+  useEffect(() => {
+    if (reduced) {
+      setFold(0);
+      return;
+    }
+    let raf;
+    const update = () => {
+      const el = ref.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, -rect.top / (rect.height * 0.85)));
+      setFold(p);
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [reduced]);
+
+  return { ref, fold };
+}
 
 function PortraitFrame() {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="relative">
-      <div className="rounded-2xl overflow-hidden border border-border-strong bg-card aspect-[4/5] w-full relative">
-        {!failed ? (
-          <img
-            src={withBase(profile.portrait)}
-            alt="Portrait of Syed Amir Kafi"
-            className="w-full h-full object-cover"
-            onError={() => setFailed(true)}
-            width={400}
-            height={500}
-          />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-base">
-            <div className="w-24 h-24 rounded-full border-2 border-accent flex items-center justify-center">
-              <span className="serif text-3xl text-ink">AK</span>
-            </div>
-            <span className="label-mono text-muted text-[0.65rem]">
-              Syed Amir Kafi
-            </span>
+    <div className="rounded-2xl overflow-hidden border border-border-strong bg-card aspect-[4/5] w-full relative shadow-[0_24px_48px_-28px_rgba(22,21,19,0.35)]">
+      {!failed ? (
+        <img
+          src={withBase(profile.portrait)}
+          alt={`Portrait of ${profile.name}`}
+          className="w-full h-full object-cover"
+          onError={() => setFailed(true)}
+          width={400}
+          height={500}
+        />
+      ) : (
+        <div className="w-full h-full flex flex-col items-center justify-center gap-3 bg-base">
+          <div className="w-24 h-24 rounded-full border-2 border-accent flex items-center justify-center">
+            <span className="serif text-3xl text-ink">AK</span>
           </div>
-        )}
-      </div>
+          <span className="label-mono text-muted text-[0.65rem]">
+            {profile.name}
+          </span>
+        </div>
+      )}
 
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-accent bg-base/90 backdrop-blur px-3 py-1.5 label-mono text-[0.58rem] text-goldtext">
-        <span className="w-1.5 h-1.5 rounded-full bg-accent kf-pulse" />
-        {profile.availability}
-      </div>
-
-      <div className="absolute -bottom-3 -right-3 rounded-full border border-border-strong bg-base px-3 py-1.5 label-mono text-[0.58rem] text-soft">
-        {profile.location}
+      <div className="absolute inset-x-0 bottom-0 p-4 pt-12 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+        <div className="serif text-white text-lg font-medium leading-tight">
+          {profile.name}
+        </div>
+        <div className="mono text-white/85 text-[0.62rem] tracking-wide mt-1">
+          {profile.role}
+        </div>
       </div>
     </div>
   );
@@ -49,6 +82,8 @@ const proofPoints = [
 ];
 
 export default function HeroSection() {
+  const { ref, fold } = useHeroFold();
+
   useEffect(() => {
     const onHash = () => {
       const id = window.location.hash.replace("#", "");
@@ -62,9 +97,21 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="top" className="relative">
-      <div className="max-w-5xl mx-auto px-6 pt-20 lg:pt-32 pb-16">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-10 items-center">
+    <section
+      id="top"
+      ref={ref}
+      className="relative"
+      style={
+        fold > 0
+          ? {
+              clipPath: `inset(0 0 ${fold * 100}% 0)`,
+              willChange: "clip-path",
+            }
+          : undefined
+      }
+    >
+      <div className="max-w-6xl mx-auto px-6 pt-20 lg:pt-32 pb-16">
+        <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
           {/* Left column — text */}
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3 mb-6">
@@ -128,18 +175,33 @@ export default function HeroSection() {
           {/* Right column — portrait */}
           <div className="mt-12 lg:mt-0 lg:col-span-5">
             <PortraitFrame />
-            <div className="mt-4 flex flex-wrap gap-2">
-              {profile.languages.map((lang) => (
-                <span
-                  key={lang.code}
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs text-soft"
-                >
-                  <span className="mono text-[0.65rem] text-accent font-semibold">
-                    {lang.code}
-                  </span>
-                  {lang.level}
+
+            <div className="mt-5 rounded-2xl border border-border bg-card p-4 module-shift">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-2 label-mono text-[0.6rem] text-soft">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent kf-pulse" />
+                  {profile.availability}
                 </span>
-              ))}
+                <span className="mono text-[0.62rem] text-muted">
+                  {profile.location}
+                </span>
+              </div>
+
+              <div className="h-px bg-border my-3.5" />
+
+              <div className="flex flex-wrap gap-2">
+                {profile.languages.map((lang) => (
+                  <span
+                    key={lang.code}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-base px-3 py-1.5 text-xs text-soft"
+                  >
+                    <span className="mono text-[0.65rem] text-accent font-semibold">
+                      {lang.code}
+                    </span>
+                    {lang.level}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

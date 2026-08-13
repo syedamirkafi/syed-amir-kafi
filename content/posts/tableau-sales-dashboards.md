@@ -19,7 +19,7 @@ A report that nobody opens is a failed investment. The challenge at Robi Axiata 
 
 ## The report suite
 
-The team didn't have time for deep exploration. They needed **today's numbers versus target**, in context, with the "why" attached. So the reports were built around three rhythms:
+The team didn't have time for deep exploration. They needed ==today's numbers versus target==, in context, with the "why" attached. So the reports were built around three rhythms:
 
 - **Daily — rep scorecards.** Each sales rep got their own card: yesterday's sales against target, with KPI numbers up top and a small bar showing how far along they were. Open it, know where you stand, pick where to go today.
 - **Weekly — route rankings.** Routes ranked by revenue, growth, and coverage cost, with trend lines versus a target line. Management read this to see which corridors deserved more reps.
@@ -35,7 +35,11 @@ Every screen answered a question — "where do I focus today?" — rather than j
 
 ## The outcome
 
-The reports became the data backbone for territory decisions, feeding directly into the 18% sales increase and the national ranking of 13th out of 200+ officers. The proof that it worked: **people kept opening them.**
+The reports became the data backbone for territory decisions, feeding directly into the ++18% sales increase++ and the national ranking of 13th out of 200+ officers. The proof that it worked: **people kept opening them.**
+
+:::note
+"Opened" is the honest KPI. A dashboard that isn't the first tab of the morning is a report that collects dust — no matter how pretty the chart.
+:::
 
 ## Takeaway
 

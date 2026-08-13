@@ -340,6 +340,108 @@ body {
   margin: 2.5rem 0;
 }
 
+/* ---- Rich text extras (highlights, gold, callouts, pull quotes) ---- */
+.prose-content .mk {
+  background: linear-gradient(transparent 52%, rgba(244, 180, 0, 0.32) 52%);
+  color: var(--color-ink);
+  padding: 0 0.08em;
+  border-radius: 0.15em;
+}
+
+.prose-content .gold {
+  color: var(--color-goldtext);
+  font-weight: 600;
+}
+
+.prose-content blockquote.pullquote {
+  margin: 2.25rem 0;
+  border-left: 3px solid var(--color-accent);
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.prose-content .callout {
+  margin: 1.75rem 0;
+  border-radius: 0.85rem;
+  border: 1px solid var(--color-border);
+  border-left-width: 3px;
+  padding: 1rem 1.25rem 1.1rem;
+}
+
+.prose-content .callout > * + * {
+  margin-top: 0.5rem;
+}
+
+.prose-content .callout p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-soft);
+}
+
+.prose-content .callout::before {
+  display: block;
+  font-family: var(--font-label);
+  letter-spacing: 0.12em;
+  font-size: 0.62rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.prose-content .callout-note {
+  border-left-color: var(--color-accent);
+  background: var(--color-goldtint);
+}
+
+.prose-content .callout-note::before {
+  content: "NOTE";
+  color: var(--color-goldtext);
+}
+
+.prose-content .callout-tip {
+  border-left-color: var(--color-emerald);
+  background: rgba(4, 120, 87, 0.07);
+}
+
+.prose-content .callout-tip::before {
+  content: "TIP";
+  color: var(--color-emerald);
+}
+
+.prose-content .callout-warn {
+  border-left-color: var(--color-destructive);
+  background: rgba(185, 28, 28, 0.06);
+}
+
+.prose-content .callout-warn::before {
+  content: "WATCH OUT";
+  color: var(--color-destructive);
+}
+
+.prose-content .callout-key {
+  border-left-color: var(--color-ink);
+  background: var(--color-panel);
+}
+
+.prose-content .callout-key::before {
+  content: "KEY POINT";
+  color: var(--color-ink);
+}
+
+.prose-content .callout-quote {
+  border-left-color: var(--color-accent);
+  background: var(--color-panel);
+}
+
+.prose-content .callout-quote::before {
+  content: "QUOTE";
+  color: var(--color-ink);
+}
+
 /* ---- Tag chips ---- */
 .tag-chip {
   font-family: var(--font-body);

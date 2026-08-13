@@ -10,6 +10,58 @@ import {
 } from "../lib/posts.js";
 import { useDocumentTitle } from "../lib/useDocumentTitle.js";
 import { profile } from "../data/profile.js";
+import { preprocessContent, toText } from "../lib/markdown.js";
+
+const CALL_OUTS = new Set(["note", "tip", "warn", "key", "quote"]);
+
+function StatCards({ stats }) {
+  if (!stats || stats.length === 0) return null;
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-9">
+      {stats.map((s, i) => (
+        <div key={i} className="rounded-xl border border-border bg-card p-4 module-shift">
+          <div className="serif text-3xl sm:text-4xl text-ink font-medium tabular-nums leading-none">
+            {s.value}
+          </div>
+          <div className="text-soft text-xs leading-snug mt-2">{s.label}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function InlineCode({ className, children }) {
+  const text = toText(children);
+  if (!className) {
+    if (text.startsWith("==") && text.endsWith("==")) {
+      return <mark className="mk">{text.slice(2, -2)}</mark>;
+    }
+    if (text.startsWith("++") && text.endsWith("++")) {
+      return <span className="gold">{text.slice(2, -2)}</span>;
+    }
+  }
+  return <code className={className}>{children}</code>;
+}
+
+function BlockQuote({ children }) {
+  const parts = Array.isArray(children) ? children : [children];
+  const markerEl = parts.find((c) => toText(c).trim() !== "");
+  const marker = markerEl ? toText(markerEl).trim() : "";
+  const m = marker.match(/^@(\w+)$/);
+  if (m && CALL_OUTS.has(m[1])) {
+    return (
+      <div className={`callout callout-${m[1]}`}>
+        {parts.filter((c) => c !== markerEl)}
+      </div>
+    );
+  }
+  return <blockquote className="pullquote">{children}</blockquote>;
+}
+
+const markdownComponents = {
+  code: InlineCode,
+  blockquote: BlockQuote,
+};
 
 export default function Post() {
   const { slug } = useParams();
@@ -91,9 +143,14 @@ export default function Post() {
             </p>
           </header>
 
+          <StatCards stats={post.stats} />
+
           <div className="prose-content">
-            <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-              {post.content}
+            <ReactMarkdown
+              rehypePlugins={[rehypeHighlight]}
+              components={markdownComponents}
+            >
+              {preprocessContent(post.content)}
             </ReactMarkdown>
           </div>
 
