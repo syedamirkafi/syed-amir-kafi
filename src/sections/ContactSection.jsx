@@ -45,7 +45,7 @@ export default function ContactSection() {
       />
 
       <Reveal>
-        <div className="rounded-2xl border border-border bg-card p-7 sm:p-9">
+        <div className="rounded-2xl border border-border glass-card p-7 sm:p-9">
           <div className="flex items-center gap-2 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-accent kf-pulse" aria-hidden="true" />
             <span className="label-mono text-accent text-[0.65rem]">

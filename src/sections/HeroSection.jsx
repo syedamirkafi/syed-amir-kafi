@@ -132,7 +132,7 @@ export default function HeroSection() {
             {/* Proof points */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
               {proofPoints.map((point, i) => (
-                <div key={i} className="rounded-xl border border-border bg-card p-4 module-shift">
+                <div key={i} className="rounded-xl border border-border glass-card p-4 module-shift">
                   <div className="serif text-3xl sm:text-4xl text-ink font-medium tabular-nums">
                     {point.metric}
                   </div>
@@ -176,7 +176,7 @@ export default function HeroSection() {
           <div className="mt-12 lg:mt-0 lg:col-span-5">
             <PortraitFrame />
 
-            <div className="mt-5 rounded-2xl border border-border bg-card p-4 module-shift">
+            <div className="mt-5 rounded-2xl border border-border glass-card p-4 module-shift">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="inline-flex items-center gap-2 label-mono text-[0.6rem] text-soft">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent kf-pulse" />

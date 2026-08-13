@@ -19,7 +19,7 @@ function StatCards({ stats }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-9">
       {stats.map((s, i) => (
-        <div key={i} className="rounded-xl border border-border bg-card p-4 module-shift">
+        <div key={i} className="rounded-xl border border-border glass-card p-4 module-shift">
           <div className="serif text-3xl sm:text-4xl text-ink font-medium tabular-nums leading-none">
             {s.value}
           </div>
@@ -195,7 +195,7 @@ export default function Post() {
                   <Link
                     key={r.slug}
                     to={`/blog/${r.slug}`}
-                    className="rounded-2xl border border-border bg-card p-5 block module-shift"
+                    className="rounded-2xl border border-border glass-card p-5 block module-shift"
                   >
                     <span className="label-mono text-muted text-[0.6rem]">
                       SHARED TAGS · {r.category}
@@ -213,7 +213,7 @@ export default function Post() {
             {prev ? (
               <Link
                 to={`/blog/${prev.slug}`}
-                className="rounded-2xl border border-border bg-card p-5 block module-shift"
+                className="rounded-2xl border border-border glass-card p-5 block module-shift"
               >
                 <span className="label-mono text-muted text-[0.6rem]">
                   ← PREVIOUS
@@ -228,7 +228,7 @@ export default function Post() {
             {next ? (
               <Link
                 to={`/blog/${next.slug}`}
-                className="rounded-2xl border border-border bg-card p-5 block text-right module-shift"
+                className="rounded-2xl border border-border glass-card p-5 block text-right module-shift"
               >
                 <span className="label-mono text-muted text-[0.6rem]">
                   NEXT →
@@ -242,7 +242,7 @@ export default function Post() {
             )}
           </nav>
 
-          <div className="mt-16 rounded-2xl border border-border bg-card p-6 sm:p-8">
+          <div className="mt-16 rounded-2xl border border-border glass-card p-6 sm:p-8">
             <h2 className="serif text-ink font-medium text-lg mb-2">
               Working on something similar?
             </h2>

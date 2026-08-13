@@ -44,7 +44,7 @@ function SkillChip({ skill }) {
         {skill.name}
       </span>
       {skill.evidence && skill.evidence.length > 0 && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1.5 bg-ink text-[0.6rem] text-paper rounded opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1.5 bg-ink/80 backdrop-blur-md text-[0.6rem] text-paper rounded opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10">
           {skill.evidence.join(" · ")}
         </div>
       )}
@@ -65,7 +65,7 @@ export default function SkillsSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {skillGroups.map((group, idx) => (
           <Reveal key={group.id} delay={Math.min(idx * 60, 180)}>
-            <div className="h-full rounded-2xl border border-border bg-card p-6 module-shift">
+            <div className="h-full rounded-2xl border border-border glass-card p-6 module-shift">
               <div className="flex items-center gap-3 mb-1">
                 <span className="flex items-center justify-center w-9 h-9 rounded-lg border border-border bg-base text-goldtext">
                   <GroupIcon name={group.icon} />
@@ -86,7 +86,7 @@ export default function SkillsSection() {
       </div>
 
       <Reveal className="mt-5">
-        <div className="rounded-2xl border border-border bg-card p-6">
+        <div className="rounded-2xl border border-border glass-card p-6">
           <div className="flex flex-wrap items-center gap-3">
             <span className="label-mono text-accent text-[0.65rem] mr-2">
               Enterprise systems I've worked in

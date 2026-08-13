@@ -21,7 +21,7 @@ function isHRChip(c) {
 
 function EducationCard({ data }) {
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 sm:p-7 module-shift">
+    <div className="rounded-2xl border border-border glass-card p-6 sm:p-7 module-shift">
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
         <h4 className="serif text-ink font-medium text-lg leading-snug">{data.degree}</h4>
         <span className="mono text-muted text-[0.65rem] whitespace-nowrap">{data.period}</span>
@@ -59,7 +59,7 @@ function WorkCard({ data }) {
       : null;
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 sm:p-7 module-shift">
+    <div className="rounded-2xl border border-border glass-card p-6 sm:p-7 module-shift">
       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
         <h4 className="serif text-ink font-medium text-lg leading-snug">{data.role}</h4>
         <span className="mono text-muted text-[0.65rem] whitespace-nowrap">{data.period}</span>

@@ -90,7 +90,7 @@ export default function RailMobile() {
     <>
       {/* Top bar */}
       <header
-        className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-base/85 backdrop-blur-md border-b border-border"
+        className="lg:hidden fixed top-0 left-0 right-0 z-50 glass border-b border-border"
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
         <div className="flex items-center justify-between px-5 py-3.5">
@@ -153,7 +153,7 @@ export default function RailMobile() {
       <div
         id="mobile-menu"
         ref={sheetRef}
-        className={`lg:hidden fixed top-0 right-0 bottom-0 z-40 w-[min(22rem,100%)] bg-base border-l border-border transition-transform duration-300 ease-out ${
+        className={`lg:hidden fixed top-0 right-0 bottom-0 z-40 w-[min(22rem,100%)] glass-strong border-l border-border transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}

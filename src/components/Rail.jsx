@@ -59,7 +59,7 @@ function Dot({ id, label }) {
         }`}
       />
       <span
-        className={`pointer-events-none absolute left-6 whitespace-nowrap rounded-full bg-base/90 px-2 py-0.5 label-mono text-[0.6rem] backdrop-blur transition-all duration-200 ${
+        className={`pointer-events-none absolute left-6 whitespace-nowrap rounded-full glass px-2 py-0.5 label-mono text-[0.6rem] transition-all duration-200 ${
           isActive
             ? "opacity-100 translate-x-0 text-ink"
             : "opacity-0 -translate-x-1 text-muted group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-soft group-focus-visible:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:text-soft"

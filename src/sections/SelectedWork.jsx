@@ -32,7 +32,7 @@ function GalleryCard({ item, index }) {
   const num = String(index + 1).padStart(2, "0");
   const ink = bandInk(item.cover);
   return (
-    <div className="group relative rounded-2xl border border-border bg-card overflow-hidden module-shift transition-all duration-300 hover:-translate-y-1 hover:border-ink/30 hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.35)]">
+    <div className="group relative rounded-2xl border border-border glass-card overflow-hidden module-shift transition-all duration-300 hover:-translate-y-1 hover:border-ink/30 hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.35)]">
       <Link to={item.caseStudy} className="block">
         <div
           className="relative aspect-video overflow-hidden"
@@ -87,7 +87,7 @@ function GalleryCard({ item, index }) {
           href={item.github}
           target="_blank"
           rel="noreferrer"
-          className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-base/90 backdrop-blur border border-border px-2.5 py-1 label-mono text-[0.55rem] text-soft hover:text-ink transition-colors"
+          className="absolute top-3 right-3 inline-flex items-center gap-1.5 rounded-full glass border border-border px-2.5 py-1 label-mono text-[0.55rem] text-soft hover:text-ink transition-colors"
         >
           GitHub ↗
         </a>

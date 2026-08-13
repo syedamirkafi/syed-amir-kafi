@@ -16,7 +16,7 @@ const STATUS_LABEL = {
 
 function CertificationCard({ cert }) {
   return (
-    <div className="rounded-2xl border border-border bg-card p-5 module-shift flex flex-col">
+    <div className="rounded-2xl border border-border glass-card p-5 module-shift flex flex-col">
       <div className="flex items-center justify-between mb-3">
         <span className="label-mono text-accent text-[0.6rem]">{cert.provider}</span>
         <span className={`rounded-full border px-2 py-0.5 label-mono text-[0.55rem] ${STATUS_STYLES[cert.status]}`}>

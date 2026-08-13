@@ -102,6 +102,85 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* ---- Glass (backdrop blur) ---- */
+.glass,
+.glass-card,
+.glass-strong {
+  background-color: var(--color-card);
+}
+
+.glass {
+  background-color: color-mix(in oklab, var(--color-card) 60%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+}
+
+.glass-card {
+  background-color: color-mix(in oklab, var(--color-card) 70%, transparent);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(140%);
+}
+
+.glass-strong {
+  background-color: color-mix(in oklab, var(--color-card) 80%, transparent);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  backdrop-filter: blur(28px) saturate(150%);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass,
+  .glass-card,
+  .glass-strong {
+    background-color: var(--color-card);
+  }
+}
+
+/* ---- Ambient orbs (so glass reads over flat backgrounds) ---- */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 9999px;
+  filter: blur(90px);
+}
+
+.ambient::before {
+  top: -22vmax;
+  left: -16vmax;
+  background: radial-gradient(circle, rgba(244, 180, 0, 0.16), transparent 60%);
+}
+
+.ambient::after {
+  bottom: -26vmax;
+  right: -16vmax;
+  background: radial-gradient(circle, rgba(4, 120, 87, 0.13), transparent 60%);
+}
+
+.dark .ambient::before {
+  background: radial-gradient(circle, rgba(244, 180, 0, 0.1), transparent 60%);
+}
+
+.dark .ambient::after {
+  background: radial-gradient(circle, rgba(4, 120, 87, 0.08), transparent 60%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient::before,
+  .ambient::after {
+    display: none;
+  }
+}
+
 /* ---- Display typography (serif) ---- */
 .head-display {
   font-family: var(--font-display);
